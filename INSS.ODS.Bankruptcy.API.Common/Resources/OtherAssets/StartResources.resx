@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OtherAssets_Start_BankAccount_Hint" xml:space="preserve">
+    <value>You have already given us this information</value>
+  </data>
+  <data name="OtherAssets_Start_BankAccount_Label" xml:space="preserve">
+    <value>Bank account balance</value>
+  </data>
+  <data name="OtherAssets_Start_Cash_Hint" xml:space="preserve">
+    <value>Money you currently have in cash</value>
+  </data>
+  <data name="OtherAssets_Start_Cash_Label" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="OtherAssets_Start_Cash_SkipLink" xml:space="preserve">
+    <value>I don't have any cash</value>
+  </data>
+  <data name="OtherAssets_Start_Compensations_Hint" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherAssets_Start_Compensations_Label" xml:space="preserve">
+    <value>Compensations or legal claims</value>
+  </data>
+  <data name="OtherAssets_Start_Compensations_SkipLink" xml:space="preserve">
+    <value>I don't have any oustanding compensation or legal claims</value>
+  </data>
+  <data name="OtherAssets_Start_Continue_Label" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="OtherAssets_Start_Delete_Label" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="OtherAssets_Start_Edit_Label" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="OtherAssets_Start_Footer_Value" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="OtherAssets_Start_Header_Actions" xml:space="preserve">
+    <value>actions</value>
+  </data>
+  <data name="OtherAssets_Start_Header_Items" xml:space="preserve">
+    <value>Your items</value>
+  </data>
+  <data name="OtherAssets_Start_Header_Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="OtherAssets_Start_HouseholdItems_Hint" xml:space="preserve">
+    <value>Electronics, furniture, appliances, etc currently worth more than £500 each</value>
+  </data>
+  <data name="OtherAssets_Start_HouseholdItems_Label" xml:space="preserve">
+    <value>Household items</value>
+  </data>
+  <data name="OtherAssets_Start_HouseholdItems_SkipLink" xml:space="preserve">
+    <value>I don’t have any household items worth more than £500</value>
+  </data>
+  <data name="OtherAssets_Start_MoneyOwed_Hint" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherAssets_Start_MoneyOwed_Label" xml:space="preserve">
+    <value>Money you're owed</value>
+  </data>
+  <data name="OtherAssets_Start_MoneyOwed_SkipLink" xml:space="preserve">
+    <value>No one owes me any money</value>
+  </data>
+  <data name="OtherAssets_Start_OtherItems_Hint" xml:space="preserve">
+    <value>Electronics, furniture, jewellery, etc worth more than £500 each</value>
+  </data>
+  <data name="OtherAssets_Start_OtherItems_Label" xml:space="preserve">
+    <value>Items or possessions</value>
+  </data>
+  <data name="OtherAssets_Start_OtherItems_SkipLink" xml:space="preserve">
+    <value>I don't have any items or possessions worth more than £500 each</value>
+  </data>
+  <data name="OtherAssets_Start_Other_Hint" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherAssets_Start_Other_Label" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="OtherAssets_Start_Other_SkipLink" xml:space="preserve">
+    <value>I don’t have any other assets</value>
+  </data>
+  <data name="OtherAssets_Start_PageTitle" xml:space="preserve">
+    <value>Other items</value>
+  </data>
+  <data name="OtherAssets_Start_Paragraph1" xml:space="preserve">
+    <value>We need to know about any items you currently own.</value>
+  </data>
+  <data name="OtherAssets_Start_Paragraph2" xml:space="preserve">
+    <value>Telling us about an item doesn’t necessarily mean it will be taken away from you.</value>
+  </data>
+  <data name="OtherAssets_Start_Paragraph3" xml:space="preserve">
+    <value>It’s very unlikely that items you need for your daily life (eg washing machine, sofa, refrigerator) will be sold.</value>
+  </data>
+  <data name="OtherAssets_Start_SelfEmployedAssets_Hint" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherAssets_Start_SelfEmployedAssets_Label" xml:space="preserve">
+    <value>Self-employed business assets</value>
+  </data>
+  <data name="OtherAssets_Start_SelfEmployedAssets_SkipLink" xml:space="preserve">
+    <value>I don’t have any self-employed business assets</value>
+  </data>
+  <data name="OtherAssets_Start_Start_Label" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="OtherAssets_Start_Stocks_Hint" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherAssets_Start_Stocks_Label" xml:space="preserve">
+    <value>Stocks, shares and investments</value>
+  </data>
+  <data name="OtherAssets_Start_Stocks_SkipLink" xml:space="preserve">
+    <value>I don’t have any stocks, shares or investments</value>
+  </data>
+  <data name="OtherAssets_Start_Wills_Hint" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OtherAssets_Start_Wills_Label" xml:space="preserve">
+    <value>Interests in wills or trusts</value>
+  </data>
+  <data name="OtherAssets_Start_Wills_SkipLink" xml:space="preserve">
+    <value>I don’t benefit from any trusts or wills</value>
+  </data>
+</root>

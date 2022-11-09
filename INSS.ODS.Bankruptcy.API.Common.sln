@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "INSS.ODS.Bankruptcy.API.Common", "INSS.ODS.Bankruptcy.API.Common\INSS.ODS.Bankruptcy.API.Common.csproj", "{F9484FA4-57FE-47A2-924A-806BAEA01491}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "INSS.ODS.Bankruptcy.API.Common.UnitTests", "INSS.ODS.Bankruptcy.API.Common.UnitTests\INSS.ODS.Bankruptcy.API.Common.UnitTests.csproj", "{F14CF4A2-E6A0-4E3C-BF63-5B0FF58AB54C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{BA2D4E0C-6A19-48C6-AA07-4B2EC2C7D87C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzurePipelines", "AzurePipelines", "{03759C52-2F64-43E5-800C-BAA5C246E084}"
+	ProjectSection(SolutionItems) = preProject
+		AzurePipelines\azure-app-parameters.yml = AzurePipelines\azure-app-parameters.yml
+		AzurePipelines\azure-env-parameters.yml = AzurePipelines\azure-env-parameters.yml
+		AzurePipelines\azure-pipelines.yml = AzurePipelines\azure-pipelines.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9484FA4-57FE-47A2-924A-806BAEA01491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9484FA4-57FE-47A2-924A-806BAEA01491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9484FA4-57FE-47A2-924A-806BAEA01491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9484FA4-57FE-47A2-924A-806BAEA01491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14CF4A2-E6A0-4E3C-BF63-5B0FF58AB54C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14CF4A2-E6A0-4E3C-BF63-5B0FF58AB54C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14CF4A2-E6A0-4E3C-BF63-5B0FF58AB54C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14CF4A2-E6A0-4E3C-BF63-5B0FF58AB54C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76E71979-FBA2-4C60-A15F-1F4EA20C8895}
+	EndGlobalSection
+EndGlobal

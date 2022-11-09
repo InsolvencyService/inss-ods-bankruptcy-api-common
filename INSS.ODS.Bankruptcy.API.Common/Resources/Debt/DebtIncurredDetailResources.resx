@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Debt_DebtIncurredDetail_Amount_Error_InvalidValue" xml:space="preserve">
+    <value>Please enter a gambling amount that's greater than 0 </value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_Amount_Error_RequiredWhenGamblingReasonSelected" xml:space="preserve">
+    <value>Please specify how much you have gambled</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessCustomersFailedToPay_Reason_Label" xml:space="preserve">
+    <value>Customers failed to pay</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessFailedToDealWithTaxes_Reason_Label" xml:space="preserve">
+    <value>Failed to deal with taxes</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessLossOfCustomerOrMarket_Reason_Label" xml:space="preserve">
+    <value>Loss of customers/market</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessLossOfFinancialBacking_Reason_Label" xml:space="preserve">
+    <value>Loss of financial backing</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessOtherText_Error_Length" xml:space="preserve">
+    <value>Please enter a reason which is between 1 and 100 characters</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessOtherText_Error_RequiredWhenOtherReasonSelected" xml:space="preserve">
+    <value>Please specify the other reason</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessOther_Reason_Label" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessReasonForDebt_Reason_Label" xml:space="preserve">
+    <value>Business</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessTooHighOverheads_Reason_Label" xml:space="preserve">
+    <value>Too high overheads</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_BusinessVictimOfBusinessFraud_Reason_Label" xml:space="preserve">
+    <value>Victim of business fraud</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_DateWhenRealisedCouldntPayBack_Label" xml:space="preserve">
+    <value>Date you first realised you couldn't repay your debts</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_GamblingAmount_Hint" xml:space="preserve">
+    <value>Leave blank if you haven't gambled</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_GamblingAmount_Label" xml:space="preserve">
+    <value>If any of your debts are due to gambling, how much have you 
+gambled in the last 2 years?</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_Page_Title" xml:space="preserve">
+    <value>Debt history</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalDrugsAndOrAlchohol_Reason_Label" xml:space="preserve">
+    <value>Drugs and/or alcohol</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalGambling_Reason_Label" xml:space="preserve">
+    <value>Gambling</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalIllnessOrAccident_Reason_Label" xml:space="preserve">
+    <value>Illness or accident</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalIncreasedInterestRates_Reason_Label" xml:space="preserve">
+    <value>Increased interest rates</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalOtherText_Error_Length" xml:space="preserve">
+    <value>Please enter a reason which is between 1 and 100 characters</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalOtherText_Error_RequiredWhenOtherReasonSelected" xml:space="preserve">
+    <value>Please specify the other reason</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalOther_Reason_Label" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalReasonForDebt_Reason_Label" xml:space="preserve">
+    <value>Personal</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalReducedEmployment_Reason_Label" xml:space="preserve">
+    <value>Reduced employment</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalReductionInHouseholdIncome_Reason_Label" xml:space="preserve">
+    <value>Reduction in my household's income</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalReductionInIncome_Reason_Label" xml:space="preserve">
+    <value>Reduction in my income</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalRedundancyOrLostJob_Reason_Label" xml:space="preserve">
+    <value>Redundancy/lost my job</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalRelationshipBreakdown_Reason_Label" xml:space="preserve">
+    <value>Relationship breakdown</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalSpendingMoreThanEarning_Reason_Label" xml:space="preserve">
+    <value>Spending more than I earn</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_PersonalVictimOfFraud_Reason_Label" xml:space="preserve">
+    <value>Victim of fraud</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_ReasonForDebt_Error_AtLeastOneReasonNeedsToBeSelected" xml:space="preserve">
+    <value>Please select at least one reason why you got into debt</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_ReasonsForDebt_Hint" xml:space="preserve">
+    <value>Tick all that apply</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_ReasonsForDebt_Label" xml:space="preserve">
+    <value>Why did you get into debt?</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_Reason_Error_OtherText" xml:space="preserve">
+    <value>You have entered text for the Other option, but you have not selected it.</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_StartDate_Error_Empty" xml:space="preserve">
+    <value>Please enter the date you first realised you couldn't pay your debts</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_StartDate_Error_InTheFuture" xml:space="preserve">
+    <value>Please enter a valid date</value>
+  </data>
+  <data name="Debt_DebtIncurredDetail_StartDate_Error_MinimumDate" xml:space="preserve">
+    <value>Please enter a in date that is after 01/01/1900</value>
+  </data>
+</root>

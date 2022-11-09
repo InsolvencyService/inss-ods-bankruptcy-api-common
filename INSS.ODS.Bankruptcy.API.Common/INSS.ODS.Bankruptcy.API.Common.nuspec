@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$authors$</authors>
+    <owners>$authors$</owners>
+    <licenseUrl>https://github.com/InsolvencyService/inss-ods-bankruptcy-api-common</licenseUrl>
+    <projectUrl>https://github.com/InsolvencyService/inss-ods-bankruptcy-api-common</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>This is the initial release.</releaseNotes>
+    <copyright>Copyright 2022</copyright>
+    <tags></tags>
+  </metadata>
+</package>
