@@ -1,0 +1,1 @@
+# inss-ods-bankruptcy-api-common
