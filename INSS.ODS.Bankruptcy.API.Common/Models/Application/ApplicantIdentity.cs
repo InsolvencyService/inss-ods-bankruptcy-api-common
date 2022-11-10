@@ -15,18 +15,19 @@ using INSS.ODS.Bankruptcy.API.Common.Models.ApplicationOverview;
 using INSS.ODS.Bankruptcy.API.Common.Models.Recoveries;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 using INSS.ODS.Bankruptcy.API.Common.Models.LegalProceedings;
+using Microsoft.EntityFrameworkCore;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
     [DataContract]
     [Validator(typeof(ApplicantDetailsValidator))]
+    [Index(nameof(Urn), IsUnique = true, Name = "IX_URN")]
     public class ApplicantIdentity : ITableBase, IApplicantDetails
     {
         [DataMember]
         public int Id { get; set; }
 
         [DataMember]
-        //[Index("IX_URN", 1, IsUnique = true)]
         public string Urn { get; set; }
 
         [DataMember]

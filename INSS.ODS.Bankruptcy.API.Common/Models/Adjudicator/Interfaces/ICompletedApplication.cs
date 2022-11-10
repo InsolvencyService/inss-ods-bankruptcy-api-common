@@ -10,7 +10,6 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Adjudicator
     {
         [DataMember]
         [MaxLength(12)]
-        //[Index("IX_URN", 1, IsUnique = true)]
         string Urn { get; set; }
         [DataMember]
         string BKTReference { get; set; }

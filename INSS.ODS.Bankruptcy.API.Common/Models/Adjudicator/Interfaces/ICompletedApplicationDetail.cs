@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
@@ -8,7 +9,6 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Adjudicator
     {
         [DataMember]
         [MaxLength(12)]
-        //[Index("IX_URN", 1, IsUnique = true)]
         string Urn { get; set; }
 
         [DataMember]

@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.AdjReference;
+using Microsoft.EntityFrameworkCore;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
     [DataContract]
+    [Index(nameof(Id), IsUnique = true, Name = "Ix_Unique_ADJ_Constraint")]
     public class AdjRegistration : IAdjRegistration
     {
-        //[Index("Ix_Unique_ADJ_Constraint", IsUnique = true)]
         [DataMember]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

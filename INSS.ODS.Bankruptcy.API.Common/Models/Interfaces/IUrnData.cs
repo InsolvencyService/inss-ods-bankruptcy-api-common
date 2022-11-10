@@ -11,8 +11,6 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Interfaces
 {
     public interface IUrnRegistration : ITableBase
     {
-        //[Index("Ix_Unique_URN_Constraint", IsUnique=true)]
-        
         [Column(TypeName = "VARCHAR")]
         [StringLength(40)]
         String URN { get; set; }

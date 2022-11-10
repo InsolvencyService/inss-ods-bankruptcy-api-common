@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.DroReference;
+using Microsoft.EntityFrameworkCore;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
     [DataContract]
+    [Index(nameof(Id), IsUnique = true, Name = "Ix_Unique_DRO_Constraint")]
     public class DroRegistration : IDroRegistration
     {
-        //[Index("Ix_Unique_DRO_Constraint", IsUnique = true)]
         [DataMember]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
