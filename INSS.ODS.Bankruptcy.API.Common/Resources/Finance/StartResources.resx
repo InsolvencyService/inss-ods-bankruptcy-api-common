@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Finance_Start_BenefitsSection_Does_Not_Receive_Text" xml:space="preserve">
+    <value>I don't receive benefits</value>
+  </data>
+  <data name="Finance_Start_BenefitsSection_Heading" xml:space="preserve">
+    <value>Benefits and tax credits</value>
+  </data>
+  <data name="Finance_Start_Childcare_Expense_Section_Heading" xml:space="preserve">
+    <value>Childcare and maintenance</value>
+  </data>
+  <data name="Finance_Start_Childcare_Expense_Section_URL" xml:space="preserve">
+    <value>/expenses/childcare</value>
+  </data>
+  <data name="Finance_Start_ContributionsSection_Does_Not_Receive_Text" xml:space="preserve">
+    <value>I live alone</value>
+  </data>
+  <data name="Finance_Start_ContributionsSection_Does_Not_Receive_URL" xml:space="preserve">
+    <value>/Income/Contributions</value>
+  </data>
+  <data name="Finance_Start_ContributionsSection_Heading" xml:space="preserve">
+    <value>Household income</value>
+  </data>
+  <data name="Finance_Start_ContributionsSection_URL" xml:space="preserve">
+    <value>/Income/Contributions</value>
+  </data>
+  <data name="Finance_Start_Expenses_Label" xml:space="preserve">
+    <value>Expenses</value>
+  </data>
+  <data name="Finance_Start_Food_Expense_Section_Heading" xml:space="preserve">
+    <value>Food and housekeeping</value>
+  </data>
+  <data name="Finance_Start_Food_Expense_Section_URL" xml:space="preserve">
+    <value>/Expenses/Food</value>
+  </data>
+  <data name="Finance_Start_HomeSection_Heading" xml:space="preserve">
+    <value>Home and utilities</value>
+  </data>
+  <data name="Finance_Start_HomeSection_URL" xml:space="preserve">
+    <value>/Expenses/Home</value>
+  </data>
+  <data name="Finance_Start_Income_Label" xml:space="preserve">
+    <value>Your Income</value>
+  </data>
+  <data name="Finance_Start_PensionSection_Does_Not_Receive_Text" xml:space="preserve">
+    <value>I don't receive a pension</value>
+  </data>
+  <data name="Finance_Start_PensionSection_Does_Not_Receive_URL" xml:space="preserve">
+    <value>/Expenses/Pensions</value>
+  </data>
+  <data name="Finance_Start_OtherSection_Does_Not_Receive_Text" xml:space="preserve">
+    <value>I don't have any other income</value>
+  </data>
+  <data name="Finance_Start_OtherSection_Does_Not_Receive_URL" xml:space="preserve">
+    <value>/Income/OtherIncome</value>
+  </data>
+  <data name="Finance_Start_OtherSection_Heading" xml:space="preserve">
+    <value>Other income</value>
+  </data>
+  <data name="Finance_Start_OtherSection_URL" xml:space="preserve">
+    <value>/Income/OtherIncome</value>
+  </data>
+  <data name="Finance_Start_PageTitle" xml:space="preserve">
+    <value>Income and Expenses</value>
+  </data>
+  <data name="Finance_Start_PensionSection_Heading" xml:space="preserve">
+    <value>Pensions</value>
+  </data>
+  <data name="Finance_Start_PensionSection_URL" xml:space="preserve">
+    <value>/Income/Pensions</value>
+  </data>
+  <data name="Finance_Start_Pension_Expense_Section_Heading" xml:space="preserve">
+    <value>Pension, insurance and health care</value>
+  </data>
+  <data name="Finance_Start_Pension_Expense_Section_URL" xml:space="preserve">
+    <value>/Expenses/Pension</value>
+  </data>
+  <data name="Finance_Start_Personal_Expense_Section_Heading" xml:space="preserve">
+    <value>Personal and leisure</value>
+  </data>
+  <data name="Finance_Start_Personal_Expense_Section_URL" xml:space="preserve">
+    <value>/Expenses/Personal</value>
+  </data>
+  <data name="Finance_Start_Savings_Expense_Section_Heading" xml:space="preserve">
+    <value>Regular savings, fines and other expenses</value>
+  </data>
+  <data name="Finance_Start_Savings_Expense_Section_URL" xml:space="preserve">
+    <value>/Expenses/Savings</value>
+  </data>
+  <data name="Finance_Start_Total_Household_Income" xml:space="preserve">
+    <value>Your household's total income</value>
+  </data>
+  <data name="Finance_Start_Total_Income_Label" xml:space="preserve">
+    <value>Your income</value>
+  </data>
+  <data name="Finance_Start_Transport_Expense_Section_Heading" xml:space="preserve">
+    <value>Transport and travel</value>
+  </data>
+  <data name="Finance_Start_Transport_Expense_Section_URL" xml:space="preserve">
+    <value>/Expenses/Transport</value>
+  </data>
+  <data name="Finance_Start_WagesSection_Does_Not_Receive_Text" xml:space="preserve">
+    <value>I don't receive any salary or wages</value>
+  </data>
+  <data name="Finance_Start_WagesSection_Does_Not_Receive_URL" xml:space="preserve">
+    <value>/Income/Wages</value>
+  </data>
+  <data name="Finance_Start_WagesSection_Heading" xml:space="preserve">
+    <value>Salary or wages</value>
+  </data>
+  <data name="Finance_Start_WagesSection_URL" xml:space="preserve">
+    <value>/Income/Wages</value>
+  </data>
+  <data name="Finance_Start_SelfEmploymentIncomeSection_Does_Not_Receive_Text" xml:space="preserve">
+    <value>I don't receive any self employed income</value>
+  </data>
+  <data name="Finance_Start_SelfEmploymentIncomeSection_Does_Not_Receive_URL" xml:space="preserve">
+    <value>/Income/SelfEmploymentIncome</value>
+  </data>
+  <data name="Finance_Start_SelfEmploymentIncomeSection_Heading" xml:space="preserve">
+    <value>Self employed income</value>
+  </data>
+  <data name="Finance_Start_SelfEmploymentIncomeSection_URL" xml:space="preserve">
+    <value>/Income/selfemploymentincome</value>
+  </data>
+  <data name="Finance_Start_Income_OverLimit" xml:space="preserve">
+    <value>Following the approval of your bankruptcy application the Official Receiver/Trustee in Bankruptcy will consider whether or not you should be asked to make a contribution to your bankruptcy estate from future income. From the information you have entered it is anticipated that you will be expected to make monthly payments for 3 years or until your circumstances change. A final determination will be made following appropriate scrutiny of your income and expenditure</value>
+  </data>
+  <data name="Finance_Start_Income_UnderLimit" xml:space="preserve">
+    <value>Following the approval of your bankruptcy application the Official Receiver/Trustee in Bankruptcy will consider whether or not you should be asked to make a contribution to your bankruptcy estate from future income. From the information you have entered it is not currently expected that you be asked to make such payments. A final determination will be made following appropriate scrutiny of your income and expenditure, and the above is indicative only. Such contributions could be sought if your financial circumstances change prior to discharge from bankruptcy</value>
+  </data>
+</root>

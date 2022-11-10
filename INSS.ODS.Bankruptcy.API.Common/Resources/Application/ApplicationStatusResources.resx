@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplicationStatus_Approved_DateLabel" xml:space="preserve">
+    <value>Order date:</value>
+  </data>
+  <data name="ApplicationStatus_Approved_ExplanationText" xml:space="preserve">
+    <value>A downloadable copy of your bankruptcy order can be found in the 'Your documents' list below.
+&lt;p class="bolder"&gt;What happens next&lt;/p&gt;
+&lt;p&gt;The early stages of a bankruptcy are normally handled by an official receiver who works for the Insolvency Service.&lt;/p&gt;&lt;p&gt;The official receiver will write to you within 2 weeks explaining what you need to know.&lt;/p&gt;&lt;p&gt;In the meantime, you can find out more about the upcoming process in our 'Guide to bankruptcy' on GOV.UK.&lt;/p&gt;</value>
+  </data>
+  <data name="ApplicationStatus_Approved_StatusText" xml:space="preserve">
+    <value>Your application has been: &lt;strong&gt;Approved&lt;/strong&gt;</value>
+  </data>
+  <data name="ApplicationStatus_AwaitingInformation_DateLabel" xml:space="preserve">
+    <value>Information request date:</value>
+  </data>
+  <data name="ApplicationStatus_AwaitingInformation_ExplanationText" xml:space="preserve">
+    <value>&lt;p&gt;We need more information before we can make a decision about your bankruptcy.&lt;/p&gt;
+&lt;p&gt;Please check your registered email account and reply to us as soon as you can.&lt;/p&gt;</value>
+  </data>
+  <data name="ApplicationStatus_AwaitingInformation_StatusText" xml:space="preserve">
+    <value>Your application is currently: &lt;strong&gt;Awaiting information&lt;/strong&gt;</value>
+  </data>
+  <data name="ApplicationStatus_BeingConsidered_DateLabel" xml:space="preserve">
+    <value>Submission date:</value>
+  </data>
+  <data name="ApplicationStatus_BeingConsidered_ExplanationText" xml:space="preserve">
+    <value>&lt;p&gt;We will email you when we have made a decision about your bankruptcy.&lt;/p&gt;
+&lt;p&gt;This will be within 28 days of the submission date.&lt;/p&gt;</value>
+  </data>
+  <data name="ApplicationStatus_BeingConsidered_StatusText" xml:space="preserve">
+    <value>Your application is currently: &lt;strong&gt;Being considered&lt;/strong&gt;</value>
+  </data>
+  <data name="ApplicationStatus_BoxHeaderText" xml:space="preserve">
+    <value>Current application status</value>
+  </data>
+  <data name="ApplicationStatus_Declined_DateLabel" xml:space="preserve">
+    <value>Decline date:</value>
+  </data>
+  <data name="ApplicationStatus_Declined_ExplanationText" xml:space="preserve">
+    <value>&lt;p&gt;Your application has been declined. A full explantion of why can be found in the 'Decline of application' document below.&lt;/p&gt;
+&lt;p class="bolder"&gt;What you can do&lt;/p&gt;
+&lt;p&gt;You can ask us to review our decision and look at your application again.&lt;/p&gt;
+&lt;p&gt;For a review to take place, we must receive your request within 14 days of the decline date.&lt;/p&gt;
+&lt;p&gt;Instructions for requesting a review can be found in your 'Decline of application' document.&lt;/p&gt;</value>
+  </data>
+  <data name="ApplicationStatus_Declined_StatusText" xml:space="preserve">
+    <value>Your application has been: &lt;strong&gt;Declined&lt;/strong&gt;</value>
+  </data>
+  <data name="ApplicationStatus_ReviewedAndDeclined_DateLabel" xml:space="preserve">
+    <value>Review decline date:</value>
+  </data>
+  <data name="ApplicationStatus_ReviewedAndDeclined_ExplanationText" xml:space="preserve">
+    <value>&lt;p&gt;We have reviewed your application again and confirm that it is still declined. A full explanation of why can be found in the 'Decline of application following review' document below.&lt;/p&gt;
+&lt;p class="bolder"&gt;What you can do&lt;/p&gt;
+&lt;p&gt;You can go to court to appeal our decision.&lt;/p&gt;
+&lt;p&gt;You must make your appeal within 28 days of the review decline date.&lt;/p&gt;
+&lt;p&gt;Information about making an appeal can be found in your 'Decline of application following review' document.&lt;/p&gt;</value>
+  </data>
+  <data name="ApplicationStatus_ReviewedAndDeclined_StatusText" xml:space="preserve">
+    <value>Your application has been: &lt;strong&gt;Reviewed and declined&lt;/strong&gt;</value>
+  </data>
+  <data name="ApplicationStatus_UnderAppeal_DateLabel" xml:space="preserve">
+    <value>Review decline date:</value>
+  </data>
+  <data name="ApplicationStatus_UnderAppeal_ExplanationText" xml:space="preserve">
+    <value>&lt;p&gt;We have been made aware that you have appealed our decision to HM Courts &amp; Tribunals Service.&lt;/p&gt;
+&lt;p&gt;They will notify you when they have made a decision.&lt;/p&gt;
+&lt;p&gt;We will also email you when we learn the outcome of your appeal.&lt;/p&gt;</value>
+  </data>
+  <data name="ApplicationStatus_UnderAppeal_StatusText" xml:space="preserve">
+    <value>Your application is currently: &lt;strong&gt;Under appeal&lt;/strong&gt;</value>
+  </data>
+  <data name="ApplicationStatus_UnderReview_DateLabel" xml:space="preserve">
+    <value>Review request date:</value>
+  </data>
+  <data name="ApplicationStatus_UnderReview_ExplanationText" xml:space="preserve">
+    <value>&lt;p&gt;We will email you when we have finished reviewing your application.&lt;/p&gt;
+&lt;p&gt;This is typically within 28 days of receiving your review request.&lt;/p&gt;</value>
+  </data>
+  <data name="ApplicationStatus_UnderReview_StatusText" xml:space="preserve">
+    <value>Your application is currently: &lt;strong&gt;Under review&lt;/strong&gt;</value>
+  </data>
+</root>

@@ -1,0 +1,9 @@
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.Interfaces
+{
+    public interface IIncomeFromLodger
+    {
+        decimal? IncomeAmount { get; set; }
+
+        string IncomeFrequency { get; set; }
+    }
+}

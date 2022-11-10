@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Vehicle_OwnVehicle_Address1_Error_NotRequired" xml:space="preserve">
+    <value>Address is not required as you have chosen your vehicle is parked at your home address overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Address2_Error_NotRequired" xml:space="preserve">
+    <value>Address is not required as you have chosen your vehicle is parked at your home address overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Address3_Error_NotRequired" xml:space="preserve">
+    <value>Address is not required as you have chosen your vehicle is parked at your home address overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_AddressLine1_Error_Required" xml:space="preserve">
+    <value>Please enter Address line 1 where the vehicle kept overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_County_Error_NotRequired" xml:space="preserve">
+    <value>County is not required as you have chosen your vehicle is parked at your home address overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_FinanceOutstandingNo_Label" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_FinanceOutstandingYes_Label" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_FinanceOutstanding_Error_Required" xml:space="preserve">
+    <value>Please indicate whether there is any finance outstanding</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_FinanceOutstanding_Hint" xml:space="preserve">
+    <value>For example, hire purchase,conditional sale or other financing from the dealership</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_FinanceOutstanding_Label" xml:space="preserve">
+    <value>Is there any finance outstanding on the vehicle?</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_KeptAtHomeAddress_Label" xml:space="preserve">
+    <value>My vehicle is kept at my home address</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_KeptOvernight_Error_Required" xml:space="preserve">
+    <value>Please enter where is the vehicle kept overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_KeptOvernight_Hint" xml:space="preserve">
+    <value>This will help us verify the information you have told us about the vehicle</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_KeptOvernight_Label" xml:space="preserve">
+    <value>Where is the vehicle kept overnight?</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_MyAddress_Hint" xml:space="preserve">
+    <value>For example, 2 Place Street AB1 2CD</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_OvernightParkedAddressLine1_Label" xml:space="preserve">
+    <value>First Line</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_OvernightParkedPostcode_Label" xml:space="preserve">
+    <value>Post Code</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Postcode_Error_NotRequired" xml:space="preserve">
+    <value>Postcode is not required as you have chosen your vehicle is parked at your home address overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_PostCode_Error_Required" xml:space="preserve">
+    <value>Please enter Postcode where the vehicle kept overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Purpose_Error_Required" xml:space="preserve">
+    <value>Please enter what do you use the vehicle for</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageOtherText_Error_RequiredAndMaxLength" xml:space="preserve">
+    <value>Please state what do you use the vehicle for in less than 100 characters</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Purpose_Hint" xml:space="preserve">
+    <value>Tick all that apply</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Purpose_Label" xml:space="preserve">
+    <value>What do you use the vehicle for?</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Towncity_Error_NotRequired" xml:space="preserve">
+    <value>Town/city is not required as you have chosen your vehicle is parked at your home address overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageAsOther_Label" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageAsRelativeCare_Label" xml:space="preserve">
+    <value>Caring for a relative</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageAsSocialising_Label" xml:space="preserve">
+    <value>Socialising</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageAsToSchool_Label" xml:space="preserve">
+    <value>Taking children to school</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageAsWorkCommute_Label" xml:space="preserve">
+    <value>Work and commuting</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageOtherPleaseSpecifyText_Label" xml:space="preserve">
+    <value>- please specify:</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageOtherText_Error_Required" xml:space="preserve">
+    <value>Please enter the value for Other field</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Worth_Error_DecimalPlaces" xml:space="preserve">
+    <value>Please use the correct format, eg £120.50</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Worth_Error_AboveZero" xml:space="preserve">
+    <value>Please enter a value greater than zero</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Worth_Error_ExpectedPositiveAndNumericValue" xml:space="preserve">
+    <value>Please enter value greater than zero for how much your vehicle is currently worth</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Worth_Error_Required" xml:space="preserve">
+    <value>Please enter how much the vehicle is currently worth</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Worth_Hint" xml:space="preserve">
+    <value>Please provide the most accurate figure you can</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Worth_Label" xml:space="preserve">
+    <value>How much is the vehicle currently worth?</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_PageTitle" xml:space="preserve">
+    <value>Vehicle you own</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Worth_Error_PositveValueOnly" xml:space="preserve">
+    <value>Please enter positive value for amount </value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageOtherText_Error_RequiredAndLength" xml:space="preserve">
+    <value>Please enter the value for Other field and its max length is 100 characters</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Country_Error_NotRequired" xml:space="preserve">
+    <value>Country is not required as you have chosen your vehicle is parked at your home address overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Country_Error_Required" xml:space="preserve">
+    <value>Please enter the Country where the vehicle kept overnight</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Back_ButtonText" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_Continue_ButtonText" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_UsageOtherText_Error_Length" xml:space="preserve">
+    <value>The length of Other field must be between 3 and 100 characters</value>
+  </data>
+  <data name="Vehicle_OwnVehicle_KeptAtHomeAddress_Hint" xml:space="preserve">
+    <value>If you tick the box, leave the address fields below blank.</value>
+  </data>
+</root>

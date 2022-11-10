@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Submit_Application_Back_Label" xml:space="preserve">
+    <value>Back to application overview</value>
+  </data>
+  <data name="Submit_Application_Continue_Button_Label1" xml:space="preserve">
+    <value>Submit my application</value>
+  </data>
+  <data name="Submit_Application_Error_ApplicationCompletionStatusNotDetermined" xml:space="preserve">
+    <value>The completion status of the application could not be checked</value>
+  </data>
+  <data name="Submit_Application_Error_IncompleteSectionNamePefix" xml:space="preserve">
+    <value>The section</value>
+  </data>
+  <data name="Submit_Application_Error_IncompleteSectionNameSuffix" xml:space="preserve">
+    <value>is not complete</value>
+  </data>
+  <data name="Submit_Application_Page_Title" xml:space="preserve">
+    <value>Submit application</value>
+  </data>
+  <data name="Submit_Application_Text" xml:space="preserve">
+    <value>
+				
+				&lt;div class="form-group"&gt;
+					&lt;p&gt;You can now submit your application.&lt;/p&gt; 
+					&lt;p&gt;In doing so, you will be confirming several facts about yourself, your situation and your application.
+					Please read these below carefully before continuing.&lt;/p&gt;
+				&lt;/div&gt;
+				
+				&lt;div class="form-group"&gt;
+					&lt;p&gt;By clicking submit you  are confirming that:&lt;/p&gt;
+					&lt;ul class="list-bullet bolder panel-body"&gt;
+						&lt;li&gt;you are the person named in this application&lt;/li&gt;
+						&lt;li&gt;you are unable to pay your debts&lt;/li&gt;
+						&lt;li&gt;you consent to a bankruptcy order being made in your name&lt;/li&gt;
+						&lt;li&gt;you aren't aware that anyone else (eg a creditor) is 
+						currently petitioning the court to make you bankrupt&lt;/li&gt;
+						&lt;li&gt;you have paid the full bankruptcy fee&lt;/li&gt;
+						&lt;li&gt;the information you have provided is accurate to the best of your knowledge&lt;/li&gt;
+						&lt;li&gt;you consent to a credit search being run using the details you have provided&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+			
+				&lt;div class=""&gt;
+					&lt;p&gt;After submission someone from the Insolvency Service may 
+					contact you directly to confirm your identity.&lt;/p&gt;					
+					&lt;p&gt;If your application is successful your credit search results will be passed to the Insolvency Service official dealing with your bankruptcy&lt;/p&gt;&lt;p&gt;Find out more about &lt;a href='/Home/Privacy'&gt;why we run a credit search&lt;/a&gt;.&lt;/p&gt;
+				&lt;/div&gt;
+
+				
+				
+			</value>
+  </data>
+</root>

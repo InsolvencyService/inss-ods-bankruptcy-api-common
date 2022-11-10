@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Summary_AddPartnership_Button_Label" xml:space="preserve">
+    <value>Add partnership</value>
+  </data>
+  <data name="Summary_AddPartnership_Button_Label_Alt" xml:space="preserve">
+    <value>Add another partnership</value>
+  </data>
+  <data name="Summary_AddPartnership_Coninue_All_PartnerShips_Added_Label" xml:space="preserve">
+    <value>Continue - I have added all my partnerships</value>
+  </data>
+  <data name="Summary_AddPartnership_Coninue_No_PartnerShips_Label" xml:space="preserve">
+    <value>Continue - I don't have any partnership to add</value>
+  </data>
+  <data name="Summary_Delete_Message" xml:space="preserve">
+    <value>partnership</value>
+  </data>
+  <data name="Summary_PageTitle" xml:space="preserve">
+    <value>Your partnerships</value>
+  </data>
+  <data name="Summary_Page_Title2" xml:space="preserve">
+    <value>We need to know about all of your current partnerships</value>
+  </data>
+  <data name="Summary_PartnershipName_Are_You_Sure" xml:space="preserve">
+    <value>Do you want to add the name of partnership you typed in below? To add this partnership, please select the green 'Add partnership' button</value>
+  </data>
+  <data name="Summary_PartnershipName_Hint" xml:space="preserve">
+    <value>If your partnership doesn't have a separate name, enter your own name &lt;br/&gt;
+For example, ABC Trading or John Smith.</value>
+  </data>
+  <data name="Summary_PartnershipName_Invalid" xml:space="preserve">
+    <value>Partnership name contains invalid characters</value>
+  </data>
+  <data name="Summary_PartnershipName_Label" xml:space="preserve">
+    <value>Enter the partnership name</value>
+  </data>
+  <data name="Summary_PartnershipName_Label_Alt" xml:space="preserve">
+    <value>Enter the partnership name you use with your customers and creditors</value>
+  </data>
+  <data name="Summary_PartnershipName_Length" xml:space="preserve">
+    <value>Partnership name should be between 1 and 100 characters</value>
+  </data>
+  <data name="Summary_PartnershipName_Required" xml:space="preserve">
+    <value>Name of partnership is required</value>
+  </data>
+  <data name="Summary_PartnershipName_TooLong" xml:space="preserve">
+    <value>Partnership name should be less than 100 characters</value>
+  </data>
+  <data name="Summary_PartnershipName_TooShort" xml:space="preserve">
+    <value>Partnership name should be at least 1 character</value>
+  </data>
+  <data name="Summary_Summary_Table_Column1_Label" xml:space="preserve">
+    <value>Partnership Name</value>
+  </data>
+  <data name="Summary_Summary_Table_Delete_Button_Label" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Summary_Summary_Table_Edit_Button_Label" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Summary_Summary_Table_Help" xml:space="preserve">
+    <value>The table above summarises the partnerships you have told us about. &lt;br/&gt; &lt;br/&gt;
+We need to know about any partnerships you have had in the last 3 years</value>
+  </data>
+  <data name="Summary_Summary_Table_Title" xml:space="preserve">
+    <value>Summary of your partnerships</value>
+  </data>
+</root>

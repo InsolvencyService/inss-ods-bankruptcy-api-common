@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DROApplication" targetNamespace="http://tempuri.org/DROApplication.xs" elementFormDefault="qualified" xmlns="http://tempuri.org/DROApplication.xs" xmlns:mstns="http://tempuri.org/DROApplication.xs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DROApplication">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="1">
+        <xs:element name="Surname" maxOccurs="1" minOccurs="1">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="AddressWithheld" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+        <xs:element name="AssetDetail" minOccurs="0" maxOccurs="1" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CashInHand" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CashAtBank" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MoneyOwed" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ToolsTradeDetails" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LeaseholdProperty" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="PropertyValue" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Commentary" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RealisableAsset" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AssetDescription" minOccurs="1" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="100" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="AssetValue" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                          <xs:totalDigits value="10" />
+                          <xs:fractionDigits value="2" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MotorVehicle" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Make" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="50" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Model" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="50" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="YearofFirstRegistration" type="xs:int" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="RegistrationNumber" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="10" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Condition" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="20" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Value" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                          <xs:totalDigits value="10" />
+                          <xs:fractionDigits value="2" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Creditor" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrganisationType" minOccurs="1" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Bank" />
+                    <xs:enumeration value="Building Society" />
+                    <xs:enumeration value="Credit Card" />
+                    <xs:enumeration value="Credit Union" />
+                    <xs:enumeration value="3rd Party Lenders" />
+                    <xs:enumeration value="Store Card" />
+                    <xs:enumeration value="Door Collection Agency" />
+                    <xs:enumeration value="Miscellaneous" />
+                    <xs:enumeration value="Utilities" />
+                    <xs:enumeration value="Councils/Local Government" />
+                    <xs:enumeration value="Telecoms" />
+                    <xs:enumeration value="Duplicate/Obsolete" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreditorName" minOccurs="1" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreditorAddress" type="Address" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="Amount" minOccurs="0" maxOccurs="1" nillable="true" >
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                    <xs:minInclusive value ="0" />
+                    <xs:maxInclusive value="200000.0000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccountReference" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SecuredCreditor" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="ItemSecured" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SecuredValue" minOccurs="0" maxOccurs="1" nillable="true" >
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                    <xs:minInclusive value ="0" />
+                    <xs:maxInclusive value="200000.0000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EarningsOrder" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="EarningsOrderDetails" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EarningsOrderAmount" minOccurs="0" maxOccurs="1" nillable="true" >
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                    <xs:minInclusive value ="0" />
+                    <xs:maxInclusive value="200000.0000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExcludedDebt" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FinancialStatement" minOccurs="0" maxOccurs="1" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Salary" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BenefitsClaimable" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pensions" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherIncome" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rent" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mortgage" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherSecuredLoans" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroundRentandServiceCharges" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherUtilities" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CourtFines" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChildSupport" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AVCPayment" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LifeInsurance" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConditionalSale" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TVLicense" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telephone" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TravelCost" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HouseKeeping" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Children" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdditionalCommentary" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Gas" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Electricity" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Water" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CouncilTax" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MonthlyOtherExpenses" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MortgageEndowmentsandMPPI" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BuildingandContentsInsurance" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EmploymentDetail" minOccurs="0" maxOccurs="1" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OccupationType" minOccurs="1" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Self Employed/Trading" />
+                    <xs:enumeration value="Employed" />
+                    <xs:enumeration value="Unemployed" />
+                    <xs:enumeration value="Housewife/husband - incl; caring for dependents" />
+                    <xs:enumeration value="Company Director/Promoter" />
+                    <xs:enumeration value="Retired" />
+                    <xs:enumeration value="Student" />
+                    <xs:enumeration value="Other" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Employer" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="EmployerName" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="50" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="PayrollNumber" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="20" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JobTitle" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="50" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="DateEmploymentStarted" type="StdDate" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="OccupationSubType" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Managers &amp; Senior Officials" />
+                          <xs:enumeration value="Professionals" />
+                          <xs:enumeration value="Administrative &amp; Technical" />
+                          <xs:enumeration value="Skilled Trades" />
+                          <xs:enumeration value="Personal Service" />
+                          <xs:enumeration value="Sales &amp; Customer Service" />
+                          <xs:enumeration value="Process, Plant &amp; Machine Operatives" />
+                          <xs:enumeration value="Elementary Occupation" />
+                          <xs:enumeration value="Corporate Managers" />
+                          <xs:enumeration value="Managers &amp; Proprietors in Services" />
+                          <xs:enumeration value="Managers &amp; Proprietors in Agriculture" />
+                          <xs:enumeration value="Science, Technology, IT Professionals" />
+                          <xs:enumeration value="Health Professionals" />
+                          <xs:enumeration value="Trade &amp; Research Professionals" />
+                          <xs:enumeration value="Business, Public Service Professionals" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmployerAddress" minOccurs="0" maxOccurs="1" nillable="true" type="Address">
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="OwnBusinessDetail" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="TypeofBusiness" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="50" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TradingInformation" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="100" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="MainCentreUK" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="InsuranceUnderTaking" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="OutsideEC" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="BusinessOnOwn" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="BusinessAddress" type="Address" minOccurs="0" maxOccurs="1" nillable="true" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PreviousTrading" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="TradingName" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="100" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="DateCeased" type="StdDate" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="OnOwn" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="TradingAddress" type="Address" minOccurs="0" maxOccurs="1" nillable="true" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InsolvencyHistory" minOccurs="0" maxOccurs="1" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CurrentFormalInsolvencyProceeding" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="InsolvencyProceeding" minOccurs="0" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Undischarged Bankrupt" />
+                          <xs:enumeration value="Subject to an Interim Order" />
+                          <xs:enumeration value="Subject to an IVA" />
+                          <xs:enumeration value="Subject to a BRO" />
+                          <xs:enumeration value="Subject to a DRRO" />
+                          <xs:enumeration value="Subject to a DRO" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FormalInsolvencyDate" type="StdDate" minOccurs="0" maxOccurs="1" nillable="true" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DebtManagmentPlan" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OrganisationName" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="100" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="OrganisationReference" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="20" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="DateStarted" type="StdDate" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="OrganisationAddress" type="Address" minOccurs="0" maxOccurs="1" nillable="true" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CountyCourtAdminOrder" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CourtName" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="100" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="CourtRef" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="20" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="DateStarted" type="StdDate" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="Address" type="Address" minOccurs="0" maxOccurs="1" nillable="true" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PreviousInsolvency" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="InsolvencyProcedure" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="IVA" />
+                          <xs:enumeration value="Administration Order" />
+                          <xs:enumeration value="Debt Relief Order" />
+                          <xs:enumeration value="Bankruptcy" />
+                          <xs:enumeration value="Bankruptcy Restrictions Order" />
+                          <xs:enumeration value="Debt Relief Restrictions Order" />
+                          <xs:enumeration value="Enforcement Order" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="PreviousInsolvencyDate" type="StdDate" minOccurs="0" maxOccurs="1" nillable="true" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="BankruptcyPetition" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PresentedPetitionYourself" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="CourtReferredToDRO" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="CourtName" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="100" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="CourtReference" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="20" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="HaveObtainedCreditorsConsent" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xs:element name="CreditorName" minOccurs="0" maxOccurs="1" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="50" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="InsolvencyReason" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Relationship Breakdown" />
+                    <xs:enumeration value="Significant reduction in household income" />
+                    <xs:enumeration value="Loss of debtors employment" />
+                    <xs:enumeration value="Living beyond means" />
+                    <xs:enumeration value="Illness/Accident" />
+                    <xs:enumeration value="Business Failure" />
+                    <xs:enumeration value="Increase in household expenses" />
+                    <xs:enumeration value="Other" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherReasonforDebt" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PensionDetail" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PensionProviderName" maxOccurs="1" minOccurs="0" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PolicyNumber" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsApprovedPension" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="IsCurrentEmployerPension" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="PensionAddress" type="Address" maxOccurs="1" minOccurs="0" nillable="true" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PersonalDetail" minOccurs="0" maxOccurs="1" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Forename" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Title" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Mr" />
+                    <xs:enumeration value="Mrs" />
+                    <xs:enumeration value="Miss" />
+                    <xs:enumeration value="Ms" />
+                    <xs:enumeration value="Rev" />
+                    <xs:enumeration value="Dr" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherForenames" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfBirth" minOccurs="0" maxOccurs="1" nillable="true" type="StdDate">
+              </xs:element>
+              <xs:element name="BirthPlace" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Gender" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Male" />
+                    <xs:enumeration value="Female" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RentOrOwnHome" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Rent" />
+                    <xs:enumeration value="Own" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="MaritalStatus" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Married" />
+                    <xs:enumeration value="Single" />
+                    <xs:enumeration value="Divorced" />
+                    <xs:enumeration value="Living Together" />
+                    <xs:enumeration value="Separated" />
+                    <xs:enumeration value="Widowed" />
+                    <xs:enumeration value="Civil Partner" />
+                    <xs:enumeration value="Former Civil Partner" />
+                    <xs:enumeration value="Surviving Civil Partner" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DependentChildren" type="xs:int" minOccurs="0" nillable="true" maxOccurs="1" />
+              <xs:element name="HomeTelephone" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobileTelephone" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DayTimeTelephone" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NINumber" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TaxReference" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TaxOffice" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ethnicity" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Other Ethnic Groups" />
+                    <xs:enumeration value="White British" />
+                    <xs:enumeration value="White Irish" />
+                    <xs:enumeration value="Other White Background" />
+                    <xs:enumeration value="White &amp; Black Carribean" />
+                    <xs:enumeration value="White &amp; Black African" />
+                    <xs:enumeration value="White &amp; Asian" />
+                    <xs:enumeration value="Other Mixed Background" />
+                    <xs:enumeration value="Indian" />
+                    <xs:enumeration value="Pakistani" />
+                    <xs:enumeration value="Bangladeshi" />
+                    <xs:enumeration value="Other Asian Backgrounds" />
+                    <xs:enumeration value="Carribean" />
+                    <xs:enumeration value="African" />
+                    <xs:enumeration value="Other Black Background" />
+                    <xs:enumeration value="Chinese" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherEthnicity" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nationality" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="English" />
+                    <xs:enumeration value="Scottish" />
+                    <xs:enumeration value="Welsh" />
+                    <xs:enumeration value="Irish" />
+                    <xs:enumeration value="British" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherNationality" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Disability" minOccurs="0" maxOccurs="unbounded">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Hearing Impaired" />
+                    <xs:enumeration value="Visually Impaired" />
+                    <xs:enumeration value="Speech Impaired" />
+                    <xs:enumeration value="Mobility Impaired" />
+                    <xs:enumeration value="Mental Health" />
+                    <xs:enumeration value="Learning difficulties" />
+                    <xs:enumeration value="Longstanding illness" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherDisability" minOccurs="0" nillable="true" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrentlyOrPrincipallyInUKWales" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="HaveLivedOrHadPrincipalLivingInUKWales" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="CarriedOnBusinessUKInLast3Yrs" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="CurrentAddress" type="Address" maxOccurs="1" minOccurs="0" nillable="true" />
+              <xs:element name="PreviousAddress" type="Address" minOccurs="0" maxOccurs="unbounded" />
+              <xs:element name="OtherName" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OtherNameForename" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="70" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="OtherNameSurname" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="35" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PreferredCreditor" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CreditorName" minOccurs="1" maxOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaymentDate" type="StdDate" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="PaymentAmount" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UndersoldProperty" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" minOccurs="1" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfSale" type="StdDate" minOccurs="0" maxOccurs="1" nillable="true" />
+              <xs:element name="ValueofItem" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="10" />
+                    <xs:fractionDigits value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SellingReason" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SoldTo" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="Line1" maxOccurs="1" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Line2" maxOccurs="1" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Line3" maxOccurs="1" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Town" maxOccurs="1" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="County" maxOccurs="1" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PostCode" maxOccurs="1" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Country" maxOccurs="1" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="England" />
+            <xs:enumeration value="Wales" />
+            <xs:enumeration value="Afghanistan" />
+            <xs:enumeration value="Albania" />
+            <xs:enumeration value="Algeria" />
+            <xs:enumeration value="American Samoa" />
+            <xs:enumeration value="Andorra" />
+            <xs:enumeration value="Angola" />
+            <xs:enumeration value="Antigua and Barbuda" />
+            <xs:enumeration value="Argentina" />
+            <xs:enumeration value="Armenia" />
+            <xs:enumeration value="Aruba" />
+            <xs:enumeration value="Australia" />
+            <xs:enumeration value="Austria" />
+            <xs:enumeration value="Azerbaijan" />
+            <xs:enumeration value="Bahamas, The" />
+            <xs:enumeration value="Bahrain" />
+            <xs:enumeration value="Bangladesh" />
+            <xs:enumeration value="Barbados" />
+            <xs:enumeration value="Belarus" />
+            <xs:enumeration value="Belgium" />
+            <xs:enumeration value="Belize" />
+            <xs:enumeration value="Benin" />
+            <xs:enumeration value="Bermuda" />
+            <xs:enumeration value="Bhutan" />
+            <xs:enumeration value="Bolivia" />
+            <xs:enumeration value="Bosnia and Herzegovina" />
+            <xs:enumeration value="Botswana" />
+            <xs:enumeration value="Brazil" />
+            <xs:enumeration value="Brunei Darussalam" />
+            <xs:enumeration value="Bulgaria" />
+            <xs:enumeration value="Burkina Faso" />
+            <xs:enumeration value="Burundi" />
+            <xs:enumeration value="Cambodia" />
+            <xs:enumeration value="Cameroon" />
+            <xs:enumeration value="Canada" />
+            <xs:enumeration value="Cape Verde" />
+            <xs:enumeration value="Cayman Islands" />
+            <xs:enumeration value="Central African Republic" />
+            <xs:enumeration value="Chad" />
+            <xs:enumeration value="Channel Islands" />
+            <xs:enumeration value="Chile" />
+            <xs:enumeration value="China" />
+            <xs:enumeration value="Colombia" />
+            <xs:enumeration value="Comoros" />
+            <xs:enumeration value="Congo, Dem. Rep." />
+            <xs:enumeration value="Congo, Rep." />
+            <xs:enumeration value="Costa Rica" />
+            <xs:enumeration value="Côte d'Ivoire" />
+            <xs:enumeration value="Croatia" />
+            <xs:enumeration value="Cuba" />
+            <xs:enumeration value="Cyprus" />
+            <xs:enumeration value="Czech Republic" />
+            <xs:enumeration value="Denmark" />
+            <xs:enumeration value="Djibouti" />
+            <xs:enumeration value="Dominica" />
+            <xs:enumeration value="Dominican Republic" />
+            <xs:enumeration value="Ecuador" />
+            <xs:enumeration value="Egypt, Arab Rep." />
+            <xs:enumeration value="El Salvador" />
+            <xs:enumeration value="Equatorial Guinea" />
+            <xs:enumeration value="Eritrea" />
+            <xs:enumeration value="Estonia" />
+            <xs:enumeration value="Ethiopia" />
+            <xs:enumeration value="Faeroe Islands" />
+            <xs:enumeration value="Fiji" />
+            <xs:enumeration value="Finland" />
+            <xs:enumeration value="France" />
+            <xs:enumeration value="French Polynesia" />
+            <xs:enumeration value="Gabon" />
+            <xs:enumeration value="Gambia, The" />
+            <xs:enumeration value="Georgia" />
+            <xs:enumeration value="Germany" />
+            <xs:enumeration value="Ghana" />
+            <xs:enumeration value="Greece" />
+            <xs:enumeration value="Greenland" />
+            <xs:enumeration value="Grenada" />
+            <xs:enumeration value="Guam" />
+            <xs:enumeration value="Guatemala" />
+            <xs:enumeration value="Guinea" />
+            <xs:enumeration value="Guinea-Bissau" />
+            <xs:enumeration value="Guyana" />
+            <xs:enumeration value="Haiti" />
+            <xs:enumeration value="Honduras" />
+            <xs:enumeration value="Hong Kong, China" />
+            <xs:enumeration value="Hungary" />
+            <xs:enumeration value="Iceland" />
+            <xs:enumeration value="India" />
+            <xs:enumeration value="Indonesia" />
+            <xs:enumeration value="Iran, Islamic Rep." />
+            <xs:enumeration value="Iraq" />
+            <xs:enumeration value="Ireland" />
+            <xs:enumeration value="Isle of Man" />
+            <xs:enumeration value="Israel" />
+            <xs:enumeration value="Italy" />
+            <xs:enumeration value="Jamaica" />
+            <xs:enumeration value="Japan" />
+            <xs:enumeration value="Jordan" />
+            <xs:enumeration value="Kazakhstan" />
+            <xs:enumeration value="Kenya" />
+            <xs:enumeration value="Kiribati" />
+            <xs:enumeration value="Korea, Dem. Rep." />
+            <xs:enumeration value="Korea, Rep." />
+            <xs:enumeration value="Kuwait" />
+            <xs:enumeration value="Kyrgyz Republic" />
+            <xs:enumeration value="Lao PDR" />
+            <xs:enumeration value="Latvia" />
+            <xs:enumeration value="Lebanon" />
+            <xs:enumeration value="Lesotho" />
+            <xs:enumeration value="Liberia" />
+            <xs:enumeration value="Libya" />
+            <xs:enumeration value="Liechtenstein" />
+            <xs:enumeration value="Lithuania" />
+            <xs:enumeration value="Luxembourg" />
+            <xs:enumeration value="Macao, China" />
+            <xs:enumeration value="Macedonia, FYR" />
+            <xs:enumeration value="Madagascar" />
+            <xs:enumeration value="Malawi" />
+            <xs:enumeration value="Malaysia" />
+            <xs:enumeration value="Maldives" />
+            <xs:enumeration value="Mali" />
+            <xs:enumeration value="Malta" />
+            <xs:enumeration value="Marshall Islands" />
+            <xs:enumeration value="Mauritania" />
+            <xs:enumeration value="Mauritius" />
+            <xs:enumeration value="Mayotte" />
+            <xs:enumeration value="Mexico" />
+            <xs:enumeration value="Micronesia, Fed. Sts." />
+            <xs:enumeration value="Moldova" />
+            <xs:enumeration value="Monaco" />
+            <xs:enumeration value="Mongolia" />
+            <xs:enumeration value="Montenegro" />
+            <xs:enumeration value="Morocco" />
+            <xs:enumeration value="Mozambique" />
+            <xs:enumeration value="Myanmar" />
+            <xs:enumeration value="Namibia" />
+            <xs:enumeration value="Nepal" />
+            <xs:enumeration value="Netherlands" />
+            <xs:enumeration value="Netherlands Antilles" />
+            <xs:enumeration value="New Caledonia" />
+            <xs:enumeration value="New Zealand" />
+            <xs:enumeration value="Nicaragua" />
+            <xs:enumeration value="Niger" />
+            <xs:enumeration value="Nigeria" />
+            <xs:enumeration value="Northern Ireland" />
+            <xs:enumeration value="Northern Mariana Islands" />
+            <xs:enumeration value="Norway" />
+            <xs:enumeration value="Oman" />
+            <xs:enumeration value="Pakistan" />
+            <xs:enumeration value="Palau" />
+            <xs:enumeration value="Panama" />
+            <xs:enumeration value="Papua New Guinea" />
+            <xs:enumeration value="Paraguay" />
+            <xs:enumeration value="Peru" />
+            <xs:enumeration value="Philippines" />
+            <xs:enumeration value="Poland" />
+            <xs:enumeration value="Portugal" />
+            <xs:enumeration value="Puerto Rico" />
+            <xs:enumeration value="Qatar" />
+            <xs:enumeration value="Romania" />
+            <xs:enumeration value="Russian Federation" />
+            <xs:enumeration value="Rwanda" />
+            <xs:enumeration value="Samoa" />
+            <xs:enumeration value="San Marino" />
+            <xs:enumeration value="São Tomé and Principe" />
+            <xs:enumeration value="Saudi Arabia" />
+            <xs:enumeration value="Scotland" />
+            <xs:enumeration value="Senegal" />
+            <xs:enumeration value="Serbia" />
+            <xs:enumeration value="Seychelles" />
+            <xs:enumeration value="Sierra Leone" />
+            <xs:enumeration value="Singapore" />
+            <xs:enumeration value="Slovak Republic" />
+            <xs:enumeration value="Slovenia" />
+            <xs:enumeration value="Solomon Islands" />
+            <xs:enumeration value="Somalia" />
+            <xs:enumeration value="South Africa" />
+            <xs:enumeration value="Spain" />
+            <xs:enumeration value="Sri Lanka" />
+            <xs:enumeration value="St. Kitts and Nevis" />
+            <xs:enumeration value="St. Lucia" />
+            <xs:enumeration value="St. Vincent and the Grenadines" />
+            <xs:enumeration value="Sudan" />
+            <xs:enumeration value="Suriname" />
+            <xs:enumeration value="Swaziland" />
+            <xs:enumeration value="Sweden" />
+            <xs:enumeration value="Switzerland" />
+            <xs:enumeration value="Syrian Arab Republic" />
+            <xs:enumeration value="Tajikistan" />
+            <xs:enumeration value="Tanzania" />
+            <xs:enumeration value="Thailand" />
+            <xs:enumeration value="Timor-Leste" />
+            <xs:enumeration value="Togo" />
+            <xs:enumeration value="Tonga" />
+            <xs:enumeration value="Trinidad and Tobago" />
+            <xs:enumeration value="Tunisia" />
+            <xs:enumeration value="Turkey" />
+            <xs:enumeration value="Turkmenistan" />
+            <xs:enumeration value="Uganda" />
+            <xs:enumeration value="Ukraine" />
+            <xs:enumeration value="United Arab Emirates" />
+            <xs:enumeration value="United Kingdom" />
+            <xs:enumeration value="United States" />
+            <xs:enumeration value="Uruguay" />
+            <xs:enumeration value="Uzbekistan" />
+            <xs:enumeration value="Vanuatu" />
+            <xs:enumeration value="Venezuela, RB" />
+            <xs:enumeration value="Vietnam" />
+            <xs:enumeration value="Virgin Islands (U.S.)" />
+            <xs:enumeration value="Palestine" />
+            <xs:enumeration value="Yemen, Rep." />
+            <xs:enumeration value="Zambia" />
+            <xs:enumeration value="Zimbabwe" />
+            <xs:enumeration value="Jersey" />
+            <xs:enumeration value="Guernsey" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StdDate">
+    <xs:restriction base="xs:date">
+      <xs:minInclusive value="1880-01-01" />
+      <xs:maxInclusive value="9000-01-01" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

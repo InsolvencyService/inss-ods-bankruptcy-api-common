@@ -1,0 +1,6 @@
+﻿variables:
+  AzureArtifactsFeed: 55aed121-b2ec-4f93-be0c-66c47a84fc23/9759cc91-0c79-4700-9db6-cd44445e3b36
+  BuildSolution: $(SolutionName).sln
+  BuildPlatform: 'any cpu'
+  BuildConfiguration: 'release'
+  UnitTestFilter: '**\$(BuildConfiguration)\**\*.UnitTests.dll'

@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Property_JointOwnerName_Add_Buttontext" xml:space="preserve">
+    <value>Add joint owner</value>
+  </data>
+  <data name="Property_JointOwnerName_Back_Buttontext" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Property_JointOwnerName_Continue_HasNoJointOwner" xml:space="preserve">
+    <value>Continue - I am the sole owner</value>
+  </data>
+  <data name="Property_JointOwnerName_FirstName_Error_Length" xml:space="preserve">
+    <value>The first name is too long. Please answer in less than 71 characters.</value>
+  </data>
+  <data name="Property_JointOwnerName_FirstName_Error_Mandatory" xml:space="preserve">
+    <value>Please enter a first name</value>
+  </data>
+  <data name="Property_JointOwnerName_FirstName_Label" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Property_JointOwnerName_LasName_Error_Length" xml:space="preserve">
+    <value>The last name is too long. Please answer in less than 36 characters.</value>
+  </data>
+  <data name="Property_JointOwnerName_LastName_Error_Mandatory" xml:space="preserve">
+    <value>Please enter a last name.</value>
+  </data>
+  <data name="Property_JointOwnerName_LastName_Label" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Property_JointOwnerName_Names_Hint" xml:space="preserve">
+    <value>For example, John Smith.</value>
+  </data>
+  <data name="Property_JointOwnerName_Names_SubHeading" xml:space="preserve">
+    <value>Enter the joint owner's name</value>
+  </data>
+  <data name="Property_JointOwnerName_Name_Error_Mandatory" xml:space="preserve">
+    <value>Please enter either a first or last name</value>
+  </data>
+  <data name="Property_JointOwnerName_Continue_Error_WhenBenficiaryNameTyped" xml:space="preserve">
+    <value>Do you want to add the joint owner you typed in below? To add this joint owner, please select the green 'Add joint owner' button.</value>
+  </data>
+  <data name="Property_JointOwnerName_Page_Intro" xml:space="preserve">
+    <value>We need to know about any joint owners of &lt;strong&gt;{0}&lt;/strong&gt;.</value>
+  </data>
+  <data name="Property_JointOwnerName_Page_Title" xml:space="preserve">
+    <value>Joint owners</value>
+  </data>
+  <data name="Property_JointOwnerName_FirstName_Error_InvalidLetters" xml:space="preserve">
+    <value>Please check the first name. Your answer can only use letters (A-Z), spaces, hyphens (-) and apostrophes (').</value>
+  </data>
+  <data name="Property_JointOwnerName_LastName_Error_InvalidLetters" xml:space="preserve">
+    <value>Please check the last name. Your answer can only use letters (A-Z), spaces, hyphens (-) and apostrophes (').</value>
+  </data>
+  <data name="Property_JointOwnerName_AnotherName_SubHeading" xml:space="preserve">
+    <value>Enter another joint owner's name</value>
+  </data>
+  <data name="Property_JointOwnerName_Continue_AfterAddingJointOwner" xml:space="preserve">
+    <value>Continue - I have added all joint owners</value>
+  </data>
+  <data name="Property_JointOwnerName_Summary_Para" xml:space="preserve">
+    <value>&lt;p&gt;&lt;span class="repeat"&gt;The table above summarises the joint owners you have told us about.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span class="repeat"&gt;We need to know about any other joint owners of&lt;strong&gt; {0}&lt;/strong&gt;.&lt;/span&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="Property_JointOwnerName_Label_For_Your_Share" xml:space="preserve">
+    <value>You</value>
+  </data>
+  <data name="Property_JointOwnerName_DeleteConfirmation_JointOwner" xml:space="preserve">
+    <value>property joint owner</value>
+  </data>
+</root>
