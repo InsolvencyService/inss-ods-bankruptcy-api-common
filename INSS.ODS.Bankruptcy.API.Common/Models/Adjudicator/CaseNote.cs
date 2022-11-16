@@ -1,7 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using System;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models.Adjudicator
 {
@@ -37,5 +36,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Adjudicator
         [DataMember]
         public bool UseCaseNoteTextAsRejectionReason { get; set; }
 
+        [DataMember]
+        public int? CompletedApplicationId { get; set; }
     }
 }
