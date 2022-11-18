@@ -7,13 +7,11 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
-using FluentValidation.Attributes;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
     [Serializable]
-    [Validator(typeof(HouseholdMemberValidator))]
     public class HouseholdMember : ITableBase, IHouseholdMember
     {
 

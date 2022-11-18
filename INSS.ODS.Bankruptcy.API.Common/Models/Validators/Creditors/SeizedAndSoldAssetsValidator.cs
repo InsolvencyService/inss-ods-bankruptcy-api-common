@@ -17,21 +17,19 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors
         public SeizedAndSoldAssetsValidator()
         {
             RuleFor(x => x.ItemValue)
-               .NotEmpty().WithLocalizedMessage(() => SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Worth_Required)
-               .GreaterThan(0).WithLocalizedMessage(() => SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Worth_Error_MinValue)
-               .SetValidator(new ScalePrecisionValidator(2, 99,
-                   () => SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Worth_Error_Scale));
+               .NotEmpty().WithMessage(SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Worth_Required)
+               .GreaterThan(0).WithMessage(SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Worth_Error_MinValue)
+               .ScalePrecision(2, 99).WithMessage(SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Worth_Error_Scale);
 
             RuleFor(x => x.ItemName)
               .NotEmpty()
-                .WithLocalizedMessage(() => SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Required )
+                .WithMessage(SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Required )
                   .Length(2, 100)
-                .WithLocalizedMessage(() => SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Length);
+                .WithMessage(SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Length);
 
             RuleFor(r => r.ItemSold)
                     .NotEmpty()
-                    .WithLocalizedMessage(
-                    () => SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Sold_Required);
+                    .WithMessage(SeizedAndSoldAssetsResources.Creditors_SiezedAndSoldAssetsResources_Item_Sold_Required);
 
 
 

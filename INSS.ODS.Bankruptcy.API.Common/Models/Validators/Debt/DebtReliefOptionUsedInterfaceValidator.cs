@@ -12,23 +12,21 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt
             RuleFor(x => x.DebtReliefOptionType)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(
-                    () => DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Error_Empty);
+                .WithMessage(DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Error_Empty);
 
             RuleFor(x => x.DebtReliefOptionStartDate)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => DebtReliefOptionDetailsResources.Debt_DebtReliefOptionDetails_DebtReliefOptionStartDate_Error_Empty)
+                .WithMessage(DebtReliefOptionDetailsResources.Debt_DebtReliefOptionDetails_DebtReliefOptionStartDate_Error_Empty)
                 .GreaterThanOrEqualTo(new DateTime(1900, 1, 1))
-                .WithLocalizedMessage(() => DebtReliefOptionDetailsResources.Debt_DebtReliefOptionDetails_DebtReliefOptionStartDate_Error_MinimumDate)
+                .WithMessage(DebtReliefOptionDetailsResources.Debt_DebtReliefOptionDetails_DebtReliefOptionStartDate_Error_MinimumDate)
                 .LessThanOrEqualTo(DateTime.Today)
-                .WithLocalizedMessage(() => DebtReliefOptionDetailsResources.Debt_DebtReliefOptionDetails_DebtReliefOptionStartDate_Error_InTheFuture);
+                .WithMessage(DebtReliefOptionDetailsResources.Debt_DebtReliefOptionDetails_DebtReliefOptionStartDate_Error_InTheFuture);
 
             RuleFor(x => x.DebtReliefOptionReferenceNumber)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(
-                    () => DebtReliefOptionDetailsResources.Debt_DebtReliefOptionDetails_DebtReliefOptionReferenceNumber_Error_Empty)
+                .WithMessage(DebtReliefOptionDetailsResources.Debt_DebtReliefOptionDetails_DebtReliefOptionReferenceNumber_Error_Empty)
                 .When(x => !string.IsNullOrEmpty(x.DebtReliefOptionType) &&
                 (x.DebtReliefOptionType.ToLower() == DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Bankruptcy_Label.ToLower()
                            || x.DebtReliefOptionType.ToLower() == DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_DebtReliefOrder_Label.ToLower()));

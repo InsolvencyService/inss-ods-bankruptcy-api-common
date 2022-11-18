@@ -11,16 +11,16 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(x => x.CurrentlyReceivingPaymentOptions)
             .NotEmpty()
-            .WithLocalizedMessage(() => PolicyValueResources.PensionAndInsurance_PolicyValue_CurrentlyReceivingPayment_Error_Empty);
+            .WithMessage(PolicyValueResources.PensionAndInsurance_PolicyValue_CurrentlyReceivingPayment_Error_Empty);
 
             RuleFor(x => x.CurrentWorth)
-            .InclusiveBetween(0, decimal.MaxValue).WithLocalizedMessage(() => PolicyValueResources.PensionAndInsurance_PolicyValue_CurrentlyWorth_Error_NegativeValue)
-            .SetValidator(new ScalePrecisionValidator(2, 99, () => PolicyValueResources.PensionAndInsurance_PolicyValue_CurrentlyWorth_Error_Format));
+            .InclusiveBetween(0, decimal.MaxValue).WithMessage(PolicyValueResources.PensionAndInsurance_PolicyValue_CurrentlyWorth_Error_NegativeValue)
+            .ScalePrecision(2, 99)
+            .WithMessage(PolicyValueResources.PensionAndInsurance_PolicyValue_CurrentlyWorth_Error_Format);
 
             RuleFor(x => x.CurrentWorth)
                 .Must(x => x.HasValue)
-                .WithLocalizedMessage(
-                    () => PolicyValueResources.PensionAndInsurance_PolicyValue_CurrentlyWorth_Error_Mandatory)
+                .WithMessage(PolicyValueResources.PensionAndInsurance_PolicyValue_CurrentlyWorth_Error_Mandatory)
                 .When(x => !x.CurrentlyReceivingPayment);
 
 

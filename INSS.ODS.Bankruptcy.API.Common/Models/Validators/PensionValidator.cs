@@ -10,12 +10,12 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(x => x.State)
                 .InclusiveBetween(0, decimal.MaxValue)
-                .WithLocalizedMessage(() => PensionResources.Pension_Positive_State_Label);
+                .WithMessage(PensionResources.Pension_Positive_State_Label);
 
 
             RuleFor(x => x.PensionCredit)
                 .InclusiveBetween(0, decimal.MaxValue)
-                .WithLocalizedMessage(() => PensionResources.Pension_Positive_PensionCredit_Label);
+                .WithMessage(PensionResources.Pension_Positive_PensionCredit_Label);
 
         }
     }

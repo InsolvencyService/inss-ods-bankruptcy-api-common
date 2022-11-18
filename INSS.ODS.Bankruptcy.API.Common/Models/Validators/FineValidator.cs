@@ -17,19 +17,16 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(r => r.Type)
                 .NotEmpty()
-                .WithLocalizedMessage(
-                    () => SavingsFinesOtherCostsResources.Expenses_SavingsFinesOtherCosts_Fines_Type_Error_Empty)
+                .WithMessage(SavingsFinesOtherCostsResources.Expenses_SavingsFinesOtherCosts_Fines_Type_Error_Empty)
                 .When(r => r.Value.HasValue);
 
             RuleFor(r => r.Value)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .WithLocalizedMessage(
-                    () => SavingsFinesOtherCostsResources.Expenses_SavingsFinesOtherCosts_Fines_Value_Error_Empty)
+                .WithMessage(SavingsFinesOtherCostsResources.Expenses_SavingsFinesOtherCosts_Fines_Value_Error_Empty)
                 .GreaterThanOrEqualTo(0)
-                .WithLocalizedMessage(
-                    () => SavingsFinesOtherCostsResources.Expenses_SavingsFinesOtherCosts_Fines_Value_Error_Negative)
-                .SetValidator(new ScalePrecisionValidator(2, 99, () => SavingsFinesOtherCostsResources.Expenses_SavingsFinesOtherCosts_Fines_Value_Error_Scale))
+                .WithMessage(SavingsFinesOtherCostsResources.Expenses_SavingsFinesOtherCosts_Fines_Value_Error_Negative)
+                .ScalePrecision(2, 99).WithMessage(SavingsFinesOtherCostsResources.Expenses_SavingsFinesOtherCosts_Fines_Value_Error_Scale)
                 .When(r => !string.IsNullOrEmpty(r.Type));
         }   
     }

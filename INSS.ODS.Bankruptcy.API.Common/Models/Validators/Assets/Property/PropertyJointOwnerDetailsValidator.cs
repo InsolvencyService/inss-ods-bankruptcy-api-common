@@ -15,19 +15,19 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
             RuleFor(x => x.Relationship)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .WithLocalizedMessage(() => JointOwnerDetailsResources.Property_JointOwnerDetails_Relationship_Error_Mandatory)
+                .WithMessage(JointOwnerDetailsResources.Property_JointOwnerDetails_Relationship_Error_Mandatory)
                 .NotEmpty()
-                .WithLocalizedMessage(() => JointOwnerDetailsResources.Property_JointOwnerDetails_Relationship_Error_Mandatory)
+                .WithMessage(JointOwnerDetailsResources.Property_JointOwnerDetails_Relationship_Error_Mandatory)
                 .Length(3, 60)
-                .WithLocalizedMessage(() => JointOwnerDetailsResources.Property_JointOwnerDetails_RelationshipOther_Error_Length)
+                .WithMessage(JointOwnerDetailsResources.Property_JointOwnerDetails_RelationshipOther_Error_Length)
                 .Must(OtherTextNotEmpty)
-                .WithLocalizedMessage(() => JointOwnerDetailsResources.Property_JointOwnerDetails_RelationshipOther_Error_Mandatory)
+                .WithMessage(JointOwnerDetailsResources.Property_JointOwnerDetails_RelationshipOther_Error_Mandatory)
                 .Must(OtherTextValidLength)
-                .WithLocalizedMessage(() => JointOwnerDetailsResources.Property_JointOwnerDetails_RelationshipOther_Error_Length);
+                .WithMessage(JointOwnerDetailsResources.Property_JointOwnerDetails_RelationshipOther_Error_Length);
                         
             RuleFor(x => x.JointOwnerShare)
               .GreaterThanOrEqualTo(1.00)
-              .WithLocalizedMessage(() => JointOwnerDetailsResources.Property_JointOwnerDetails__Error_YourShareTooLow)
+              .WithMessage(JointOwnerDetailsResources.Property_JointOwnerDetails__Error_YourShareTooLow)
               .When(r => r.IsSelf);
         }
         private bool OtherTextNotEmpty(IPropertyJointOwnerDetails instance, string relationship)

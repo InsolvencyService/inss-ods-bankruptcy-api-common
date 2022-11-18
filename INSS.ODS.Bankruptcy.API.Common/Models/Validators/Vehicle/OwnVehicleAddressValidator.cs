@@ -13,31 +13,31 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
 
             RuleFor(r => r.Address_1)
               .Length(0)
-              .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Address1_Error_NotRequired);
+              .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Address1_Error_NotRequired);
 
             RuleFor(r => r.Address_2)
                .Length(0)
-               .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Address2_Error_NotRequired);
+               .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Address2_Error_NotRequired);
 
             RuleFor(r => r.Address_3)
                .Length(0)
-               .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Address3_Error_NotRequired);
+               .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Address3_Error_NotRequired);
 
             RuleFor(r => r.TownCity)
                .Length(0)
-               .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Towncity_Error_NotRequired);
+               .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Towncity_Error_NotRequired);
 
             RuleFor(r => r.County)
                .Length(0)
-               .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_County_Error_NotRequired);
+               .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_County_Error_NotRequired);
 
             RuleFor(r => r.PostCode)
                .Length(0)
-               .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Postcode_Error_NotRequired);
+               .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Postcode_Error_NotRequired);
 
             RuleFor(r => r.Country)
                .Length(0)
-               .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Country_Error_NotRequired);
+               .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Country_Error_NotRequired);
         }
     }
 }

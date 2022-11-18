@@ -10,24 +10,20 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.CompanyDirectorships
     {
         public LimitedCompanyNameInterfaceValidator()
         {
+            var regex = RegularExpressions.LimitedCompanyName1;
+
             RuleFor(x => x.LimitedCompanyName)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_Empty)
+                .WithMessage(AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_Empty)
                 .Must(limitedCompanyName => HaveLengthGreaterThan(limitedCompanyName, 2))
-                .WithLocalizedMessage(() => AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_TooShort)
+                .WithMessage(AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_TooShort)
                 .Must(limitedCompanyName => HaveLengthLessThan(limitedCompanyName, 101))
-                .WithLocalizedMessage(() => AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_TooLong)
+                .WithMessage(AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_TooLong)
                 .Matches(RegularExpressions.LimitedCompanyName2)
-                .WithLocalizedMessage(() => AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_InvalidCharacter,
-                    c =>
-                    {
-                        var regex = RegularExpressions.LimitedCompanyName1;
-                        var matchedResult = Regex.Match(c.LimitedCompanyName, regex);
-                        return matchedResult;
-                    })
+                .WithMessage(x => $"{AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_InvalidCharacter} {Regex.Match(x.LimitedCompanyName, regex)}")
                 .Matches(RegularExpressions.LimitedCompanyMustContain, RegexOptions.IgnoreCase)
-                .WithLocalizedMessage(() => AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_IncorrectEnding);
+                .WithMessage(AddLimitedCompanyNameResources.CompanyDirectorships_AddLimitedCompanyName_CompanyName_Error_IncorrectEnding);
 
 
         }

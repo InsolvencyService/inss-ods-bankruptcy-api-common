@@ -1,32 +1,30 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentValidation.TestHelper;
 using INSS.ODS.Bankruptcy.API.Common.Models;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
-using FluentValidation.TestHelper;
 
-namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
+namespace INSS.ODS.Bankruptcy.API.Common.UnitTests;
+
+[TestClass]
+public class TaxDetailTests
 {
-    [TestClass]
-    public class TaxDetailTests
+    private TaxDetailValidator validator;
+
+    [TestInitialize]
+    public void Setup()
     {
-        private TaxDetailValidator validator;
+        validator = new TaxDetailValidator();
+    }
 
-        [TestInitialize]
-        public void Setup()
-        {
-            validator = new TaxDetailValidator();
-        }
+    [TestMethod]
+    [TestCategory("Tax Details")]
+    public void TaxDetailValidModel()
+    {
+        var taxDetail = new TaxDetail();
 
-        [TestMethod]
-        [TestCategory("Tax Details")]
-        public void TaxDetailValidModel()
-        {
-            var taxDetail = new TaxDetail();
+        taxDetail.UTR = "ABCD1234EF";
 
-            taxDetail.UTR = "ABCD1234EF";
+        var validationResult = validator.TestValidate(taxDetail);
 
-            validator.ShouldNotHaveValidationErrorFor(x => x.UTR, taxDetail);
-
-        }
-
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.UTR);
     }
 }

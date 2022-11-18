@@ -29,10 +29,11 @@ namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
             selfEmployedBusinessDetail.BusinessType = "BB";
             selfEmployedBusinessDetail.TradingStartedDate =DateTime.Now.AddDays(-1);
 
-            validator.ShouldNotHaveValidationErrorFor(x => x.BusinessName, selfEmployedBusinessDetail);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TradingStartedDate, selfEmployedBusinessDetail);
-            validator.ShouldNotHaveValidationErrorFor(x => x.BusinessType, selfEmployedBusinessDetail);
+            var validationResult = validator.TestValidate(selfEmployedBusinessDetail);
 
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.BusinessName);
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.TradingStartedDate);
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.BusinessType);
         }
 
         [TestMethod]
@@ -54,8 +55,10 @@ namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
 
             selfEmployedBusinessDetail.BusinessNames = businessNamesList;
 
-            validator.ShouldNotHaveValidationErrorFor(x => x.BusinessName, selfEmployedBusinessDetail);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TradingStartedDate, selfEmployedBusinessDetail);
+            var validationResult = validator.TestValidate(selfEmployedBusinessDetail);
+
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.BusinessName);
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.TradingStartedDate);
 
             var context = new ValidationContext(selfEmployedBusinessDetail, null, null);
             var results = new List<ValidationResult>();
@@ -73,10 +76,11 @@ namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
             selfEmployedBusinessDetail.BusinessName = "AA";
             selfEmployedBusinessDetail.TradingStartedDate = DateTime.Now.AddDays(-1);
 
-            validator.ShouldHaveValidationErrorFor(x => x.BusinessType, selfEmployedBusinessDetail);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TradingStartedDate, selfEmployedBusinessDetail);
-            validator.ShouldNotHaveValidationErrorFor(x => x.BusinessName, selfEmployedBusinessDetail);
+            var validationResult = validator.TestValidate(selfEmployedBusinessDetail);
 
+            validationResult.ShouldHaveValidationErrorFor(x => x.BusinessType);
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.TradingStartedDate);
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.BusinessName);
         }
 
         [TestMethod]
@@ -97,8 +101,10 @@ namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
 
             selfEmployedBusinessDetail.BusinessNames = businessNamesList;
 
-            validator.ShouldNotHaveValidationErrorFor(x => x.BusinessName, selfEmployedBusinessDetail);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TradingStartedDate, selfEmployedBusinessDetail);
+            var validationResult = validator.TestValidate(selfEmployedBusinessDetail);
+
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.BusinessName);
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.TradingStartedDate);
 
             var context = new ValidationContext(selfEmployedBusinessDetail, null, null);
             var results = new List<ValidationResult>();

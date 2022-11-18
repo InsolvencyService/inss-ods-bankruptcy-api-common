@@ -14,8 +14,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         public CurrencyValidator()
         {
             RuleFor(x => x)
-                .SetValidator(new ScalePrecisionValidator(2, 18,
-                    () => ErrorMessagesResources.CurrencyPropertyBinder_Invalid_Format))
+                .ScalePrecision(2, 18).WithMessage(ErrorMessagesResources.CurrencyPropertyBinder_Invalid_Format)
                 .WithName("Value")
                 .When(x => x.HasValue);
         }

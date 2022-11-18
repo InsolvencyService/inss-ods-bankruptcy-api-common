@@ -1,13 +1,12 @@
-namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum Relationship
 {
-    public enum Relationship
-    {
-        Single,
-        MarriedOrCivilPartnership,
-        InARelationshipAndLivingApart,
-        LivingTogether,
-        DivorcedOrFormerCivilPartner,
-        WidowedOrSurvivingCivilPartner,
-        Separated
-    }
+    Single,
+    MarriedOrCivilPartnership,
+    InARelationshipAndLivingApart,
+    LivingTogether,
+    DivorcedOrFormerCivilPartner,
+    WidowedOrSurvivingCivilPartner,
+    Separated
 }

@@ -1,5 +1,4 @@
-﻿using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.Vehicle;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using INSS.ODS.Bankruptcy.API.Common.Resources.Vehicle;
 namespace INSS.ODS.Bankruptcy.API.Common.Models.Vehicle
 {
     [DataContract]
-    [Validator(typeof(VehicleValidator))]
     public class VehicleDetails : ITableBase, IVehicleDetails
     {
         public int Id { get; set; }

@@ -1,21 +1,20 @@
 ﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using System.Runtime.Serialization;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models
+namespace INSS.ODS.Bankruptcy.API.Common.Models;
+
+[DataContract]
+public class PropertyLodger : IPropertyLodger, ITableBase
 {
-    [DataContract]
-    public class PropertyLodger : IPropertyLodger, ITableBase
-    {
-        [DataMember]
-        public int Id { get; set; }
+    [DataMember]
+    public int Id { get; set; }
 
-        [DataMember]
-        public int PropertyId { get; set; }
+    [DataMember]
+    public int PropertyId { get; set; }
 
-        [DataMember]
-        public string FirstName { get; set; }
+    [DataMember]
+    public string FirstName { get; set; }
 
-        [DataMember]
-        public string LastName { get; set; }
-    }
+    [DataMember]
+    public string LastName { get; set; }
 }

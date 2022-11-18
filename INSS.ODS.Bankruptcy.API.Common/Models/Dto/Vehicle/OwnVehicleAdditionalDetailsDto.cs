@@ -1,5 +1,4 @@
-﻿using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.Vehicle;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.Vehicle;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,6 @@ using System.Threading.Tasks;
 namespace INSS.ODS.Bankruptcy.API.Common.Models.Dto.Vehicle
 {
     [DataContract]
-    [Validator(typeof(OwnVehicleAdditionalDetailsValidator<Address>))]
     public class OwnVehicleAdditionalDetailsDto : IOwnVehicleAdditionalDetails<Address>
     {
         [DataMember]

@@ -12,9 +12,9 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
             RuleFor(x => x.MotabilityCRN)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .WithLocalizedMessage(() => MotabilityDetailsResources.Vehicle_MotabilityDetails_MotabilityCRN_Error_Required)
+                .WithMessage(MotabilityDetailsResources.Vehicle_MotabilityDetails_MotabilityCRN_Error_Required)
                 .NotEmpty()
-                .WithLocalizedMessage(() => MotabilityDetailsResources.Vehicle_MotabilityDetails_MotabilityCRN_Error_Required);
+                .WithMessage(MotabilityDetailsResources.Vehicle_MotabilityDetails_MotabilityCRN_Error_Required);
         }
     }
 }

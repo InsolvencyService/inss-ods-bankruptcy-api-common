@@ -1,13 +1,12 @@
-using System.ComponentModel.DataAnnotations;
 using INSS.ODS.Bankruptcy.API.Common.Resources.DRO;
+using System.ComponentModel.DataAnnotations;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model.Enums
+namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model.Enums;
+
+public enum Gender
 {
-    public enum Gender
-    {
-        Male,
-        Female,
-        [Display(Name="PersonalDetails_Gender_Unspecified_Label", ResourceType = typeof(PersonalDetailsResources))]
-        Unspecified
-    }
+    Male,
+    Female,
+    [Display(Name="PersonalDetails_Gender_Unspecified_Label", ResourceType = typeof(PersonalDetailsResources))]
+    Unspecified
 }

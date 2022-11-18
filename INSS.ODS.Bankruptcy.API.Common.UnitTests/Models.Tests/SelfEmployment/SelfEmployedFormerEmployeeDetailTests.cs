@@ -1,84 +1,77 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
-using INSS.ODS.Bankruptcy.API.Common.Models;
 using FluentValidation.TestHelper;
+using INSS.ODS.Bankruptcy.API.Common.Models;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.CompanyDirectorships;
+using System.ComponentModel.DataAnnotations;
 
-namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
+namespace INSS.ODS.Bankruptcy.API.Common.UnitTests;
+
+[TestClass]
+public class SelEmployedFormerEmployeeDetailTests
 {
-    [TestClass]
-    public class SelEmployedFormerEmployeeDetailTests
+    private SelfEmployedFormerEmployeeDetailValidator validator;
+
+    [TestInitialize]
+    public void Setup()
     {
-        private SelfEmployedFormerEmployeeDetailValidator validator;
+        validator = new SelfEmployedFormerEmployeeDetailValidator();
+    }
 
-        [TestInitialize]
-        public void Setup()
+    [TestMethod]
+    [TestCategory("Self Employed Former Employee Detail")]
+    public void SelfEmployedFormerEmployeeDetailValidModel()
+    {
+        var selfEmployedFormerEmployeeDetail = new FormerEmployeeDetail();
+
+        selfEmployedFormerEmployeeDetail.FirstName = "SIMON";
+        selfEmployedFormerEmployeeDetail.LastName = "TEST";
+        selfEmployedFormerEmployeeDetail.Reason  = "TEST";
+        selfEmployedFormerEmployeeDetail.Amount = 100;
+        selfEmployedFormerEmployeeDetail.FormerEmployeeAddress = new Address()
         {
-            validator = new SelfEmployedFormerEmployeeDetailValidator();
-        }
+            Address_1 = "A",
+            Address_2 = "B",
+            Address_3 = "C",
+            County = "D",
+            TownCity = "E",
+            PostCode = "F",
+            Country = "UK"
+        };
 
-        [TestMethod]
-        [TestCategory("Self Employed Former Employee Detail")]
-        public void SelfEmployedFormerEmployeeDetailValidModel()
+        var validationResult = validator.TestValidate(selfEmployedFormerEmployeeDetail);
+
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.FirstName);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.LastName);
+    }
+
+    [TestMethod]
+    [TestCategory("Self Employed Former Employee Detail")]
+    public void SelfEmployedFormerEmployeeDetailInValidModel()
+    {
+        var selfEmployedFormerEmployeeDetail = new FormerEmployeeDetail();
+
+
+        selfEmployedFormerEmployeeDetail.FirstName = "";
+        selfEmployedFormerEmployeeDetail.LastName = "";
+        selfEmployedFormerEmployeeDetail.Reason = "";
+        selfEmployedFormerEmployeeDetail.FormerEmployeeAddress = new Address()
         {
-            var selfEmployedFormerEmployeeDetail = new FormerEmployeeDetail();
+            Address_1 = "",
+            Address_2 = "B",
+            Address_3 = "C",
+            County = "D",
+            TownCity = "E",
+            PostCode = ""
+        };
 
-            selfEmployedFormerEmployeeDetail.FirstName = "SIMON";
-            selfEmployedFormerEmployeeDetail.LastName = "TEST";
-            selfEmployedFormerEmployeeDetail.Reason  = "TEST";
-            selfEmployedFormerEmployeeDetail.Amount = 100;
-            selfEmployedFormerEmployeeDetail.FormerEmployeeAddress = new Address()
-            {
-                Address_1 = "A",
-                Address_2 = "B",
-                Address_3 = "C",
-                County = "D",
-                TownCity = "E",
-                PostCode = "F",
-                Country = "UK"
-            };
+        var validationResult = validator.TestValidate(selfEmployedFormerEmployeeDetail);
 
-            validator.ShouldNotHaveValidationErrorFor(x => x.FirstName, selfEmployedFormerEmployeeDetail);
-            validator.ShouldNotHaveValidationErrorFor(x => x.LastName, selfEmployedFormerEmployeeDetail);
+        validationResult.ShouldHaveValidationErrorFor(x => x.FirstName);
+        validationResult.ShouldHaveValidationErrorFor(x => x.LastName);
 
+        var context = new ValidationContext(selfEmployedFormerEmployeeDetail, null, null);
+            var results = new List<ValidationResult>();
+            var isModelStateValid = Validator.TryValidateObject(selfEmployedFormerEmployeeDetail, context, results, true);
 
-        }
-
-        [TestMethod]
-        [TestCategory("Self Employed Former Employee Detail")]
-        public void SelfEmployedFormerEmployeeDetailInValidModel()
-        {
-            var selfEmployedFormerEmployeeDetail = new FormerEmployeeDetail();
-
-
-            selfEmployedFormerEmployeeDetail.FirstName = "";
-            selfEmployedFormerEmployeeDetail.LastName = "";
-            selfEmployedFormerEmployeeDetail.Reason = "";
-            selfEmployedFormerEmployeeDetail.FormerEmployeeAddress = new Address()
-            {
-                Address_1 = "",
-                Address_2 = "B",
-                Address_3 = "C",
-                County = "D",
-                TownCity = "E",
-                PostCode = ""
-            };
-
-            validator.ShouldHaveValidationErrorFor(x => x.FirstName, selfEmployedFormerEmployeeDetail);
-            validator.ShouldHaveValidationErrorFor(x => x.LastName, selfEmployedFormerEmployeeDetail);
-
-
-            var context = new ValidationContext(selfEmployedFormerEmployeeDetail, null, null);
-                var results = new List<ValidationResult>();
-                var isModelStateValid = Validator.TryValidateObject(selfEmployedFormerEmployeeDetail, context, results, true);
-
-                Assert.IsTrue(isModelStateValid);
-
-
-        }
-
-
-
+            Assert.IsTrue(isModelStateValid);
     }
 }

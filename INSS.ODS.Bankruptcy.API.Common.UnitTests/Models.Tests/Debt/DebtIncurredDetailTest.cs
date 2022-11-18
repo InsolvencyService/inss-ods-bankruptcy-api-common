@@ -1,151 +1,164 @@
-using System;
 using FluentValidation.TestHelper;
 using INSS.ODS.Bankruptcy.API.Common.Models.Debt;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt;
 
-namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.Debt
+namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.Debt;
+
+[TestClass]
+public class DebtIncurredDetailTest
 {
-    [TestClass]
-    public class DebtIncurredDetailTest
+    private DebtIncurredDetailInterfaceValidator _validator;
+
+    [TestInitialize]
+    public void Setup()
     {
-        private DebtIncurredDetailInterfaceValidator _validator;
+        _validator = new DebtIncurredDetailInterfaceValidator();
+    }
 
-        [TestInitialize]
-        public void Setup()
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_StartDate_ShouldErrorOnInvalidValue()
+    {
+        var model = new DebtIncurredDetail();
+
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.StartDate);
+
+        model.StartDate = DateTime.Now.AddYears(1);
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.StartDate);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_StartDate_ShouldPassOnValidValue()
+    {
+        var model = new DebtIncurredDetail();
+
+        model.StartDate = DateTime.Now.AddYears(-1);
+        var validationResult = _validator.TestValidate(model);
+
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.StartDate);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_ReasonSelected_ShouldErrorOnInvalidValue()
+    {
+        var model = new DebtIncurredDetail()
         {
-            _validator = new DebtIncurredDetailInterfaceValidator();
-        }
+            StartDate = DateTime.Now.AddYears(-1)
+        };
 
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_StartDate_ShouldErrorOnInvalidValue()
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.DebtIncurredReasonValidationHook);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_ReasonSelected_ShouldErrorOnValidValue()
+    {
+        var model = new DebtIncurredDetail()
         {
-            var model = new DebtIncurredDetail();
-            
-            _validator.ShouldHaveValidationErrorFor(x => x.StartDate, model);
+            StartDate = DateTime.Now.AddYears(-1),
+            PersonalRelationshipBreakdown = true
+        };
 
-            model.StartDate = DateTime.Now.AddYears(1);
-            _validator.ShouldHaveValidationErrorFor(x => x.StartDate, model);
-        }
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.DebtIncurredReasonValidationHook);
+    }
 
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_StartDate_ShouldPassOnValidValue()
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_GamblingAmount_ShouldErrorOnInvalidValue()
+    {
+        var model = new DebtIncurredDetail()
         {
-            var model = new DebtIncurredDetail();
+            PersonalGambling = true
+        };
 
-            model.StartDate = DateTime.Now.AddYears(-1);
-            _validator.ShouldNotHaveValidationErrorFor(x => x.StartDate, model);
-        }
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.GamblingAmount);
 
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_ReasonSelected_ShouldErrorOnInvalidValue()
+        model.GamblingAmount = -100;
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.GamblingAmount);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_GamblingAmount_ShouldPassOnValidValue()
+    {
+        var model = new DebtIncurredDetail()
         {
-            var model = new DebtIncurredDetail()
-            {
-                StartDate = DateTime.Now.AddYears(-1)
-            };
-            
-            _validator.ShouldHaveValidationErrorFor(x => x.DebtIncurredReasonValidationHook, model);
-        }
+            PersonalGambling = true,
+            GamblingAmount = 200
+        };
 
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_ReasonSelected_ShouldErrorOnValidValue()
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.GamblingAmount);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_PersonalOtherText_ShouldErrorOnInvalidValue()
+    {
+        var model = new DebtIncurredDetail()
         {
-            var model = new DebtIncurredDetail()
-            {
-                StartDate = DateTime.Now.AddYears(-1),
-                PersonalRelationshipBreakdown = true
-            };
+            PersonalOther = true
+        };
 
-            _validator.ShouldNotHaveValidationErrorFor(x => x.DebtIncurredReasonValidationHook, model);
-        }
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.PersonalDebtIncurredReasonValidationHook);
 
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_GamblingAmount_ShouldErrorOnInvalidValue()
+        model.PersonalOtherText = "ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJA";
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.PersonalDebtIncurredReasonValidationHook);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_PersonalOtherText_ShouldPassOnValidValue()
+    {
+        var model = new DebtIncurredDetail()
         {
-            var model = new DebtIncurredDetail()
-            {
-                PersonalGambling = true
-            };
-            
-            _validator.ShouldHaveValidationErrorFor(x => x.GamblingAmount, model);
+            PersonalOther = true,
+            PersonalOtherText = "Because of some other reason"
+        };
 
-            model.GamblingAmount = -100;
-            _validator.ShouldHaveValidationErrorFor(x => x.GamblingAmount, model);
-        }
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.PersonalDebtIncurredReasonValidationHook);
+    }
 
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_GamblingAmount_ShouldPassOnValidValue()
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_BusinessOtherText_ShouldErrorOnInvalidValue()
+    {
+        var model = new DebtIncurredDetail()
         {
-            var model = new DebtIncurredDetail()
-            {
-                PersonalGambling = true,
-                GamblingAmount = 200
-            };
+            BusinessOther = true
+        };
 
-            _validator.ShouldNotHaveValidationErrorFor(x => x.GamblingAmount, model);
-        }
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.BusinessDebtIncurredReasonValidationHook);
 
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_PersonalOtherText_ShouldErrorOnInvalidValue()
+        model.BusinessOtherText = "ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJA";
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.BusinessDebtIncurredReasonValidationHook);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtIncurredDetail")]
+    public void DebtIncurredDetail_BusinessOtherText_ShouldPassOnValidValue()
+    {
+        var model = new DebtIncurredDetail()
         {
-            var model = new DebtIncurredDetail()
-            {
-                PersonalOther = true
-            };
+            BusinessOther = true,
+            BusinessOtherText = "Because of some other reason"
+        };
 
-            _validator.ShouldHaveValidationErrorFor(x => x.PersonalDebtIncurredReasonValidationHook, model);
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.BusinessDebtIncurredReasonValidationHook);
 
-            model.PersonalOtherText = "ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJA";
-            _validator.ShouldHaveValidationErrorFor(x => x.PersonalDebtIncurredReasonValidationHook, model);
-        }
-
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_PersonalOtherText_ShouldPassOnValidValue()
-        {
-            var model = new DebtIncurredDetail()
-            {
-                PersonalOther = true,
-                PersonalOtherText = "Because of some other reason"
-            };
-
-            _validator.ShouldNotHaveValidationErrorFor(x => x.PersonalDebtIncurredReasonValidationHook, model);
-        }
-
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_BusinessOtherText_ShouldErrorOnInvalidValue()
-        {
-            var model = new DebtIncurredDetail()
-            {
-                BusinessOther = true
-            };
-
-            _validator.ShouldHaveValidationErrorFor(x => x.BusinessDebtIncurredReasonValidationHook, model);
-
-            model.BusinessOtherText = "ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJA";
-            _validator.ShouldHaveValidationErrorFor(x => x.BusinessDebtIncurredReasonValidationHook, model);
-        }
-
-        [TestMethod]
-        [TestCategory("DebtIncurredDetail")]
-        public void DebtIncurredDetail_BusinessOtherText_ShouldPassOnValidValue()
-        {
-            var model = new DebtIncurredDetail()
-            {
-                BusinessOther = true,
-                BusinessOtherText = "Because of some other reason"
-            };
-
-            _validator.ShouldNotHaveValidationErrorFor(x => x.BusinessDebtIncurredReasonValidationHook, model);
-        }
     }
 }

@@ -3,6 +3,7 @@ using FluentValidation.TestHelper;
 using FluentAssertions;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 using INSS.ODS.Bankruptcy.API.Common.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
 {
@@ -27,8 +28,10 @@ namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
             additionalTransport.Additional_Transport_Value = 12.12m;
             additionalTransport.Additional_Transport_Frequency = "Yearly";
 
-            additionalTransportValidator.ShouldNotHaveValidationErrorFor(x => x.Additional_Transport_Text, additionalTransport);
-            additionalTransportValidator.ShouldNotHaveValidationErrorFor(x => x.Additional_Transport_Value, additionalTransport);
+            var validationResult = additionalTransportValidator.TestValidate(additionalTransport);
+
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.Additional_Transport_Text);
+            validationResult.ShouldNotHaveValidationErrorFor(x => x.Additional_Transport_Value);
            
         }
 
@@ -40,9 +43,9 @@ namespace INSS.ODS.Bankruptcy.API.Common.UnitTests
             additionalTransport.Additional_Transport_Text = "TEST";
             additionalTransport.Additional_Transport_Value = -1;
 
-            additionalTransportValidator.ShouldHaveValidationErrorFor(x => x.Additional_Transport_Value, additionalTransport);
+            var validationResult = additionalTransportValidator.TestValidate(additionalTransport);
 
-            var validationResult = additionalTransportValidator.Validate(additionalTransport);
+            validationResult.ShouldHaveValidationErrorFor(x => x.Additional_Transport_Value);
 
             validationResult.IsValid.Should().BeFalse();
             validationResult.Errors.Count.Should().Be(1);

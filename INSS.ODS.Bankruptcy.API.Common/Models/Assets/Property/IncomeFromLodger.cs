@@ -1,22 +1,17 @@
-﻿using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
-using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using System.Runtime.Serialization;
-using System;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models
+namespace INSS.ODS.Bankruptcy.API.Common.Models;
+
+[DataContract]
+public class IncomeFromLodger : IIncomeFromLodger, ITableBase
 {
-    [Validator(typeof(IncomeFromLodgerValidator))]
-    [DataContract]
-    public class IncomeFromLodger : IIncomeFromLodger, ITableBase
-    {
-        [DataMember]
-        public int Id { get; set; }
+    [DataMember]
+    public int Id { get; set; }
 
-        [DataMember]
-        public decimal? IncomeAmount { get; set; }
+    [DataMember]
+    public decimal? IncomeAmount { get; set; }
 
-        [DataMember]
-        public string IncomeFrequency { get; set; }
-    }
+    [DataMember]
+    public string IncomeFrequency { get; set; }
 }

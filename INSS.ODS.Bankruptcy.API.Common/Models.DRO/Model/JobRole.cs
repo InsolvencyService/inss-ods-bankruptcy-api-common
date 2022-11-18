@@ -1,14 +1,13 @@
-namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum JobRole
 {
-    public enum JobRole
-    {
-        ManagersAndSeniorOfficials,
-        Professionals,
-        AdministrativeAndTechnical,
-        SkilledTrades,
-        PersonalService,
-        SalesAndCustomerService,
-        ProcessPlantAndMachineOperatives,
-        ElementaryOccupation
-    }
+    ManagersAndSeniorOfficials,
+    Professionals,
+    AdministrativeAndTechnical,
+    SkilledTrades,
+    PersonalService,
+    SalesAndCustomerService,
+    ProcessPlantAndMachineOperatives,
+    ElementaryOccupation
 }

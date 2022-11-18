@@ -14,16 +14,12 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
 
             RuleFor(x => x.FirstName)
-                .NotEmpty().WithLocalizedMessage(
-                      () => EmployeeSummaryResources.EmployeeSummary_FirstName_Required )
-                .Length(1, 70).WithLocalizedMessage(
-                      () => EmployeeSummaryResources.EmployeeSummary_FirstName_Length );
+                .NotEmpty().WithMessage(EmployeeSummaryResources.EmployeeSummary_FirstName_Required )
+                .Length(1, 70).WithMessage(EmployeeSummaryResources.EmployeeSummary_FirstName_Length );
 
             RuleFor(x => x.LastName)
-              .NotEmpty().WithLocalizedMessage(
-                    () => EmployeeSummaryResources.EmployeeSummary_LastName_Required)
-              .Length(1, 39).WithLocalizedMessage(
-                    () => EmployeeSummaryResources.EmployeeSummary_LastName_Length);
+              .NotEmpty().WithMessage(EmployeeSummaryResources.EmployeeSummary_LastName_Required)
+              .Length(1, 39).WithMessage(EmployeeSummaryResources.EmployeeSummary_LastName_Length);
 
         }
 

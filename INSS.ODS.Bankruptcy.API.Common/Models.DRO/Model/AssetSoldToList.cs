@@ -1,14 +1,13 @@
-﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum AssetSoldToList
 {
-    public enum AssetSoldToList
-    {
-        AFamilyMember,
-        AMemberOfYourSpouseFamily,
-        AnEmployee,
-        AnEmployer,
-        ABusinessPartner,
-        ABusinessPartnersSpouse,
-        ACompanyYouAreADirectorOf,
-        Other
-    }
+    AFamilyMember,
+    AMemberOfYourSpouseFamily,
+    AnEmployee,
+    AnEmployer,
+    ABusinessPartner,
+    ABusinessPartnersSpouse,
+    ACompanyYouAreADirectorOf,
+    Other
 }

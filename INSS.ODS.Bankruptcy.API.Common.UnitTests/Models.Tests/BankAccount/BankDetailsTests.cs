@@ -2,58 +2,58 @@ using FluentAssertions;
 using FluentValidation.TestHelper;
 using INSS.ODS.Bankruptcy.API.Common.Models;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.BankAccount
+namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.BankAccount;
+
+[TestClass]
+public class BankDetailsTest
 {
-    [TestClass]
-    public class BankDetailsTest
+    private BankDetailsValidator validator;
+
+    [TestInitialize]
+    public void Setup()
     {
-        private BankDetailsValidator validator;
+        validator = new BankDetailsValidator();
+    }
 
-        [TestInitialize]
-        public void Setup()
+    [TestMethod]
+    [TestCategory("Bank Details")]
+    public void BankDetailsValidModel()
+    {
+        var model = new BankDetails()
         {
-            validator = new BankDetailsValidator();
-        }
+            BankName = "Testing Bank Name",
+            AddressLine1 = "Testing Address Line 1",
+            PostCode = "AB1 2CD"
+        };
 
-        [TestMethod]
-        [TestCategory("Bank Details")]
-        public void BankDetailsValidModel()
+        var validationResult = validator.TestValidate(model);
+
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.BankName);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.AddressLine1);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.PostCode);
+    }
+
+    [TestMethod]
+    [TestCategory("Bank Details")]
+    public void BankDetailsInValidModel()
+    {
+        var model = new BankDetails()
         {
-            var model = new BankDetails()
-            {
-                BankName = "Testing Bank Name",
-                AddressLine1 = "Testing Address Line 1",
-                PostCode = "AB1 2CD"
-            };
+            BankName = "",
+            AddressLine1 = "",
+            PostCode = "",
+            Country = ""
+        };
 
-            validator.ShouldNotHaveValidationErrorFor(x => x.BankName, model);
-            validator.ShouldNotHaveValidationErrorFor(x => x.AddressLine1, model);
-            validator.ShouldNotHaveValidationErrorFor(x => x.PostCode, model);
-        }
+        var validationResult = validator.TestValidate(model);
 
-        [TestMethod]
-        [TestCategory("Bank Details")]
-        public void BankDetailsInValidModel()
-        {
-            var model = new BankDetails()
-            {
-                BankName = "",
-                AddressLine1 = "",
-                PostCode = "",
-                Country = ""
-            };
+        validationResult.ShouldHaveValidationErrorFor(x => x.BankName);
+        validationResult.ShouldHaveValidationErrorFor(x => x.AddressLine1);
+        validationResult.ShouldHaveValidationErrorFor(x => x.PostCode);
+        validationResult.ShouldHaveValidationErrorFor(x => x.Country);
 
-            validator.ShouldHaveValidationErrorFor(x => x.BankName, model);
-            validator.ShouldHaveValidationErrorFor(x => x.AddressLine1, model);
-            validator.ShouldHaveValidationErrorFor(x => x.PostCode, model);
-            validator.ShouldHaveValidationErrorFor(x => x.Country, model);
-
-            var validationResult = validator.Validate(model);
-
-            validationResult.IsValid.Should().BeFalse();
-            validationResult.Errors.Count.Should().Be(6);
-        }
+        validationResult.IsValid.Should().BeFalse();
+        validationResult.Errors.Count.Should().Be(6);
     }
 }

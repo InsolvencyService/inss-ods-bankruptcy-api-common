@@ -1,5 +1,4 @@
-﻿using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,7 +11,6 @@ using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 namespace INSS.ODS.Bankruptcy.API.Common.Models.Dto
 {
     [DataContract]
-    [Validator(typeof(PersonalDetailsAdditionalValidators))]
     public class PersonalDetailsAdditionalDto : IPersonalDetailsAdditional
     {
         [DataMember]

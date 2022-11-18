@@ -14,11 +14,11 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
            // RuleFor(r => r.DebtType)
            // .NotEmpty()
-           // .WithLocalizedMessage(() => SecuredDebtCreditorDetailsResources.PensionAndInsurance_PolicyProviderDetails_PolicyType);
+           // .WithMessage(SecuredDebtCreditorDetailsResources.PensionAndInsurance_PolicyProviderDetails_PolicyType);
 
            // RuleFor(r => r.CommencementDate)
            //.NotEmpty()
-           //.WithLocalizedMessage(() => PolicyProviderDetailsResources.PensionAndInsurance_PolicyProviderDetails_CommencementDate);
+           //.WithMessage(PolicyProviderDetailsResources.PensionAndInsurance_PolicyProviderDetails_CommencementDate);
 
 
         }

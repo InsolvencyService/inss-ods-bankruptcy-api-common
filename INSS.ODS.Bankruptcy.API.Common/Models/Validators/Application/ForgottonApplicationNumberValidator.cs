@@ -16,7 +16,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
 
             RuleFor(x => x.Email)
                 .EmailAddress()
-                .WithLocalizedMessage(() => ForgottenApplicationNumberResources.Application_ForgottenApplicationNumber_Email_Error_Format)
+                .WithMessage(ForgottenApplicationNumberResources.Application_ForgottenApplicationNumber_Email_Error_Format)
                 .When(x => !string.IsNullOrEmpty(x.Email));
 
           

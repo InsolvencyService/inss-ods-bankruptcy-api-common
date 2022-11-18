@@ -11,28 +11,28 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
         {
           
             RuleFor(r => r.RelationshipType)
-                .NotEmpty().WithLocalizedMessage(() => ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_RelationshipType_Error_Madatory);
+                .NotEmpty().WithMessage(ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_RelationshipType_Error_Madatory);
 
             RuleFor(x => x.RelationshipType)
               .Must(x => false)
               .When(x =>  !string.IsNullOrWhiteSpace(x.RelationshipTypeOther)
                             && (x.RelationshipTypeOther.Trim().Length < 3 || x.RelationshipTypeOther.Trim().Length > 60)
                             && (x.RelationshipType == ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_RelationshipType_Other))
-              .WithLocalizedMessage(() => ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_RelationshipTypeOtherText_Error_Length);
+              .WithMessage(ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_RelationshipTypeOtherText_Error_Length);
 
             RuleFor(x => x.RelationshipType)
              .Must(x => false)
              .When(x => string.IsNullOrWhiteSpace(x.RelationshipTypeOther)                            
                             && (x.RelationshipType == ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_RelationshipType_Other))
-             .WithLocalizedMessage(() => ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_RelationshipTypeOtherText_Error_Madatory);
+             .WithMessage(ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_RelationshipTypeOtherText_Error_Madatory);
 
             RuleFor(x => x.OwnerName)           
            .NotEmpty()
-           .WithLocalizedMessage(() => ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_OwnerName_Error_Madatory)
+           .WithMessage(ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_OwnerName_Error_Madatory)
            .Length(2, 179)
-           .WithLocalizedMessage(() => ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_OwnerName_Error_InvalidLength)
+           .WithMessage(ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_OwnerName_Error_InvalidLength)
            .Matches(RegularExpressions.VehicleOwnersNameInvalid)
-           .WithLocalizedMessage(() => ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_OwnerName__Error_InvalidCharacters);
+           .WithMessage(ThirdPartyVehicleResources.Vehicle_ThirdPartyVehicle_OwnerName__Error_InvalidCharacters);
 
 
         }

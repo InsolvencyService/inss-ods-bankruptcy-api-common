@@ -16,26 +16,26 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.BankAccount
             RuleFor(r => r.AccountNumber)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => AccountDetailsResources.BankAccount_AccountDetails_AccountNumber_Error_Empty);
+                .WithMessage(AccountDetailsResources.BankAccount_AccountDetails_AccountNumber_Error_Empty);
 
             RuleFor(r => r.CurrentBalance)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => AccountDetailsResources.BankAccount_AccountDetails_CurrentBalance_Error_Empty);
+                .WithMessage(AccountDetailsResources.BankAccount_AccountDetails_CurrentBalance_Error_Empty);
 
             RuleFor(r => r.DateOpened)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => AccountDetailsResources.BankAccount_AccountDetails_DateOpened_Error_Empty)
+                .WithMessage(AccountDetailsResources.BankAccount_AccountDetails_DateOpened_Error_Empty)
                 .Must(BeAfter1900Date)
-                .WithLocalizedMessage(() => AccountDetailsResources.BankAccount_AccountDetails_DateOpened_Error_Date_After_1900)
+                .WithMessage(AccountDetailsResources.BankAccount_AccountDetails_DateOpened_Error_Date_After_1900)
                 .Must(BeInThePast)
-                .WithLocalizedMessage(() => AccountDetailsResources.BankAccount_AccountDetails_DateOpened_Error_Date_In_The_Past);
+                .WithMessage(AccountDetailsResources.BankAccount_AccountDetails_DateOpened_Error_Date_In_The_Past);
 
             RuleFor(r => r.JointAccount)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => AccountDetailsResources.BankAccount_AccountDetails_JointAccount_Error_Empty);
+                .WithMessage(AccountDetailsResources.BankAccount_AccountDetails_JointAccount_Error_Empty);
         }
         private bool BeAfter1900Date(DateTime date)
         {

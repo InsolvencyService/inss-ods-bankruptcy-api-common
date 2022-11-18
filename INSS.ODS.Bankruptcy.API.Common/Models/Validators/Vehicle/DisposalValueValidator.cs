@@ -12,9 +12,8 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
         {
             RuleFor(x => x.Amount)
                .InclusiveBetween(0, decimal.MaxValue)
-               .WithLocalizedMessage(() => DisposalValueResources.Vehicle_DisposalValue_VehicleValue_Error_PositiveValue)
-               .SetValidator(new ScalePrecisionValidator(2, 99,
-                   () => DisposalValueResources.Vehicle_DisposalValue_Amount_Error_Scale));
+               .WithMessage(DisposalValueResources.Vehicle_DisposalValue_VehicleValue_Error_PositiveValue)
+               .ScalePrecision(2, 99).WithMessage(DisposalValueResources.Vehicle_DisposalValue_Amount_Error_Scale);
         }
     }
 }

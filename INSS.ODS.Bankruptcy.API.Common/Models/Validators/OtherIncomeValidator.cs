@@ -21,18 +21,15 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
                 RuleFor(r => r.Amount)
                .Cascade(CascadeMode.StopOnFirstFailure)
                .NotNull()
-               .WithLocalizedMessage(
-                   () => OtherIncomeResources.Income_OtherIncome_Amount_Error_RequiredIfSourceIsEntered)
+               .WithMessage(OtherIncomeResources.Income_OtherIncome_Amount_Error_RequiredIfSourceIsEntered)
                .GreaterThanOrEqualTo(0)
-               .WithLocalizedMessage(
-                   () => OtherIncomeResources.Income_OtherIncome_Amount_Error_ExpectedPositiveAndNumericValue)
-               .SetValidator(new ScalePrecisionValidator(2, 99, () => OtherIncomeResources.Income_OtherIncome_Amount_Error_DecimalPlaces))
+               .WithMessage(OtherIncomeResources.Income_OtherIncome_Amount_Error_ExpectedPositiveAndNumericValue)
+               .ScalePrecision(2, 99).WithMessage(OtherIncomeResources.Income_OtherIncome_Amount_Error_DecimalPlaces)
                .When(r => !string.IsNullOrEmpty(r.Source));
 
                 RuleFor(r => r.Source)
                    .NotEmpty()
-                   .WithLocalizedMessage(
-                       () => OtherIncomeResources.Income_OtherIncome_Source_Error_RequiredIfAmountIsEntered)
+                   .WithMessage(OtherIncomeResources.Income_OtherIncome_Source_Error_RequiredIfAmountIsEntered)
                    .When(r => r.Amount.HasValue);
 
         }         

@@ -15,19 +15,15 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
 
             RuleFor(x => x.VATNumber)
-                .Length(1, 15).WithLocalizedMessage(
-                      () => SelfEmployedAdditionalBusinessDetailsResources.SelfEmployedAdditonalBusinessDetails_VATNumber_Length)
-                                           .Matches(RegularExpressions.VAT).WithLocalizedMessage(
-                    () => SelfEmployedAdditionalBusinessDetailsResources.SelfEmployedAdditonalBusinessDetails_VATNumber_Invalid)
+                .Length(1, 15).WithMessage(SelfEmployedAdditionalBusinessDetailsResources.SelfEmployedAdditonalBusinessDetails_VATNumber_Length)
+                                           .Matches(RegularExpressions.VAT).WithMessage(SelfEmployedAdditionalBusinessDetailsResources.SelfEmployedAdditonalBusinessDetails_VATNumber_Invalid)
                 .When(x => !string.IsNullOrEmpty(x.VATNumber));
 
             RuleFor(x => x.UTR)
-               .NotEmpty().WithLocalizedMessage(
-                     () => SelfEmployedAdditionalBusinessDetailsResources.SelfEmployedAdditonalBusinessDetails_UTR_Required);
+               .NotEmpty().WithMessage(SelfEmployedAdditionalBusinessDetailsResources.SelfEmployedAdditonalBusinessDetails_UTR_Required);
 
             RuleFor(x => x.RecordsLocation)
-                  .NotNull().WithLocalizedMessage(
-                     () => SelfEmployedAdditionalBusinessDetailsResources.SelfEmployedAdditonalBusinessDetails_RecordsLocation_Required);
+                  .NotNull().WithMessage(SelfEmployedAdditionalBusinessDetailsResources.SelfEmployedAdditonalBusinessDetails_RecordsLocation_Required);
 
         }
 

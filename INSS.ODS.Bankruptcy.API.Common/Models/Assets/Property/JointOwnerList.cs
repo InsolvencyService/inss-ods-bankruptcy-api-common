@@ -1,16 +1,10 @@
-﻿using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
-using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
-using System;
-using System.Collections.Generic;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models
+namespace INSS.ODS.Bankruptcy.API.Common.Models;
+
+[Serializable]
+public class JointOwnerList : IJointOwnerList<PropertyJointOwnerDetails>
 {
-    [Serializable]
-    [Validator(typeof(PropertyJointOwnerListValidator<PropertyJointOwnerDetails>))]
-    public class JointOwnerList : IJointOwnerList<PropertyJointOwnerDetails>
-    {
-        public int PropertyId { get; set; }        
-        public List<PropertyJointOwnerDetails> JointOwners { get; set; }
-    }
+    public int PropertyId { get; set; }        
+    public List<PropertyJointOwnerDetails> JointOwners { get; set; }
 }

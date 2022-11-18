@@ -13,7 +13,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(x => x.JointOwners)
                 .Must(SumOfJointOwnersShareIsValid)
-                .WithLocalizedMessage(() => JointOwnerDetailsResources.Property_JointOwnerDetails_Error_InvalidShares);
+                .WithMessage(JointOwnerDetailsResources.Property_JointOwnerDetails_Error_InvalidShares);
         }
 
         private bool SumOfJointOwnersShareIsValid(IJointOwnerList<T> instance, List<T> jointOwners)

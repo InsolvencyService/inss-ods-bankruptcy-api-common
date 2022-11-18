@@ -1,15 +1,14 @@
-﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum EmploymentType
 {
-    public enum EmploymentType
-    {
-        SelfEmployedOrTrading,
-        Employed,
-        Unemployed,
-        HousewifeOrHusband,
-        Carer,
-        CompanyDirectorOrPromoter,
-        Retired,
-        Student,
-        Other
-    }
+    SelfEmployedOrTrading,
+    Employed,
+    Unemployed,
+    HousewifeOrHusband,
+    Carer,
+    CompanyDirectorOrPromoter,
+    Retired,
+    Student,
+    Other
 }

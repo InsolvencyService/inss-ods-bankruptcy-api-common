@@ -16,13 +16,13 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
         {
             RuleFor(r => r.IsFinanceOutstanding)
            .NotEmpty()
-           .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_FinanceOutstanding_Error_Required);
+           .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_FinanceOutstanding_Error_Required);
 
-            RuleFor(x => x.Address)
+            RuleFor(x => (IAddress)x.Address)
                 .SetValidator(new OwnVehicleAddressValidator())
                 .When(r => r.IsVehicleKeptAtHomeAddress == true);
 
-            RuleFor(x => x.Address)
+            RuleFor(x => (IAddress)x.Address)
                 .SetValidator(new AddressValidator())
                 .When(r => r.IsVehicleKeptAtHomeAddress == false);
         }

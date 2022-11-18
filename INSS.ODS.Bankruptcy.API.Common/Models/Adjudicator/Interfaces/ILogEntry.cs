@@ -1,18 +1,15 @@
-﻿using System;
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.Adjudicator;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models.Adjudicator
+public interface ILogEntry
 {
-    public interface ILogEntry
-    {
-        string Urn { get; set; }
+    string Urn { get; set; }
 
-        string LogAction { get; set; }
+    string LogAction { get; set; }
 
-        DateTime DateCreated { get; set; }
+    DateTime DateCreated { get; set; }
 
-        string Owner { get; set; }
+    string Owner { get; set; }
 
-        string BKTReference { get; set; }
+    string BKTReference { get; set; }
 
-    }
 }

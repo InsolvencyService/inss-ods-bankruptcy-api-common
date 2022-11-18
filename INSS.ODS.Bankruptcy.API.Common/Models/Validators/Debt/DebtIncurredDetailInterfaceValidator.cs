@@ -16,60 +16,57 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt
                .Must(x => false)
                .When(x => !String.IsNullOrWhiteSpace(x.PersonalOtherText))
                .Unless(x => x.PersonalOther)
-               .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_Reason_Error_OtherText);
+               .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_Reason_Error_OtherText);
 
             RuleFor(x => x.ReasonsForBusinessDebt)
               .Must(x => false)
               .When(x => !String.IsNullOrWhiteSpace(x.BusinessOtherText))
               .Unless(x => x.BusinessOther)
-              .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_Reason_Error_OtherText);
+              .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_Reason_Error_OtherText);
 
             RuleFor(x => x.StartDate)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_StartDate_Error_Empty)
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_StartDate_Error_Empty)
                 .GreaterThanOrEqualTo(new DateTime(1900, 1, 1))
-                .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_StartDate_Error_MinimumDate)
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_StartDate_Error_MinimumDate)
                 .LessThanOrEqualTo(DateTime.Today)
-                .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_StartDate_Error_InTheFuture);
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_StartDate_Error_InTheFuture);
 
 
 
             RuleFor(x => x.DebtIncurredReasonValidationHook)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .Must(HaveAtLeastOneReasonSelected)
-                .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_ReasonForDebt_Error_AtLeastOneReasonNeedsToBeSelected);
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_ReasonForDebt_Error_AtLeastOneReasonNeedsToBeSelected);
 
             RuleFor(x => x.PersonalDebtIncurredReasonValidationHook)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .Must(HavePersonalOtherReasonSpecified)
-                .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_PersonalOtherText_Error_RequiredWhenOtherReasonSelected)
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_PersonalOtherText_Error_RequiredWhenOtherReasonSelected)
                 .Must(HavePersonalOtherReasonValidLength)
-                .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_PersonalOtherText_Error_Length)
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_PersonalOtherText_Error_Length)
                 .When(x => x.PersonalOther);
 
             RuleFor(x => x.BusinessDebtIncurredReasonValidationHook)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .Must(HaveBusinessOtherReasonSpecified)
-                .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_BusinessOtherText_Error_RequiredWhenOtherReasonSelected)
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_BusinessOtherText_Error_RequiredWhenOtherReasonSelected)
                 .Must(HaveBusinessOtherReasonValidLength)
-                .WithLocalizedMessage(() => DebtIncurredDetailResources.Debt_DebtIncurredDetail_BusinessOtherText_Error_Length)
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_BusinessOtherText_Error_Length)
                 .When(x => x.BusinessOther);
 
             RuleFor(x => x.GamblingAmount)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(
-                    () =>
-                        DebtIncurredDetailResources
+                .WithMessage(DebtIncurredDetailResources
                             .Debt_DebtIncurredDetail_Amount_Error_RequiredWhenGamblingReasonSelected)
             .When(x => x.PersonalGambling);
 
             RuleFor(x => x.GamblingAmount)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .GreaterThan(0)
-                .WithLocalizedMessage(
-                    () => DebtIncurredDetailResources.Debt_DebtIncurredDetail_Amount_Error_InvalidValue)
+                .WithMessage(DebtIncurredDetailResources.Debt_DebtIncurredDetail_Amount_Error_InvalidValue)
                 .When(x => x.GamblingAmount.HasValue);
         }
 

@@ -12,7 +12,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
             RuleFor(r => r.Firstline)
             .Cascade(CascadeMode.StopOnFirstFailure)
             .NotEmpty()
-            .WithLocalizedMessage(() => AddPropertyResources.Property_AddProperty_Error_AnyOneFieldRequired)
+            .WithMessage(AddPropertyResources.Property_AddProperty_Error_AnyOneFieldRequired)
             .When(r => String.IsNullOrWhiteSpace(r.Postalcode));
         }
     }

@@ -14,10 +14,8 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
 
             RuleFor(x => x.AccountantName)
-                .NotEmpty().WithLocalizedMessage(
-                      () => AccountantSummaryResources.AccountantSummary_AccountantName_Required )
-                .Length(3, 30).WithLocalizedMessage(
-                      () =>AccountantSummaryResources.AccountantSummary_AccountantName_Length );
+                .NotEmpty().WithMessage(AccountantSummaryResources.AccountantSummary_AccountantName_Required )
+                .Length(3, 30).WithMessage(AccountantSummaryResources.AccountantSummary_AccountantName_Length );
 
        
 

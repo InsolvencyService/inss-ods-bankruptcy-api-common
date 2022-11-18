@@ -15,22 +15,22 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.OtherAssets
         {
             RuleFor(x => x.Amount)
                 .NotEmpty()
-                .WithLocalizedMessage(() => SelfEmployedAssetsResources.OtherAssets_SelfEmployedAssets_Amount_Error_Required)
+                .WithMessage(SelfEmployedAssetsResources.OtherAssets_SelfEmployedAssets_Amount_Error_Required)
                 .When(x => !String.IsNullOrWhiteSpace(x.Description));
 
             RuleFor(x => x.Amount)
                 .Must(x => x > 0)
-                .WithLocalizedMessage(() => SelfEmployedAssetsResources.OtherAssets_SelfEmployedAssets_Amount_Error_Minimum)
+                .WithMessage(SelfEmployedAssetsResources.OtherAssets_SelfEmployedAssets_Amount_Error_Minimum)
                 .When(x => x.Amount != null);
 
             RuleFor(x => x.Description)
                 .NotEmpty()
-                .WithLocalizedMessage(() => SelfEmployedAssetsResources.OtherAssets_SelfEmployedAssets_Description_Error_Required)
+                .WithMessage(SelfEmployedAssetsResources.OtherAssets_SelfEmployedAssets_Description_Error_Required)
                 .When(x => x.Amount != null);
 
             RuleFor(x => x.Description)
                 .Must(x => x.Length <= 100)
-                .WithLocalizedMessage(() => SelfEmployedAssetsResources.OtherAssets_SelfEmployedAssets_Description_Error_MaxLength)
+                .WithMessage(SelfEmployedAssetsResources.OtherAssets_SelfEmployedAssets_Description_Error_MaxLength)
                 .When(x => !String.IsNullOrWhiteSpace(x.Description));
 
         }

@@ -18,7 +18,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
                 .Must(x => x != default(DateTime))
                 .WithMessage(emptyErrorMessage)
                 .Must(x => x >= minimumDate)
-                .WithMessage(minimumDateError, new String[] { minimumDate.ToString("dd/MM/yyyy")});
+                .WithMessage(x => $"{minimumDateError} { minimumDate.ToString("dd/MM/yyyy")}");
         }
     }
 }

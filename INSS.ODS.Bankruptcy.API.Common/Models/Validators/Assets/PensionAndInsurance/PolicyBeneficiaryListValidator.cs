@@ -16,7 +16,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
 
             RuleFor(x => x.PolicyBeneficiaries)
                 .Must(SumOfBeneficiarySharesIsValid)
-                .WithLocalizedMessage(() => OtherPolicyBeneficiariesResources.PensionAndInsurance_OtherPolicyBeneficiaries_Error_InvalidShares);
+                .WithMessage(OtherPolicyBeneficiariesResources.PensionAndInsurance_OtherPolicyBeneficiaries_Error_InvalidShares);
         }
 
         private bool SumOfBeneficiarySharesIsValid(IPolicyBeneficiaryList<T> instance, List<T> policyBeneficiaries)
