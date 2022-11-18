@@ -16,7 +16,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
         {
             RuleFor(x => x.Name)
                 .NotEmpty()
-                .WithLocalizedMessage(() => FinanceCompanyResources.Vehicle_FinanceCompany_Name_Error_Required);
+                .WithMessage(FinanceCompanyResources.Vehicle_FinanceCompany_Name_Error_Required);
         }
     }
 }

@@ -1,24 +1,20 @@
-using System.Runtime.Serialization;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
-using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
+using System.Runtime.Serialization;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models
+namespace INSS.ODS.Bankruptcy.API.Common.Models;
+
+
+[DataContract]
+public class ApplicationSubmissionQuestions : IApplicationSubmissionQuestions, ITableBase
 {
+    [DataMember]
+    public int Id { get; set; }
+    [DataMember]
+    public bool? IncludedDebtsFromAnotherApplication { get; set; }
+    [DataMember]
+    public bool? SpokenToDebtAdvisor { get; set; }
+    [DataMember]
+    public bool? AppliedForPAVOrder { get; set; }
 
-    [DataContract]
-    [Validator(typeof(ApplicationSubmissionQuestionsValidator))]
-    public class ApplicationSubmissionQuestions : IApplicationSubmissionQuestions, ITableBase
-    {
-        [DataMember]
-        public int Id { get; set; }
-        [DataMember]
-        public bool? IncludedDebtsFromAnotherApplication { get; set; }
-        [DataMember]
-        public bool? SpokenToDebtAdvisor { get; set; }
-        [DataMember]
-        public bool? AppliedForPAVOrder { get; set; }
-
-       
-    }
+   
 }

@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+public class FeeInfo
 {
-    public class FeeInfo
+    public string ApplicantEmail { get; set; }
+    public string ApplicantFirstName { get; set; }
+    public string ApplicantLastName { get; set; }
+    public bool IncludeAddress { get; set; }
+    public LegacyAddress ApplicantAddress { get; set; }
+    public decimal FeeAmount { get; set; }
+    public decimal AmountPaid { get; set; }
+    public decimal AmountOutstanding
     {
-        public string ApplicantEmail { get; set; }
-        public string ApplicantFirstName { get; set; }
-        public string ApplicantLastName { get; set; }
-        public bool IncludeAddress { get; set; }
-        public LegacyAddress ApplicantAddress { get; set; }
-        public decimal FeeAmount { get; set; }
-        public decimal AmountPaid { get; set; }
-        public decimal AmountOutstanding
-        {
-            get { return FeeAmount - AmountPaid; }
-        }
-        public string DroReference { get; set; }
-        public DateTime? LastPaymentUpdate { get; set; }
-        public List<KeyValuePair<string, decimal>> PaymentsByType { get; set; }
+        get { return FeeAmount - AmountPaid; }
     }
+    public string DroReference { get; set; }
+    public DateTime? LastPaymentUpdate { get; set; }
+    public List<KeyValuePair<string, decimal>> PaymentsByType { get; set; }
 }

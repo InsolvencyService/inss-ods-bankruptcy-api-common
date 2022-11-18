@@ -10,22 +10,18 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.CompanyPartnerships
     {
         public SummaryInterfaceValidator()
         {
+            var regex = RegularExpressions.PartnershipName1;
+
             RuleFor(x => x.PartnershipName)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => SummaryResources.Summary_PartnershipName_Required)
+                .WithMessage(SummaryResources.Summary_PartnershipName_Required)
                 .Must(partnershipname => HaveLengthGreaterThan(partnershipname, 0))
-                .WithLocalizedMessage(() => SummaryResources.Summary_PartnershipName_TooShort)
+                .WithMessage(SummaryResources.Summary_PartnershipName_TooShort)
                 .Must(partnershipname => HaveLengthLessThan(partnershipname, 100))
-                .WithLocalizedMessage(() => SummaryResources.Summary_PartnershipName_TooLong)
+                .WithMessage(SummaryResources.Summary_PartnershipName_TooLong)
                 .Matches(RegularExpressions.PartnershipName2)
-                .WithLocalizedMessage(() => SummaryResources.Summary_PartnershipName_Invalid,
-                    c =>
-                    {
-                        var regex = RegularExpressions.PartnershipName1;
-                        var matchedResult = Regex.Match(c.PartnershipName, regex);
-                        return matchedResult;
-                    });
+                .WithMessage(x => $"{SummaryResources.Summary_PartnershipName_Invalid} {Regex.Match(x.PartnershipName, regex)}");
         }
 
         private bool HaveLengthGreaterThan(string value, int length)

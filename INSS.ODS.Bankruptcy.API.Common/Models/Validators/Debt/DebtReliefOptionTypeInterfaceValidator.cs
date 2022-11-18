@@ -12,7 +12,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt
             RuleFor(x => x.DebtReliefOptionType)
             .Cascade(CascadeMode.StopOnFirstFailure)
             .NotEmpty()
-            .WithLocalizedMessage(() => DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Error_Empty);
+            .WithMessage(DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Error_Empty);
         }
     }
 }

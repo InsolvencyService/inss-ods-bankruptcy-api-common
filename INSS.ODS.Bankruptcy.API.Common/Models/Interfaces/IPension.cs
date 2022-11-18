@@ -3,7 +3,6 @@ using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 using INSS.ODS.Bankruptcy.API.Common.Resources;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using FluentValidation.Attributes;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models.Interfaces
 {

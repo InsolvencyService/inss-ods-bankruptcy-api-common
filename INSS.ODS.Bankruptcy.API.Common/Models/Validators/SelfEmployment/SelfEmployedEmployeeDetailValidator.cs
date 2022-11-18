@@ -17,7 +17,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.CompanyDirectorships
             RuleFor(x => x.MoneyOwed)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .WithLocalizedMessage(() => EmployeeDetailResources.EmployeeDetail_MoneyOwed_Required)
+                .WithMessage(EmployeeDetailResources.EmployeeDetail_MoneyOwed_Required)
                 .When(x => !x.MoneyOwed.HasValue);
 
         }

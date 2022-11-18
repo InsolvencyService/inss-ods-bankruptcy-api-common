@@ -9,10 +9,8 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         public CompanyPartnershipTradingAddressPartialValidator()
         {
             RuleFor(x => x.Address_1)
-                .NotEmpty().WithLocalizedMessage(
-                      () => CompanyPartnershipTradingAddressResources.CompanyPartnershipTradingAddress_Address1_Required)
-                .Length(1, 100).WithLocalizedMessage(
-                      () => CompanyPartnershipTradingAddressResources.CompanyPartnershipTradingAddress_Address1_Length);
+                .NotEmpty().WithMessage(CompanyPartnershipTradingAddressResources.CompanyPartnershipTradingAddress_Address1_Required)
+                .Length(1, 100).WithMessage(CompanyPartnershipTradingAddressResources.CompanyPartnershipTradingAddress_Address1_Length);
         }
     }
 }

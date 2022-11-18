@@ -14,13 +14,11 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
 
             RuleFor(r => r.AddressLine1)
             .NotEmpty()
-            .WithLocalizedMessage(
-            () => ForgottenApplicationNumberPostalResources.Application_ForgottenApplicationNumberPostal_AddressLine1_Error_Empty );
+            .WithMessage(ForgottenApplicationNumberPostalResources.Application_ForgottenApplicationNumberPostal_AddressLine1_Error_Empty );
 
             RuleFor(r => r.PostCode)
               .NotEmpty()
-              .WithLocalizedMessage(
-              () => ForgottenApplicationNumberPostalResources.Application_ForgottenApplicationNumberPostal_Postcode_Error_Empty);
+              .WithMessage(ForgottenApplicationNumberPostalResources.Application_ForgottenApplicationNumberPostal_Postcode_Error_Empty);
 
 
         }

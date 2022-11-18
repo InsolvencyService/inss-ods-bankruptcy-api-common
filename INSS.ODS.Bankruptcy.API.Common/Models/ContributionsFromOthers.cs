@@ -1,44 +1,41 @@
-﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
-using System;
-using System.ComponentModel.DataAnnotations;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Helpers;
+using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
-using INSS.ODS.Bankruptcy.API.Common.Models.Helpers;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models
+namespace INSS.ODS.Bankruptcy.API.Common.Models;
+
+[DataContract]
+public class ContributionsFromOthers : ITableBase, IContributionsFromOthers
 {
-    [DataContract]
-    public class ContributionsFromOthers : ITableBase, IContributionsFromOthers
+    [DataMember]
+    public int Id { get; set; }
+
+    [DataMember]
+    public decimal? HouseholdPersonContribution { get; set; }
+
+    [DataMember]
+    public string HouseholdPersonContribution_Frequency { get; set; }
+
+
+    [NotMapped]
+    public decimal? Total
     {
-        [DataMember]
-        public int Id { get; set; }
-
-        [DataMember]
-        public decimal? HouseholdPersonContribution { get; set; }
-
-        [DataMember]
-        public string HouseholdPersonContribution_Frequency { get; set; }
-
-
-        [NotMapped]
-        public decimal? Total
+        get
         {
-            get
-            {
-                if (IsNotStarted) { return null; }
+            if (IsNotStarted) { return null; }
 
-                return
-                    ValueFrequencyNormalisation.Normalise(HouseholdPersonContribution,
-                        HouseholdPersonContribution_Frequency);
+            return
+                ValueFrequencyNormalisation.Normalise(HouseholdPersonContribution,
+                    HouseholdPersonContribution_Frequency);
 
-            }
         }
-
-        [NotMapped]
-        public bool IsNotStarted
-        {
-            get { return HouseholdPersonContribution == null; }
-        }
-
     }
+
+    [NotMapped]
+    public bool IsNotStarted
+    {
+        get { return HouseholdPersonContribution == null; }
+    }
+
 }

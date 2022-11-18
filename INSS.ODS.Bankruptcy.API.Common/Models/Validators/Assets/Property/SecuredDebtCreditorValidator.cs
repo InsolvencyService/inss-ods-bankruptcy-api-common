@@ -15,7 +15,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(r => r.CreditorName)
            .NotEmpty()
-           .WithLocalizedMessage(() => SecuredDebtResources.Property_SecuredDebt_CreditorName_Error_Empty);
+           .WithMessage(SecuredDebtResources.Property_SecuredDebt_CreditorName_Error_Empty);
 
             RuleFor(x => x.CreditorAddress)
                 .SetValidator(new AddressValidator());

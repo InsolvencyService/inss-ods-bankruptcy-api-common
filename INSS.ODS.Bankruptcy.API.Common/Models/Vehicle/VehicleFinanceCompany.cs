@@ -1,5 +1,4 @@
-﻿using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.Vehicle;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle;
 using System;
@@ -12,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models.Vehicle
 {    
-    [Validator(typeof(FinanceCompanyValidator))]
     [DataContract]
     public class VehicleFinanceCompany : IVehicleFinanceCompany, ITableBase
     {

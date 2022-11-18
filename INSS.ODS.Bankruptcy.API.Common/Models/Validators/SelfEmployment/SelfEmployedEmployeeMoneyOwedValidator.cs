@@ -12,14 +12,12 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.CompanyDirectorships
         public SelfEmployedEmployeeMoneyOwedValidator()
         {
             RuleFor(x => x.Reason )
-             .NotEmpty().WithLocalizedMessage(
-                   () => MoneyOwedResources.MoneyOwed_Reason_Required)
-             .Length(1, 100).WithLocalizedMessage(
-                   () => MoneyOwedResources.MoneyOwed_Reason_Length);
+             .NotEmpty().WithMessage(MoneyOwedResources.MoneyOwed_Reason_Required)
+             .Length(1, 100).WithMessage(MoneyOwedResources.MoneyOwed_Reason_Length);
 
             RuleFor(x => x.Amount)
                .Must(x => x > 0)
-               .WithLocalizedMessage(() => MoneyOwedResources.MoneyOwed_Amount_Required);
+               .WithMessage(MoneyOwedResources.MoneyOwed_Amount_Required);
 
             RuleFor(x => x.Amount).SetValidator(new CurrencyValidator());
 

@@ -11,11 +11,11 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(x => x.Amount)
              .NotEmpty()
-             .WithLocalizedMessage(() => BeneficialInterestResources.Property_BeneficialInterest_Amount_Error_Mandatory)
+             .WithMessage(BeneficialInterestResources.Property_BeneficialInterest_Amount_Error_Mandatory)
              .InclusiveBetween(1, decimal.MaxValue)
-             .WithLocalizedMessage(() => BeneficialInterestResources.Property_BeneficialInterest_Amount_Error_PositiveOnly)
-             .SetValidator(new ScalePrecisionValidator(2, 99,
-               () => BeneficialInterestResources.Property_BeneficialInterest_Amount_Error_DecimalPlaces));
+             .WithMessage(BeneficialInterestResources.Property_BeneficialInterest_Amount_Error_PositiveOnly)
+             .ScalePrecision(2, 99)
+             .WithMessage(BeneficialInterestResources.Property_BeneficialInterest_Amount_Error_DecimalPlaces);
         }         
     }
 }

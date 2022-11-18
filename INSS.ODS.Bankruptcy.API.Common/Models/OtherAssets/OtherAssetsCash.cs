@@ -1,5 +1,4 @@
-﻿using FluentValidation.Attributes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,7 +12,6 @@ using INSS.ODS.Bankruptcy.API.Common.Models.Validators.OtherAssets;
 namespace INSS.ODS.Bankruptcy.API.Common.Models.OtherAssets
 {
     [DataContract]
-    [Validator(typeof(OtherAssetsCashValidator))]
     public class OtherAssetsCash : ITableBase, IOtherAssetsCash
     {
         [DataMember]

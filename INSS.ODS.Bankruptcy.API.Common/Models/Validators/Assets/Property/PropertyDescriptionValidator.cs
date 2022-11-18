@@ -11,30 +11,30 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(r => r.PropertyType)
                 .NotEmpty()
-                .WithLocalizedMessage(() => PropertyDescriptionResources.Property_PropertyDescription_PropertyType_Error_Required);
+                .WithMessage(PropertyDescriptionResources.Property_PropertyDescription_PropertyType_Error_Required);
 
             RuleFor(r => r.PropertyType)
               .Must(x => false)              
               .When(x => (String.IsNullOrWhiteSpace(x.OtherPropertyType)
                     && x.PropertyType == PropertyDescriptionResources.Property_PropertyDescription_PropertyType_Other))
-              .WithLocalizedMessage(() => PropertyDescriptionResources.Property_PropertyDescription_PropertyTypeOtherField_Error_Required);
+              .WithMessage(PropertyDescriptionResources.Property_PropertyDescription_PropertyTypeOtherField_Error_Required);
 
             RuleFor(x => x.PropertyType)
                 .Must(x => false)
                 .When(x => !string.IsNullOrWhiteSpace(x.OtherPropertyType)
                     && (x.OtherPropertyType.Trim().Length < 3 || x.OtherPropertyType.Trim().Length > 60)
                     && (x.PropertyType == PropertyDescriptionResources.Property_PropertyDescription_PropertyType_Other))
-                    .WithLocalizedMessage(() => PropertyDescriptionResources.Property_PropertyDescription_PropertyTypeOtherField_Error_Length);
+                    .WithMessage(PropertyDescriptionResources.Property_PropertyDescription_PropertyTypeOtherField_Error_Length);
 
             RuleFor(r => r.OwnershipType)
                     .NotEmpty()
-                    .WithLocalizedMessage(() => PropertyDescriptionResources.Property_PropertyDescription_OwnershipType_Error_Required);
+                    .WithMessage(PropertyDescriptionResources.Property_PropertyDescription_OwnershipType_Error_Required);
 
             RuleFor(r => r.BedroomCount)
                     .NotEmpty()
-                    .WithLocalizedMessage(() => PropertyDescriptionResources.Property_PropertyDescription_BedRoomCount_Error_Required)
+                    .WithMessage(PropertyDescriptionResources.Property_PropertyDescription_BedRoomCount_Error_Required)
                     .InclusiveBetween(1,999)
-                    .WithLocalizedMessage(() => PropertyDescriptionResources.Property_PropertyDescription_BedRoomCount_Error_InvalidEntry);
+                    .WithMessage(PropertyDescriptionResources.Property_PropertyDescription_BedRoomCount_Error_InvalidEntry);
            
 
             RuleFor(r => r.WhoLivesInProperty_FieldsetStart)
@@ -44,7 +44,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
                         && x.WhoLivesSpouse ==  false
                         && x.WhoLivesTenant == false
                         && x.WhoLivesYou == false )
-                    .WithLocalizedMessage(() => PropertyDescriptionResources.Property_PropertyDescription_WhoLives_Error_Required);            
+                    .WithMessage(PropertyDescriptionResources.Property_PropertyDescription_WhoLives_Error_Required);            
         }
     }
 }

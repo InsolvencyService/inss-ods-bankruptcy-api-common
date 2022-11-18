@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
-using FluentValidation.Attributes;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.Debt;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt;
@@ -9,7 +8,6 @@ using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt;
 namespace INSS.ODS.Bankruptcy.API.Common.Models.Debt
 {
     [DataContract]
-    [Validator(typeof(PreferentialPaymentDetailInterfaceValidator))]
     public class PreferentialPaymentDetail : IPreferentialPaymentDetail, ITableBase
     {
         [DataMember]

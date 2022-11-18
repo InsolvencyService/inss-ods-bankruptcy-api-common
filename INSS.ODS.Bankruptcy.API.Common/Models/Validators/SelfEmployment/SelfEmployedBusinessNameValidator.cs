@@ -11,10 +11,8 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         public SelfEmployedBusinessNameValidator()
         {
             RuleFor(x => x.BusinessName)
-                .NotEmpty().WithLocalizedMessage(
-                      () => SelfEmployedBusinessDetailsResources.SelfEmployedBusinessDetails_BusinessName_Required)
-                .Length(1, 100).WithLocalizedMessage(
-                      () => SelfEmployedBusinessDetailsResources.SelfEmployedBusinessDetails_BusinessName_Length);
+                .NotEmpty().WithMessage(SelfEmployedBusinessDetailsResources.SelfEmployedBusinessDetails_BusinessName_Required)
+                .Length(1, 100).WithMessage(SelfEmployedBusinessDetailsResources.SelfEmployedBusinessDetails_BusinessName_Length);
         }
     }
 }

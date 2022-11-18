@@ -15,7 +15,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(r => r.ProviderName)
             .NotEmpty()
-            .WithLocalizedMessage(() => SelectPolicyProviderResources.PensionAndInsurance_SelectPolicyProvider_SelectedProvider_Error_Empty);
+            .WithMessage(SelectPolicyProviderResources.PensionAndInsurance_SelectPolicyProvider_SelectedProvider_Error_Empty);
 
     
             RuleFor(x => x.ProviderAddress)

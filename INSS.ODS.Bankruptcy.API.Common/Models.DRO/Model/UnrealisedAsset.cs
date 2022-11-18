@@ -1,11 +1,10 @@
-﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public class UnrealisedAsset
 {
-    public class UnrealisedAsset
-    {
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        public string Description { get; set; }
+    public string Description { get; set; }
 
-        public decimal? Value { get; set; }
-    }
+    public decimal? Value { get; set; }
 }

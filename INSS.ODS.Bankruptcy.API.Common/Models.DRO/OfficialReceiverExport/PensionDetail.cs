@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Serialization;
+namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.OfficialReceiverExport;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.OfficialReceiverExport
+public class PensionDetail
 {
-    public class PensionDetail
-    {
-        public string ProviderName { get; set; }
-        public Address ProviderAddress { get; set; }
-        public string PolicyNumber { get; set; }
-        public bool? IsApprovedPension { get; set; }
-        public bool? IsCurrentEmployerPension { get; set; }
-        
-    }
+    public string ProviderName { get; set; }
+    public Address ProviderAddress { get; set; }
+    public string PolicyNumber { get; set; }
+    public bool? IsApprovedPension { get; set; }
+    public bool? IsCurrentEmployerPension { get; set; }
+    
 }

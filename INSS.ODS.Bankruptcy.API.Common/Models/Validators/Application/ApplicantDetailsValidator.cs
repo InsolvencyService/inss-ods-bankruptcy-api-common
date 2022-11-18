@@ -26,22 +26,22 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
                 StartResources.Application_Start_DateOfBirth_Error_MinimumDate
                 ))
                 .Must(x => x.AddYears(18) <= DateTime.Today)
-                .WithLocalizedMessage(() => StartResources.Application_Start_DateOfBirth_Error_MinimumAge, new object[]{ 18 });
+                .WithMessage(x => $"{StartResources.Application_Start_DateOfBirth_Error_MinimumAge} : {new object[] { 18 }}");
 
 
             RuleFor(x => x.ConfirmEmail)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .WithLocalizedMessage(() => StartResources.Application_Start_ConfirmEmail_Error_Empty)
+                .WithMessage(StartResources.Application_Start_ConfirmEmail_Error_Empty)
                 .NotEmpty()
-                .WithLocalizedMessage(() => StartResources.Application_Start_ConfirmEmail_Error_Empty)
+                .WithMessage(StartResources.Application_Start_ConfirmEmail_Error_Empty)
             .When(x => !String.IsNullOrEmpty(x.Email));
 
 
             RuleFor(x => x.ConfirmEmail)
                 .Must(x => false)
                 .When(x => !String.IsNullOrEmpty(x.ConfirmEmail) && !String.IsNullOrEmpty(x.Email) && x.Email != x.ConfirmEmail)
-                .WithLocalizedMessage(() => StartResources.Application_Start_ConfirmEmail_Error_EmailMismatch);
+                .WithMessage(StartResources.Application_Start_ConfirmEmail_Error_EmailMismatch);
 
 
 
@@ -49,7 +49,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
                 .Cascade(CascadeMode.StopOnFirstFailure)
                    .Must(x => String.IsNullOrEmpty(x))
                   .When(x => String.IsNullOrEmpty(x.Email))
-                  .WithLocalizedMessage(() => StartResources.Application_Start_ConfirmEmail_Error_Not_Madatory);
+                  .WithMessage(StartResources.Application_Start_ConfirmEmail_Error_Not_Madatory);
 
         }
     }

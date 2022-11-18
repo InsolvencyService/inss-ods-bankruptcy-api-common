@@ -1,104 +1,114 @@
-using System;
 using FluentValidation.TestHelper;
 using INSS.ODS.Bankruptcy.API.Common.Models.Debt;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.Debt
+namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.Debt;
+
+[TestClass]
+public class PreferentialPaymentDetailTest
 {
-    [TestClass]
-    public class PreferentialPaymentDetailTest
+    private PreferentialPaymentDetailInterfaceValidator _validator;
+
+    [TestInitialize]
+    public void Setup()
     {
-        private PreferentialPaymentDetailInterfaceValidator _validator;
+        _validator = new PreferentialPaymentDetailInterfaceValidator();
+    }
 
-        [TestInitialize]
-        public void Setup()
+    [TestMethod]
+    [TestCategory("PreferentialPaymentDetail")]
+    public void PreferentialPaymentDetail_MissingFields()
+    {
+        var model = new PreferentialPaymentDetail();
+
+        var validationResult = _validator.TestValidate(model);
+
+        validationResult.ShouldHaveValidationErrorFor(x => x.PaymentAmount);
+        validationResult.ShouldHaveValidationErrorFor(x => x.PaymentDate);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.AssetName);
+    }
+
+    [TestMethod]
+    [TestCategory("PreferentialPaymentDetail")]
+    public void PreferentialPaymentDetail_PaymentDate_ShouldErrorOnInvalidValue()
+    {
+        var model = new PreferentialPaymentDetail();
+
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.PaymentDate);
+
+        model.PaymentDate = DateTime.Now.AddYears(1);
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.PaymentDate);
+    }
+
+    [TestMethod]
+    [TestCategory("PreferentialPaymentDetail")]
+    public void PreferentialPaymentDetail_PaymentDate_ShouldPassOnValidValue()
+    {
+        var model = new PreferentialPaymentDetail();
+
+        model.PaymentDate = DateTime.Now.AddYears(-1);
+        var validationResult = _validator.TestValidate(model);
+
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.PaymentDate);
+    }
+
+    [TestMethod]
+    [TestCategory("PreferentialPaymentDetail")]
+    public void PreferentialPaymentDetail_PaymentAmount_ShouldErrorOnInvalidValue()
+    {
+        var model = new PreferentialPaymentDetail();
+
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.PaymentAmount);
+
+        model.PaymentAmount = -100;
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.PaymentAmount);
+    }
+
+    [TestMethod]
+    [TestCategory("PreferentialPaymentDetail")]
+    public void PreferentialPaymentDetail_PaymentAmount_ShouldPassOnValidValue()
+    {
+        var model = new PreferentialPaymentDetail()
         {
-            _validator = new PreferentialPaymentDetailInterfaceValidator();
-        }
+            PaymentAmount = 200
+        };
 
-        [TestMethod]
-        [TestCategory("PreferentialPaymentDetail")]
-        public void PreferentialPaymentDetail_MissingFields()
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.PaymentAmount);
+    }
+
+    [TestMethod]
+    [TestCategory("PreferentialPaymentDetail")]
+    public void PreferentialPaymentDetail_AssetName_ShouldErrorOnInvalidValue()
+    {
+        var model = new PreferentialPaymentDetail()
         {
-            var model = new PreferentialPaymentDetail();
+            AssetName = "ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJA"
+        };
 
-            _validator.ShouldHaveValidationErrorFor(x => x.PaymentAmount, model);
-            _validator.ShouldHaveValidationErrorFor(x => x.PaymentDate, model);
-            _validator.ShouldNotHaveValidationErrorFor(x => x.AssetName, model);
-        }
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.AssetName);
 
-        [TestMethod]
-        [TestCategory("PreferentialPaymentDetail")]
-        public void PreferentialPaymentDetail_PaymentDate_ShouldErrorOnInvalidValue()
+
+        model.AssetName = "A";
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.AssetName);
+    }
+
+    [TestMethod]
+    [TestCategory("PreferentialPaymentDetail")]
+    public void PreferentialPaymentDetail_AssetName_ShouldPassOnValidValue()
+    {
+        var model = new PreferentialPaymentDetail()
         {
-            var model = new PreferentialPaymentDetail();
+            AssetName = "TV"
+        };
 
-            _validator.ShouldHaveValidationErrorFor(x => x.PaymentDate, model);
-
-            model.PaymentDate = DateTime.Now.AddYears(1);
-            _validator.ShouldHaveValidationErrorFor(x => x.PaymentDate, model);
-        }
-
-        [TestMethod]
-        [TestCategory("PreferentialPaymentDetail")]
-        public void PreferentialPaymentDetail_PaymentDate_ShouldPassOnValidValue()
-        {
-            var model = new PreferentialPaymentDetail();
-
-            model.PaymentDate = DateTime.Now.AddYears(-1);
-            _validator.ShouldNotHaveValidationErrorFor(x => x.PaymentDate, model);
-        }
-
-        [TestMethod]
-        [TestCategory("PreferentialPaymentDetail")]
-        public void PreferentialPaymentDetail_PaymentAmount_ShouldErrorOnInvalidValue()
-        {
-            var model = new PreferentialPaymentDetail();
-
-            _validator.ShouldHaveValidationErrorFor(x => x.PaymentAmount, model);
-
-            model.PaymentAmount = -100;
-            _validator.ShouldHaveValidationErrorFor(x => x.PaymentAmount, model);
-        }
-
-        [TestMethod]
-        [TestCategory("PreferentialPaymentDetail")]
-        public void PreferentialPaymentDetail_PaymentAmount_ShouldPassOnValidValue()
-        {
-            var model = new PreferentialPaymentDetail()
-            {
-                PaymentAmount = 200
-            };
-
-            _validator.ShouldNotHaveValidationErrorFor(x => x.PaymentAmount, model);
-        }
-
-        [TestMethod]
-        [TestCategory("PreferentialPaymentDetail")]
-        public void PreferentialPaymentDetail_AssetName_ShouldErrorOnInvalidValue()
-        {
-            var model = new PreferentialPaymentDetail()
-            {
-                AssetName = "ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJA"
-            };
-
-            _validator.ShouldHaveValidationErrorFor(x => x.AssetName, model);
-
-            model.AssetName = "A";
-            _validator.ShouldHaveValidationErrorFor(x => x.AssetName, model);
-        }
-
-        [TestMethod]
-        [TestCategory("PreferentialPaymentDetail")]
-        public void PreferentialPaymentDetail_AssetName_ShouldPassOnValidValue()
-        {
-            var model = new PreferentialPaymentDetail()
-            {
-                AssetName = "TV"
-            };
-
-            _validator.ShouldNotHaveValidationErrorFor(x => x.AssetName, model);
-        }
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.AssetName);
     }
 }

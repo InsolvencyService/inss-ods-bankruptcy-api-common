@@ -33,7 +33,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
                 .NotEmpty()
                 .WithMessage(emptyErrorMessage)
                 .Length(NameValidationConstants.LastName_MinSize, NameValidationConstants.LastName_MaxSize)
-                .WithMessage(maxLengthErrorMessage, new object[] { NameValidationConstants.LastName_MaxSize + 1 })
+                .WithMessage(x => $"{maxLengthErrorMessage} { NameValidationConstants.LastName_MaxSize + 1 }")
                 .Matches(RegularExpressions.LastName_ValidPattern)
                 .WithMessage(invalidErrorMessage);
         }

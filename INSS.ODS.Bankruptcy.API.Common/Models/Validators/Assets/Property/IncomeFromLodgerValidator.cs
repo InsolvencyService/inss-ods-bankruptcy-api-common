@@ -10,18 +10,17 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         public IncomeFromLodgerValidator()
         {
             RuleFor(x => x.IncomeAmount)
-            .NotEmpty().WithLocalizedMessage(() => IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_Mandatory)
+            .NotEmpty().WithMessage(IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_Mandatory)
             .GreaterThan(0)
-            .WithLocalizedMessage(() => IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_PositiveValueOnly)
+            .WithMessage(IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_PositiveValueOnly)
             .LessThan(decimal.MaxValue)
-            .WithLocalizedMessage(() => IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_EnterLessValue)
-            .SetValidator(new ScalePrecisionValidator(2, 99,
-            () => IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_Scale));
+            .WithMessage(IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_EnterLessValue)
+            .ScalePrecision(2, 99).WithMessage(IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_Scale);
 
             RuleFor(x => x.IncomeAmount)
                 .Must(x => false)
                 .When(x => CheckAmountFieldInputType(x.IncomeAmount.ToString()) == false && !string.IsNullOrEmpty(x.IncomeAmount.ToString()))
-                .WithLocalizedMessage(() => IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_NumberDecimalOnly);
+                .WithMessage(IncomeFromTenantResources.Property_IncomeFromTenant_Amount_Error_NumberDecimalOnly);
         }
 
         private bool CheckAmountFieldInputType(string amount)

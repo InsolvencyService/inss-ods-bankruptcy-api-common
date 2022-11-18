@@ -13,23 +13,23 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(r => r.BankName)
             .NotEmpty()
-            .WithLocalizedMessage(() => BankDetailsResources.BankAccount_BankDetails_BankName_Error_Mandatory);
+            .WithMessage(BankDetailsResources.BankAccount_BankDetails_BankName_Error_Mandatory);
 
             RuleFor(r => r.AddressLine1)
                 .NotEmpty()
-                .WithLocalizedMessage(() => BankDetailsResources.BankAccount_BankDetails_AddressLine1_Error_Mandatory);
+                .WithMessage(BankDetailsResources.BankAccount_BankDetails_AddressLine1_Error_Mandatory);
 
             RuleFor(r => r.PostCode)
              .NotEmpty()
-             .WithLocalizedMessage(() => BankDetailsResources.BankAccount_BankDetails_PostCode_Error_Mandatory)
+             .WithMessage(BankDetailsResources.BankAccount_BankDetails_PostCode_Error_Mandatory)
              .Length(1, 11)
-             .WithLocalizedMessage(() => BankDetailsResources.BankAccount_BankDetails_PostCode_Error_MaxLength)
+             .WithMessage(BankDetailsResources.BankAccount_BankDetails_PostCode_Error_MaxLength)
              .Matches(regExAlphanumericAndSpaces)
-             .WithLocalizedMessage(() => BankDetailsResources.BankAccount_BankDetails_PostCode_Error_SpecialCharacters);
+             .WithMessage(BankDetailsResources.BankAccount_BankDetails_PostCode_Error_SpecialCharacters);
 
             RuleFor(r => r.Country)
              .NotEmpty()
-             .WithLocalizedMessage(() => BankDetailsResources.BankAccount_BankDetails_Country_Error_Mandatory);
+             .WithMessage(BankDetailsResources.BankAccount_BankDetails_Country_Error_Mandatory);
         }
     }
 }

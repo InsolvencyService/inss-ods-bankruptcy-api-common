@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+public enum MessageType
 {
-    public enum MessageType
-    {
-        DroWithheldAddressNotification,
-        DroAttachmentOfEarningsNotification
-    }
+    DroWithheldAddressNotification,
+    DroAttachmentOfEarningsNotification
 }

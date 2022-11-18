@@ -1,9 +1,8 @@
-﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum DebtManagementPlanType
 {
-    public enum DebtManagementPlanType
-    {
-        No,
-        DebtManagementPlan,
-        CountyCourtAdministrationOrder
-    }
+    No,
+    DebtManagementPlan,
+    CountyCourtAdministrationOrder
 }

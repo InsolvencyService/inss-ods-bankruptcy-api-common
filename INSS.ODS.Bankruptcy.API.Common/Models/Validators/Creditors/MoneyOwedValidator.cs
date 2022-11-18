@@ -18,8 +18,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors
 
             RuleFor(r => r.IsMoneyOwed)
                       .NotEmpty()
-                      .WithLocalizedMessage(
-                      () => MoneyOwedResources.Creditors_MoneyOwed_MoneyOwed_Required);
+                      .WithMessage(MoneyOwedResources.Creditors_MoneyOwed_MoneyOwed_Required);
 
           
         }

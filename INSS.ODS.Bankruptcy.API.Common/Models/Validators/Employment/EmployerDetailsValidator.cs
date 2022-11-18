@@ -12,24 +12,23 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
 
             RuleFor(x => x.EmployerName)
-               .NotEmpty().WithLocalizedMessage(
-                      () => EmployersDetailsResources.Employment_EmployersDetails_EmployersName_Required);
+               .NotEmpty().WithMessage(EmployersDetailsResources.Employment_EmployersDetails_EmployersName_Required);
             RuleFor(x => x.EmployerAddress).SetValidator(new AddressValidator());
 
             RuleFor(x => x.DateStarted)
                 .NotNull()
                 .Must(BeAValidDate)
-                .WithLocalizedMessage(() => EmployersDetailsResources.Employment_EmployersDetails_DateStarted_Required)
+                .WithMessage(EmployersDetailsResources.Employment_EmployersDetails_DateStarted_Required)
                 .Must(x => x.Value >= new DateTime(1900, 1, 1))
-                .WithLocalizedMessage(() => EmployersDetailsResources.Employment_EmployersDetails_DateStarted_Error_MinimumDate)
+                .WithMessage(EmployersDetailsResources.Employment_EmployersDetails_DateStarted_Error_MinimumDate)
                 .LessThanOrEqualTo(DateTime.Today)
-                .WithLocalizedMessage(() => EmployersDetailsResources.Employment_EmployersDetails_DateStarted_Error_MaximumDate);
+                .WithMessage(EmployersDetailsResources.Employment_EmployersDetails_DateStarted_Error_MaximumDate);
 
             RuleFor(m => m.DateStopped)
                 .GreaterThan(m => m.DateStarted.Value)
-                .WithLocalizedMessage(() => EmployersDetailsResources.Employment_EmployersDetails_DateStopped_Before_DateStarted_Error)
+                .WithMessage(EmployersDetailsResources.Employment_EmployersDetails_DateStopped_Before_DateStarted_Error)
                 .LessThanOrEqualTo(DateTime.Today)
-                .WithLocalizedMessage(() => EmployersDetailsResources.Employment_EmployersDetails_DateStopped_Error_MaximumDate)
+                .WithMessage(EmployersDetailsResources.Employment_EmployersDetails_DateStopped_Error_MaximumDate)
                 .When(m => m.DateStarted.HasValue && m.DateStopped.HasValue);
         }
 

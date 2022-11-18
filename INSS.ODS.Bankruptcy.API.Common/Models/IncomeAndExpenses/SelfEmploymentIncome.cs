@@ -1,4 +1,3 @@
-using FluentValidation.Attributes;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using System;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
-    [Validator(typeof(SelfEmploymentIncomeValidator))]
     [DataContract]
     public class SelfEmploymentIncome : ITableBase, ISelfEmploymentIncome
     {

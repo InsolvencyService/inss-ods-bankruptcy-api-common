@@ -11,7 +11,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.OtherAssets
             RuleFor(x => x.Amount)
                 .Must(x => x > 0)
                 .When(x => x.Amount.HasValue)
-                .WithLocalizedMessage(() => CashResources.OtherAssets_Cash_Amount_Error_Minimum);
+                .WithMessage(CashResources.OtherAssets_Cash_Amount_Error_Minimum);
 
             RuleFor(x => x.Amount).SetValidator(new CurrencyValidator());
 

@@ -20,20 +20,17 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
 
             RuleFor(r => r.IncludedDebtsFromAnotherApplication)
                      .NotEmpty()
-                      .WithLocalizedMessage(
-                      () => ContinueToSubmitResources.Application_ContinueToSubmit_OtherApplications_Required);
+                      .WithMessage(ContinueToSubmitResources.Application_ContinueToSubmit_OtherApplications_Required);
 
 
 
             RuleFor(r => r.SpokenToDebtAdvisor)
                      .NotEmpty()
-                     .WithLocalizedMessage(
-                     () => ContinueToSubmitResources.Application_ContinueToSubmit_DebtAdvisor_Required);
+                     .WithMessage(ContinueToSubmitResources.Application_ContinueToSubmit_DebtAdvisor_Required);
 
             RuleFor(r => r.AppliedForPAVOrder)
                      .NotEmpty()
-                     .WithLocalizedMessage(
-                     () => ContinueToSubmitResources.Application_ContinueToSubmit_PAV_Required);
+                     .WithMessage(ContinueToSubmitResources.Application_ContinueToSubmit_PAV_Required);
 
 
 

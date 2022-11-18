@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
-using FluentValidation.Attributes;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 using INSS.ODS.Bankruptcy.API.Common.Resources.Personal;
 
@@ -12,7 +11,6 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
     [Serializable]
     [DataContract]
-    [Validator(typeof(ContactDetailsValidator))]
     public class ContactDetails : ITableBase, IContactDetails
     {
         [DataMember]

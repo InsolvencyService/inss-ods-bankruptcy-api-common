@@ -15,12 +15,11 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
         public OwnVehicleValidator()
         {
             RuleFor(x => x.Price)
-                .NotEmpty().WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Worth_Error_Required)
-                //.InclusiveBetween(0, decimal.MaxValue).WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Worth_Error_PositveValueOnly)
-                .SetValidator(new ScalePrecisionValidator(2, 99, () => OwnVehicleResources.Vehicle_OwnVehicle_Worth_Error_DecimalPlaces))
+                .NotEmpty().WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Worth_Error_Required)
+                //.InclusiveBetween(0, decimal.MaxValue).WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Worth_Error_PositveValueOnly)
+                .ScalePrecision(2, 99).WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Worth_Error_DecimalPlaces)
                 .GreaterThan(0)
-                .WithLocalizedMessage(
-                    () => OwnVehicleResources.Vehicle_OwnVehicle_Worth_Error_AboveZero);
+                .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Worth_Error_AboveZero);
 
             RuleFor(r => r.VehicleUses)
                 .Must(x => false)
@@ -29,20 +28,20 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
                     && x.UsageAsToSchool == false
                     && x.UsageAsWorkCommute == false
                     && x.UsageOther == false)
-                .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_Purpose_Error_Required);
+                .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_Purpose_Error_Required);
 
             RuleFor(x => x.VehicleUses)
                 .Must(x => false)
                 .When(x => !string.IsNullOrWhiteSpace(x.UsageOtherText)
                     && (x.UsageOtherText.Trim().Length < 3 || x.UsageOtherText.Trim().Length > 100)
                     && (x.UsageOther == true))
-                .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_UsageOtherText_Error_Length);
+                .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_UsageOtherText_Error_Length);
 
             RuleFor(x => x.VehicleUses)
                 .Must(x => false)
                 .When(x => string.IsNullOrWhiteSpace(x.UsageOtherText)
                     && (x.UsageOther == true))
-                .WithLocalizedMessage(() => OwnVehicleResources.Vehicle_OwnVehicle_UsageOtherText_Error_Required);
+                .WithMessage(OwnVehicleResources.Vehicle_OwnVehicle_UsageOtherText_Error_Required);
         }
     }
 }

@@ -17,8 +17,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors
         {
             RuleFor(r => r.TypeOfAction)
             .NotNull()
-            .WithLocalizedMessage(
-            () => TypeOfActionTakenResources.Creditors_TypeOfAction_ActionType_Required_Error);
+            .WithMessage(TypeOfActionTakenResources.Creditors_TypeOfAction_ActionType_Required_Error);
 
 
 

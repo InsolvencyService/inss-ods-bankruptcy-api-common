@@ -15,19 +15,19 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
             RuleFor(x => x.Relationship)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .WithLocalizedMessage(() => PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_Relationship_Error_Empty)
+                .WithMessage(PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_Relationship_Error_Empty)
                 .NotEmpty()
-                .WithLocalizedMessage(() => PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_Relationship_Error_Empty)
+                .WithMessage(PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_Relationship_Error_Empty)
                 .Length(3, 60)
-                .WithLocalizedMessage(() => PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_RelationshipOther_Error_InvalidLength)
+                .WithMessage(PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_RelationshipOther_Error_InvalidLength)
                 .Must(OtherTextNotEmpty)
-                .WithLocalizedMessage(() => PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_RelationshipOther_Error_Empty)
+                .WithMessage(PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_RelationshipOther_Error_Empty)
                 .Must(OtherTextValidLength)
-                .WithLocalizedMessage(() => PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_RelationshipOther_Error_InvalidLength);
+                .WithMessage(PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_RelationshipOther_Error_InvalidLength);
 
             RuleFor(x => x.BeneficiaryShare)
                 .GreaterThanOrEqualTo(1.00)
-                .WithLocalizedMessage(() => PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_RelationshipOther_Error_YourShareTooLow)
+                .WithMessage(PolicyBeneficiaryDetailResources.PensionAndInsurance_PolicyBeneficiaryDetail_RelationshipOther_Error_YourShareTooLow)
                 .When(r => r.IsSelf);
         }
         private bool OtherTextNotEmpty(IPolicyBeneficiaryDetail instance, string relationship)

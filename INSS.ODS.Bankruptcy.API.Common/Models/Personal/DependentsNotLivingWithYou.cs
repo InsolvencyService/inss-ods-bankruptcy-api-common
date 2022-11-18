@@ -1,4 +1,3 @@
-using FluentValidation.Attributes;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 using INSS.ODS.Bankruptcy.API.Common.Resources.Personal;
@@ -10,7 +9,6 @@ using System.Runtime.Serialization;
 namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
     [DataContract]
-    [Validator(typeof(DependentsNotLivingWithYouValidator<Address>))]
     public class DependentsNotLivingWithYou : ITableBase, IDependentsNotLivingWithYou<Address>
     {
         [DataMember]

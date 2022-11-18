@@ -17,8 +17,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors
         {
             RuleFor(r => r.ActionValue)
             .NotEmpty()
-            .WithLocalizedMessage(
-            () => CreditorActionResources.Creditors_CreditorAction_Required_Error);
+            .WithMessage(CreditorActionResources.Creditors_CreditorAction_Required_Error);
 
 
 

@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.Constants;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models.Constants
+public static class NameValidationConstants
 {
-    public static class NameValidationConstants
-    {
-        public const int FirstName_MinSize = 1;
-        public const int FirstName_MaxSize = 70;
+    public const int FirstName_MinSize = 1;
+    public const int FirstName_MaxSize = 70;
 
 
-        public const int MiddleName_MinSize = 0;
-        public const int MiddleName_MaxSize = 70;
+    public const int MiddleName_MinSize = 0;
+    public const int MiddleName_MaxSize = 70;
 
 
-        public const int LastName_MinSize = 1;
-        public const int LastName_MaxSize = 35;
+    public const int LastName_MinSize = 1;
+    public const int LastName_MaxSize = 35;
 
-    }
 }

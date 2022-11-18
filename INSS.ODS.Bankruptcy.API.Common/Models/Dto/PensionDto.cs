@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using FluentValidation.Attributes;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
 using System.Runtime.Serialization;

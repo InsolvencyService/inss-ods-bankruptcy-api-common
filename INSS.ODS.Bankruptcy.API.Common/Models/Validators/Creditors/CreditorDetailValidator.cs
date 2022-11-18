@@ -17,38 +17,36 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors
         public CreditorDetailValidator()
         {
             RuleFor(x => x.Amount)
-                .NotEmpty().WithLocalizedMessage(() => CreditorDetailResources.Creditors_CreditorDetail_Amount_Error_Mandatory)
-                .GreaterThan(0).WithLocalizedMessage(() => CreditorDetailResources.Creditors_CreditorDetail_Amount_Error_MinValue)           
-                .SetValidator(new ScalePrecisionValidator(2, 99,
-                    () => CreditorDetailResources.Creditors_CreditorDetail_Amount_Error_Scale));
+                .NotEmpty().WithMessage(CreditorDetailResources.Creditors_CreditorDetail_Amount_Error_Mandatory)
+                .GreaterThan(0).WithMessage(CreditorDetailResources.Creditors_CreditorDetail_Amount_Error_MinValue)           
+                .ScalePrecision(2, 99).WithMessage(CreditorDetailResources.Creditors_CreditorDetail_Amount_Error_Scale);
 
             RuleFor(x => x.Reference)
-                .Length(3, 70).WithLocalizedMessage(
-                    () => CreditorDetailResources.Creditors_CreditorDetail_Reference_Length)
+                .Length(3, 70).WithMessage(CreditorDetailResources.Creditors_CreditorDetail_Reference_Length)
                 .When(x => !string.IsNullOrEmpty(x.Reference));
 
          
             RuleFor(x => x.DebtType)
                 .NotNull()
-                .WithLocalizedMessage(() => CreditorDetailResources.Creditors_CreditorDetail_DebtType_Error_Mandatory);
+                .WithMessage(CreditorDetailResources.Creditors_CreditorDetail_DebtType_Error_Mandatory);
 
             RuleFor(x => x.DebtType)
                 .Must(x => false)
                 .When(x => x.DebtType == "Other")
                 .Unless(x => !String.IsNullOrWhiteSpace(x.DebtTypeOther))
-                .WithLocalizedMessage(() => CreditorDetailResources.Creditors_CreditorDetail_DebtType_Error_Other_OtherText);
+                .WithMessage(CreditorDetailResources.Creditors_CreditorDetail_DebtType_Error_Other_OtherText);
 
             RuleFor(x=>x.DebtType)
                 .Must(x => false)
                 .When(x => x.DebtType == "Other" && !String.IsNullOrWhiteSpace(x.DebtTypeOther))
                 .Unless(x => x.DebtTypeOther!=null && x.DebtTypeOther.Length >= 3)
-                .WithLocalizedMessage(() => CreditorDetailResources.Creditors_CreditorDetail_DebtType_Error_Other_MinLength);
+                .WithMessage(CreditorDetailResources.Creditors_CreditorDetail_DebtType_Error_Other_MinLength);
 
             RuleFor(x => x.DebtType)
                 .Must(x => false)
                 .When(x => x.DebtType == "Other" && !String.IsNullOrWhiteSpace(x.DebtTypeOther))
                 .Unless( x=> x.DebtTypeOther != null && x.DebtTypeOther.Length <= 50)
-                .WithLocalizedMessage(() => CreditorDetailResources.Creditors_CreditorDetail_DebtType_Error_Other_MaxLength);
+                .WithMessage(CreditorDetailResources.Creditors_CreditorDetail_DebtType_Error_Other_MaxLength);
 
         }
     }

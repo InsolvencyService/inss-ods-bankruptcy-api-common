@@ -1,45 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.Creditors;
-using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models.Creditors
+namespace INSS.ODS.Bankruptcy.API.Common.Models.Creditors;
+
+[DataContract]
+public class CreditorDetail : ICreditorDetail, ITableBase
 {
-    [DataContract]
-    [Validator(typeof(CreditorDetailValidator))]
-    public class CreditorDetail : ICreditorDetail, ITableBase
+    [DataMember]
+    public int Id { get; set; }
+
+    [DataMember]
+    public decimal? Amount { get; set; }
+
+    [DataMember]
+    public string Reference { get; set; }
+
+    [DataMember]
+    public string DebtType { get; set; }
+
+    [DataMember]
+    public string DebtTypeOther { get; set; }
+
+    [NotMapped]
+    public bool RequiresReason
     {
-        [DataMember]
-        public int Id { get; set; }
-
-        [DataMember]
-        public decimal? Amount { get; set; }
-
-        [DataMember]
-        public string Reference { get; set; }
-
-        [DataMember]
-        public string DebtType { get; set; }
-
-        [DataMember]
-        public string DebtTypeOther { get; set; }
-
-        [NotMapped]
-        public bool RequiresReason
+        get
         {
-            get
-            {
-                return DebtType == "Credit card/ store card"
-                    || DebtType == "Personal loan (unsecured)";
-            }
+            return DebtType == "Credit card/ store card"
+                || DebtType == "Personal loan (unsecured)";
         }
-
     }
+
 }

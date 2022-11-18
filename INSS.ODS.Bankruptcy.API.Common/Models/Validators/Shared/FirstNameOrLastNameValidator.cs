@@ -14,20 +14,20 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
             RuleFor(x => x.FirstName)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .Must(AtleastOneNameNotEmpty)
-                .WithLocalizedMessage(() => NameResources.Shared_Name_Error_FirstNameOrLastNameRequired)
+                .WithMessage(NameResources.Shared_Name_Error_FirstNameOrLastNameRequired)
                 .Length(0, NameValidationConstants.FirstName_MaxSize)
-                .WithLocalizedMessage(() => NameResources.Shared_Name_FirstName_Error_MaxLength, new object[] { NameValidationConstants.FirstName_MaxSize + 1 })
+                .WithMessage(x => $"{NameResources.Shared_Name_FirstName_Error_MaxLength} {NameValidationConstants.FirstName_MaxSize + 1}")
                 .Matches(RegularExpressions.FirstName_ValidPattern_AllowingEmpty)
-                .WithLocalizedMessage(() => NameResources.Shared_Name_FirstName_Error_InvalidLetters);
+                .WithMessage(NameResources.Shared_Name_FirstName_Error_InvalidLetters);
 
             RuleFor(x => x.LastName)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .Must(AtleastOneNameNotEmpty)
-                .WithLocalizedMessage(() => NameResources.Shared_Name_Error_FirstNameOrLastNameRequired)
+                .WithMessage(NameResources.Shared_Name_Error_FirstNameOrLastNameRequired)
                 .Length(0, NameValidationConstants.LastName_MaxSize)
-                .WithLocalizedMessage(() => NameResources.Shared_Name_LastName_Error_MaxLength, new object[] { NameValidationConstants.LastName_MaxSize + 1 })
+                .WithMessage(x => $"{NameResources.Shared_Name_LastName_Error_MaxLength} { NameValidationConstants.LastName_MaxSize + 1 }")
                 .Matches(RegularExpressions.LastName_ValidPattern_AllowingEmpty)
-                .WithLocalizedMessage(() => NameResources.Shared_Name_LastName_Error_InvalidLetters);
+                .WithMessage(NameResources.Shared_Name_LastName_Error_InvalidLetters);
         }
 
         private bool AtleastOneNameNotEmpty(IFirstNameLastNamePartial instance, String firstName)

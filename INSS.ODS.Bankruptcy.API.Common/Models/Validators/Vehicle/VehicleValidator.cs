@@ -12,16 +12,16 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
         {
             RuleFor(r => r.Make)
                 .NotEmpty()
-                .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_MakeModel_Error_AnyOneFieldRequired)
+                .WithMessage(VehicleResources.Vehicle_Vehicle_MakeModel_Error_AnyOneFieldRequired)
                 .When(r => String.IsNullOrWhiteSpace(r.Model));
 
             RuleFor(r => r.VehicleType)
                 .NotEmpty()
-                .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_VehicleType_Error_Required);
+                .WithMessage(VehicleResources.Vehicle_Vehicle_VehicleType_Error_Required);
 
             RuleFor(r => r.VehicleType)
                 .Must(x => false)
-                .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_VehicleTypeOther_Error_Required)
+                .WithMessage(VehicleResources.Vehicle_Vehicle_VehicleTypeOther_Error_Required)
                 .When(x => (x.VehicleType == VehicleResources.Vehicle_Vehicle_VehicleType_Other)
                 && (String.IsNullOrWhiteSpace(x.VehicleTypeOther)));
 
@@ -30,19 +30,19 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
                 .When(x => !string.IsNullOrWhiteSpace(x.VehicleTypeOther)
                 && (x.VehicleTypeOther.Trim().Length < 3 || x.VehicleTypeOther.Trim().Length > 60)
                 && (x.VehicleType == VehicleResources.Vehicle_Vehicle_VehicleType_Other))
-                .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_VehicleTypeOther_Error_Length);
+                .WithMessage(VehicleResources.Vehicle_Vehicle_VehicleTypeOther_Error_Length);
 
             RuleFor(r => r.NatureOfInterestInVehicle)
                 .NotEmpty()
-                .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_NatureInterestOfVehicle_Error_Required);
+                .WithMessage(VehicleResources.Vehicle_Vehicle_NatureInterestOfVehicle_Error_Required);
 
             RuleFor(r => r.RegistrationNumber)
                 .NotEmpty()
-                .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_RegistrationNumber_Error_Required)           
+                .WithMessage(VehicleResources.Vehicle_Vehicle_RegistrationNumber_Error_Required)           
                 .Matches(RegularExpressions.Vehicle_AlphaNumericOnly)
-                .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_RegistrationNumber_Error_AlphaNumericOnly)
+                .WithMessage(VehicleResources.Vehicle_Vehicle_RegistrationNumber_Error_AlphaNumericOnly)
                 .Length(1, 20)
-                .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_RegistrationNumber_Error_Length);          
+                .WithMessage(VehicleResources.Vehicle_Vehicle_RegistrationNumber_Error_Length);          
       
         }
     }

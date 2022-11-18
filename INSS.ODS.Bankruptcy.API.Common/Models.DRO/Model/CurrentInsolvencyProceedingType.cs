@@ -1,12 +1,11 @@
-namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum CurrentInsolvencyProceedingType
 {
-    public enum CurrentInsolvencyProceedingType
-    {
-        UndischargedBankruptcy,
-        InterimOrder,
-        Iva,
-        BroU,
-        Dro,
-        DrroU
-    }
+    UndischargedBankruptcy,
+    InterimOrder,
+    Iva,
+    BroU,
+    Dro,
+    DrroU
 }

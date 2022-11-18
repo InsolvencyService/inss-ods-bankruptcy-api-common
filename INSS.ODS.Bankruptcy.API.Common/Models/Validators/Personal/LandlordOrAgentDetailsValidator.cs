@@ -12,9 +12,9 @@ namespace Insolvency.Bankruptcy.App.Validators
             RuleFor(x => x.Name)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .WithLocalizedMessage(() => LandlordDetailsResources.Personal_LandlordDetails_Name_Error_Empty)
+                .WithMessage(LandlordDetailsResources.Personal_LandlordDetails_Name_Error_Empty)
                 .NotEmpty()
-                .WithLocalizedMessage(() => LandlordDetailsResources.Personal_LandlordDetails_Name_Error_Empty);
+                .WithMessage(LandlordDetailsResources.Personal_LandlordDetails_Name_Error_Empty);
 
             RuleFor(x => x.Address)
                 .SetValidator(new AddressValidator());

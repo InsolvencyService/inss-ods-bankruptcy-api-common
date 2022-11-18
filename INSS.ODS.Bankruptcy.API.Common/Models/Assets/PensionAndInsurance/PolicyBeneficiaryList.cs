@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 
-using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
-using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
+namespace INSS.ODS.Bankruptcy.API.Common.Models;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models
+[Serializable]
+public class PolicyBeneficiaryList : IPolicyBeneficiaryList<PolicyBeneficiaryDetail>
 {
-    [Serializable]
-    [Validator(typeof(PolicyBeneficiaryListValidator<PolicyBeneficiaryDetail>))]
-    public class PolicyBeneficiaryList : IPolicyBeneficiaryList<PolicyBeneficiaryDetail>
-    {
-        public int PolicyMainId { get; set; }
-        public List<PolicyBeneficiaryDetail> PolicyBeneficiaries { get; set; }
-    }
+    public int PolicyMainId { get; set; }
+    public List<PolicyBeneficiaryDetail> PolicyBeneficiaries { get; set; }
 }

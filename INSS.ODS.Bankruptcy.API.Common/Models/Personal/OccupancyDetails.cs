@@ -6,7 +6,6 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using FluentValidation.Attributes;
 using INSS.ODS.Bankruptcy.API.Common.Models;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators;
@@ -16,7 +15,6 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
     [Serializable]
     [DataContract]
-//    [Validator(typeof(AddressInterfaceValidator))]
     public class OccupancyDetails : ITableBase, IOccupancyDetails
     {
         [DataMember]

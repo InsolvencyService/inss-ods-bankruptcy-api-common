@@ -12,11 +12,11 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt
             RuleFor(x => x.CreditorName)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithLocalizedMessage(() => DebtPreferentialPaymentsResources.Debt_DebtPreferentialPayments_CreditorName_Error_Empty)
+                .WithMessage(DebtPreferentialPaymentsResources.Debt_DebtPreferentialPayments_CreditorName_Error_Empty)
                 .Must(limitedCompanyName => ValidationLengthHelper.HaveLengthGreaterThan(limitedCompanyName, 2))
-                .WithLocalizedMessage(() => DebtPreferentialPaymentsResources.Debt_DebtPreferentialPayments_CreditorName_Error_TooShort)
+                .WithMessage(DebtPreferentialPaymentsResources.Debt_DebtPreferentialPayments_CreditorName_Error_TooShort)
                 .Must(limitedCompanyName => ValidationLengthHelper.HaveLengthLessThan(limitedCompanyName, 51))
-                .WithLocalizedMessage(() => DebtPreferentialPaymentsResources.Debt_DebtPreferentialPayments_CreditorName_Error_TooLong);
+                .WithMessage(DebtPreferentialPaymentsResources.Debt_DebtPreferentialPayments_CreditorName_Error_TooLong);
         }
     }
 }

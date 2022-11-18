@@ -11,10 +11,8 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         public SelfEmployedBusinessAddressPartialValidator()
         {
             RuleFor(x => x.Address_1)
-                .NotEmpty().WithLocalizedMessage(
-                      () => SelfEmployedBusinessAddressResources.SelfEmployedBusinessAddress_Address1_Required)
-                .Length(1, 100).WithLocalizedMessage(
-                      () => SelfEmployedBusinessAddressResources.SelfEmployedBusinessAddress_Address1_Length);
+                .NotEmpty().WithMessage(SelfEmployedBusinessAddressResources.SelfEmployedBusinessAddress_Address1_Required)
+                .Length(1, 100).WithMessage(SelfEmployedBusinessAddressResources.SelfEmployedBusinessAddress_Address1_Length);
         }
     }
 }

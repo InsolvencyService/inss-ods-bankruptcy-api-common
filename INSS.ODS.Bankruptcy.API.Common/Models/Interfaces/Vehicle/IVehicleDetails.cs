@@ -1,5 +1,4 @@
-﻿using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.CustomAttributes;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.CustomAttributes;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle;
 using INSS.ODS.Bankruptcy.API.Common.Resources.Vehicle;
 using System.Collections.Generic;

@@ -17,17 +17,16 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors
         public AttachmentOfEarningsValidator()
         {
             RuleFor(x => x.AmountTaken)
-     .NotEmpty().WithLocalizedMessage(() => AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_AmountTaken_Required)
-     .GreaterThan(0).WithLocalizedMessage(() => AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_AmountTaken_Min)
-     .SetValidator(new ScalePrecisionValidator(2, 99,
-         () => AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_AmountTaken_Scale));
+     .NotEmpty().WithMessage(AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_AmountTaken_Required)
+     .GreaterThan(0).WithMessage(AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_AmountTaken_Min)
+     .ScalePrecision(2, 99).WithMessage(AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_AmountTaken_Scale);
 
             RuleFor(x => x.HowOftenTaken)
 .Cascade(CascadeMode.StopOnFirstFailure)
 .NotNull()
-.WithLocalizedMessage(() => AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_HowOften_Required)
+.WithMessage(AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_HowOften_Required)
 .NotEmpty()
-.WithLocalizedMessage(() => AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_HowOften_Required);
+.WithMessage(AttachmentOfEarningsResources.Creditors_AttachmentOfEarnings_HowOften_Required);
         }
     }
 }

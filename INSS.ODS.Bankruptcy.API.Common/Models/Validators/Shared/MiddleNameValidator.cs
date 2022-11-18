@@ -27,7 +27,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
             RuleFor(x => x.MiddleNames)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .Length(NameValidationConstants.MiddleName_MinSize, NameValidationConstants.MiddleName_MaxSize)
-                .WithMessage(maxLengthErrorMessage, new object[] { NameValidationConstants.MiddleName_MaxSize + 1 })
+                .WithMessage(x => $"{maxLengthErrorMessage} { NameValidationConstants.MiddleName_MaxSize + 1 }")
                 .Matches(RegularExpressions.MiddleName_ValidPattern_AllowingEmpty)
                 .WithMessage(invalidErrorMessage)
                 .When(x => !String.IsNullOrEmpty(x.MiddleNames));

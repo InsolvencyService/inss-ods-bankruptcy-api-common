@@ -11,9 +11,9 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(x => x.SortCode)
                 .Matches(RegularExpressions.SortCode)
-                .WithLocalizedMessage(() => AddAccountResources.BankAccount_AddAccount_SortCode_Error_InvalidCharacter)
+                .WithMessage(AddAccountResources.BankAccount_AddAccount_SortCode_Error_InvalidCharacter)
                 .Length(6)
-                .WithLocalizedMessage(() => AddAccountResources.BankAccount_AddAccount_SortCode_Error_WrongLength)
+                .WithMessage(AddAccountResources.BankAccount_AddAccount_SortCode_Error_WrongLength)
                 .When(x => ! string.IsNullOrEmpty(x.SortCode));
         }
     }

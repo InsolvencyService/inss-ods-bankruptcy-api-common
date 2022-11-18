@@ -17,7 +17,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.Vehicle
             RuleFor(r => r.Make)
             .Cascade(CascadeMode.StopOnFirstFailure)
             .NotEmpty()
-            .WithLocalizedMessage(() => VehicleResources.Vehicle_Vehicle_MakeModel_Error_AnyOneFieldRequired)
+            .WithMessage(VehicleResources.Vehicle_Vehicle_MakeModel_Error_AnyOneFieldRequired)
             .When(r => String.IsNullOrWhiteSpace(r.Model));
         }
     }

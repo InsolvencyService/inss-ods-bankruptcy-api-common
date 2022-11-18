@@ -1,28 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation.Attributes;
-using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
+﻿using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.Creditors;
-using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors;
+using System.Runtime.Serialization;
 
-namespace INSS.ODS.Bankruptcy.API.Common.Models.Creditors
+namespace INSS.ODS.Bankruptcy.API.Common.Models.Creditors;
+
+[DataContract]
+public class MoneyOwed: IMoneyOwed, ITableBase
 {
-    [DataContract]
-    [Validator(typeof(MoneyOwedValidator))]
-    public class MoneyOwed: IMoneyOwed, ITableBase
-    {
-        [DataMember]
-        public int Id { get; set; }
+    [DataMember]
+    public int Id { get; set; }
 
-        [DataMember]
-        public bool? IsMoneyOwed { get; set; }
+    [DataMember]
+    public bool? IsMoneyOwed { get; set; }
 
 
-    }
 }

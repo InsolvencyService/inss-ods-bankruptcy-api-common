@@ -1,7 +1,6 @@
-﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public class UnderValueTransactionDetails
 {
-    public class UnderValueTransactionDetails
-    {
-        public bool? GivenAwayOrSold { get; set; }
-    }
+    public bool? GivenAwayOrSold { get; set; }
 }

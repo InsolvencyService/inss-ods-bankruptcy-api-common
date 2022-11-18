@@ -1,56 +1,52 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FluentValidation.TestHelper;
-using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
-using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors;
+﻿using FluentValidation.TestHelper;
 using INSS.ODS.Bankruptcy.API.Common.Models.Creditors;
+using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Creditors;
+using System.ComponentModel.DataAnnotations;
 
-namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.Creditors
+namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.Creditors;
+
+[TestClass]
+public class MoneyOwedTests
 {
-    [TestClass]
-    public class MoneyOwedTests
+
+    private MoneyOwedValidator validator;
+
+    [TestInitialize]
+    public void Setup()
+    {
+        validator = new MoneyOwedValidator();
+    }
+
+    [TestMethod]
+    public void MoneyOwedInvalid()
     {
 
-        private MoneyOwedValidator validator;
-
-        [TestInitialize]
-        public void Setup()
-        {
-            validator = new MoneyOwedValidator();
-        }
-
-        [TestMethod]
-        public void MoneyOwedInvalid()
+        var MoneyOwed = new MoneyOwed
         {
 
-            var MoneyOwed = new MoneyOwed
-            {
+        };
 
-            };
+        var validationResult = validator.TestValidate(MoneyOwed);
 
-            validator.ShouldHaveValidationErrorFor(x => x.IsMoneyOwed, MoneyOwed);
+        validationResult.ShouldHaveValidationErrorFor(x => x.IsMoneyOwed);
+    }
 
-        }
-
-        [TestMethod]
-        public void MoneyOwedValid()
+    [TestMethod]
+    public void MoneyOwedValid()
+    {
+        var MoneyOwed = new MoneyOwed
         {
-            var MoneyOwed = new MoneyOwed
-            {
-                IsMoneyOwed = true
-            };
+            IsMoneyOwed = true
+        };
 
+        var validationResult = validator.TestValidate(MoneyOwed);
 
-            validator.ShouldNotHaveValidationErrorFor(x => x.IsMoneyOwed, MoneyOwed);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.IsMoneyOwed);
 
-            var context = new System.ComponentModel.DataAnnotations.ValidationContext(MoneyOwed, null, null);
-            var results = new List<ValidationResult>();
-            var isModelStateValid = Validator.TryValidateObject(MoneyOwed, context, results, true);
+        var context = new System.ComponentModel.DataAnnotations.ValidationContext(MoneyOwed, null, null);
+        var results = new List<ValidationResult>();
+        var isModelStateValid = Validator.TryValidateObject(MoneyOwed, context, results, true);
 
-            Assert.IsTrue(isModelStateValid);
-        }
-
-
-
+        Assert.IsTrue(isModelStateValid);
     }
 }

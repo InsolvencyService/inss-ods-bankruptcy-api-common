@@ -1,11 +1,10 @@
-﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum Title
 {
-    public enum Title
-    {
-        Mr,
-        Mrs,
-        Miss,
-        Ms,
-        Other
-    }
+    Mr,
+    Mrs,
+    Miss,
+    Ms,
+    Other
 }

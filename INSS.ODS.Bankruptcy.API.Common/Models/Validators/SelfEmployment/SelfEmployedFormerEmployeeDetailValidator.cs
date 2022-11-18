@@ -15,16 +15,13 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators.CompanyDirectorships
             RegisterBaseValidator(new LastNameValidator());
 
             RuleFor(x => x.Reason)
-                .NotEmpty().WithLocalizedMessage(
-                    () => FormerEmployeeDetailResources.FormerEmployeeDetail_Reason_Required)
-                .Length(3, 100).WithLocalizedMessage(
-                    () => FormerEmployeeDetailResources.FormerEmployeeDetail_Reason_Length);
+                .NotEmpty().WithMessage(FormerEmployeeDetailResources.FormerEmployeeDetail_Reason_Required)
+                .Length(3, 100).WithMessage(FormerEmployeeDetailResources.FormerEmployeeDetail_Reason_Length);
 
             RuleFor(x => x.Amount)
-              .NotEmpty().WithLocalizedMessage(
-                    () => FormerEmployeeDetailResources.FormerEmployeeDetail_Amount_Required)
+              .NotEmpty().WithMessage(FormerEmployeeDetailResources.FormerEmployeeDetail_Amount_Required)
               .Must(x => x > 0)
-              .WithLocalizedMessage(() => FormerEmployeeDetailResources.FormerEmployeeDetail_Amount_Invalid);
+              .WithMessage(FormerEmployeeDetailResources.FormerEmployeeDetail_Amount_Invalid);
 
 
             RuleFor(x => x.Amount).SetValidator(new CurrencyValidator());

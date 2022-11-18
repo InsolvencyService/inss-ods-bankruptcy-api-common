@@ -1,8 +1,7 @@
-﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+﻿namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum ApplicationStatus
 {
-    public enum ApplicationStatus
-    {
-        InProgress,
-        Submitted
-    }
+    InProgress,
+    Submitted
 }

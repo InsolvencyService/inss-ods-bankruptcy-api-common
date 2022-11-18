@@ -30,14 +30,13 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
         {
             RuleFor(x => x.SecurityQuestion)
             .NotEmpty()
-            .WithLocalizedMessage(() => AnswerSecurityQuestionsResources.Application_AnswerSecurityQuestions_SecurityQuestion_Empty, x => x.ItemIndex + 1);
+            .WithMessage(x => $"{AnswerSecurityQuestionsResources.Application_AnswerSecurityQuestions_SecurityQuestion_Empty} {x.ItemIndex + 1}");
 
             RuleFor(x => x.SecurityAnswer)
             .NotEmpty()
-            .WithLocalizedMessage(() => AnswerSecurityQuestionsResources.Application_AnswerSecurityQuestions_SecurityAnswer_Empty, x => x.ItemIndex + 1)
+            .WithMessage(x => $"{AnswerSecurityQuestionsResources.Application_AnswerSecurityQuestions_SecurityAnswer_Empty} {x.ItemIndex + 1}")
             .Length(3, 250)
-            .WithLocalizedMessage(() => AnswerSecurityQuestionsResources.Application_AnswerSecurityQuestions_SecurityAnswer_FormatError, x => x.ItemIndex + 1);
-
+            .WithMessage(x => $"{AnswerSecurityQuestionsResources.Application_AnswerSecurityQuestions_SecurityAnswer_FormatError} {x.ItemIndex + 1}");
         }
     }
 

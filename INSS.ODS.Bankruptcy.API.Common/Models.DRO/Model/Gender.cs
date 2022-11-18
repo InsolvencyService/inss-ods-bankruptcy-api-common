@@ -1,9 +1,8 @@
-namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model
+namespace INSS.ODS.Bankruptcy.API.Common.Models.DRO.Model;
+
+public enum Gender
 {
-    public enum Gender
-    {
-        Male,
-        Female,
-        Unspecified
-    }
+    Male,
+    Female,
+    Unspecified
 }

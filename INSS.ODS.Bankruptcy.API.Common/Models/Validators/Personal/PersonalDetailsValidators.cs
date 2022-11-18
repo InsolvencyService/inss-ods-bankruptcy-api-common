@@ -17,13 +17,13 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
             RuleFor(x => x.Title)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .WithLocalizedMessage(() => StartResources.Personal_Start_Title_Error_Empty)
+                .WithMessage(StartResources.Personal_Start_Title_Error_Empty)
                 .NotEmpty()
-                .WithLocalizedMessage(() => StartResources.Personal_Start_Title_Error_Empty)
+                .WithMessage(StartResources.Personal_Start_Title_Error_Empty)
                 .Must(OtherTitleNotEmpty)
-                .WithLocalizedMessage(() => StartResources.Personal_Start_Title_Error_Empty)
+                .WithMessage(StartResources.Personal_Start_Title_Error_Empty)
                 .Must(OtherTitleHasValidLength)
-                .WithLocalizedMessage(() => StartResources.Personal_Start_TitleOther_Error_MaxLength);
+                .WithMessage(StartResources.Personal_Start_TitleOther_Error_MaxLength);
 
             RuleFor(x => x.DateOfBirth)
                 .Cascade(CascadeMode.StopOnFirstFailure)
@@ -32,7 +32,7 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
                 StartResources.Personal_Start_DateOfBirth_Error_MinimumDate
                 ))
                 .Must(x => x.AddYears(18) <= DateTime.Today)
-                .WithLocalizedMessage(() => StartResources.Personal_Start_DateOfBirth_Error_MinimumAge, new object[] { 18 });
+                .WithMessage(x => $"{StartResources.Personal_Start_DateOfBirth_Error_MinimumAge} : 18");
         }
 
         private bool OtherTitleNotEmpty(IPersonalDetails instance, string relationship)

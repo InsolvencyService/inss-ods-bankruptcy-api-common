@@ -1,80 +1,85 @@
-using System;
 using FluentValidation.TestHelper;
 using INSS.ODS.Bankruptcy.API.Common.Models.Debt;
 using INSS.ODS.Bankruptcy.API.Common.Models.Validators.Debt;
 using INSS.ODS.Bankruptcy.API.Common.Resources.Debt;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.Debt
+namespace INSS.ODS.Bankruptcy.API.Common.UnitTests.Debt;
+
+[TestClass]
+public class DebtReliefOptionUsedTest
 {
-    [TestClass]
-    public class DebtReliefOptionUsedTest
+    private DebtReliefOptionUsedInterfaceValidator _validator;
+
+    [TestInitialize]
+    public void Setup()
     {
-        private DebtReliefOptionUsedInterfaceValidator _validator;
+        _validator = new DebtReliefOptionUsedInterfaceValidator();
+    }
 
-        [TestInitialize]
-        public void Setup()
+    [TestMethod]
+    [TestCategory("DebtReliefOptionUsed")]
+    public void DebtReliefHistory_DebtReliefOptionStartDate_ShouldErrorOnInvalidValue()
+    {
+        var model = new DebtReliefOptionUsed();
+
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.DebtReliefOptionStartDate);
+
+        model.DebtReliefOptionStartDate = DateTime.Now.AddYears(1);
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.DebtReliefOptionStartDate);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtReliefOptionUsed")]
+    public void DebtReliefHistory_DebtReliefOptionStartDate_ShouldPassOnValidValue()
+    {
+        var model = new DebtReliefOptionUsed()
         {
-            _validator = new DebtReliefOptionUsedInterfaceValidator();
-        }
+            DebtReliefOptionStartDate = new DateTime(2012, 1, 1)
+        };
 
-        [TestMethod]
-        [TestCategory("DebtReliefOptionUsed")]
-        public void DebtReliefHistory_DebtReliefOptionStartDate_ShouldErrorOnInvalidValue()
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.DebtReliefOptionStartDate);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtReliefOptionUsed")]
+    public void DebtReliefHistory_DebtReliefOptionReferenceNumber_ShouldErrorOnInvalidValue()
+    {
+        var model = new DebtReliefOptionUsed()
         {
-            var model = new DebtReliefOptionUsed();
-            
-            _validator.ShouldHaveValidationErrorFor(x => x.DebtReliefOptionStartDate, model);
+            DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Bankruptcy_Label
+        };
 
-            model.DebtReliefOptionStartDate = DateTime.Now.AddYears(1);
-            _validator.ShouldHaveValidationErrorFor(x => x.DebtReliefOptionStartDate, model);
-        }
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber);
 
-        [TestMethod]
-        [TestCategory("DebtReliefOptionUsed")]
-        public void DebtReliefHistory_DebtReliefOptionStartDate_ShouldPassOnValidValue()
+        model.DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_DebtReliefOrder_Label;
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber);
+    }
+
+    [TestMethod]
+    [TestCategory("DebtReliefOptionUsed")]
+    public void DebtReliefHistory_DebtReliefOptionReferenceNumber_ShouldPassOnValidValue()
+    {
+        var model = new DebtReliefOptionUsed()
         {
-            var model = new DebtReliefOptionUsed()
-            {
-                DebtReliefOptionStartDate = new DateTime(2012, 1, 1)
-            };
-            
-            _validator.ShouldNotHaveValidationErrorFor(x => x.DebtReliefOptionStartDate, model);
-        }
+            DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Bankruptcy_Label,
+            DebtReliefOptionReferenceNumber = "AB123456"
+        };
 
-        [TestMethod]
-        [TestCategory("DebtReliefOptionUsed")]
-        public void DebtReliefHistory_DebtReliefOptionReferenceNumber_ShouldErrorOnInvalidValue()
-        {
-            var model = new DebtReliefOptionUsed()
-            {
-                DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Bankruptcy_Label
-            };
+        var validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber);
 
-            _validator.ShouldHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber, model);
+        model.DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_DebtReliefOrder_Label;
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber);
 
-            model.DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_DebtReliefOrder_Label;
-            _validator.ShouldHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber, model);
-        }
-
-        [TestMethod]
-        [TestCategory("DebtReliefOptionUsed")]
-        public void DebtReliefHistory_DebtReliefOptionReferenceNumber_ShouldPassOnValidValue()
-        {
-            var model = new DebtReliefOptionUsed()
-            {
-                DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_Bankruptcy_Label,
-                DebtReliefOptionReferenceNumber = "AB123456"
-            };
-
-            _validator.ShouldNotHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber, model);
-
-            model.DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_DebtReliefOrder_Label;
-            _validator.ShouldNotHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber, model);
-
-            model.DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_DebtManagementPlan_Label;
-            model.DebtReliefOptionReferenceNumber = "";
-            _validator.ShouldNotHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber, model);
-        }
+        model.DebtReliefOptionType = DebtReliefHistoryResources.Debt_DebtReliefHistory_DebtReliefOptionType_DebtManagementPlan_Label;
+        model.DebtReliefOptionReferenceNumber = "";
+        validationResult = _validator.TestValidate(model);
+        validationResult.ShouldNotHaveValidationErrorFor(x => x.DebtReliefOptionReferenceNumber);
     }
 }

@@ -11,9 +11,9 @@ namespace INSS.ODS.Bankruptcy.API.Common.Models.Validators
             RuleFor(r => r.AgentName)
               .Cascade(CascadeMode.StopOnFirstFailure)
               .NotEmpty()
-              .WithLocalizedMessage(() => ManagingAgentAddressResources.Property_ManagingAgentAddress_Name_Error_Manadatory)
+              .WithMessage(ManagingAgentAddressResources.Property_ManagingAgentAddress_Name_Error_Manadatory)
               .Length(3, 100)
-              .WithLocalizedMessage(() => ManagingAgentAddressResources.Property_ManagingAgentAddress_Name_Error_Length);
+              .WithMessage(ManagingAgentAddressResources.Property_ManagingAgentAddress_Name_Error_Length);
 
             RuleFor(x => x.AgentAddress)
             .SetValidator(new AddressValidator());
