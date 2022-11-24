@@ -35,7 +35,4 @@ public class CaseNote : ITableBase, ICaseNote
 
     [DataMember]
     public bool UseCaseNoteTextAsRejectionReason { get; set; }
-
-    [DataMember]
-    public int? CompletedApplicationId { get; set; }
 }

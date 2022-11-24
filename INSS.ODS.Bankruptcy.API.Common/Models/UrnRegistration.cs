@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
+using IndexAttribute = Microsoft.EntityFrameworkCore.IndexAttribute;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models;
 

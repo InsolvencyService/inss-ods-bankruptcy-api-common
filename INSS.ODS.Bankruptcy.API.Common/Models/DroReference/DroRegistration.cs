@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces;
 using INSS.ODS.Bankruptcy.API.Common.Models.Interfaces.DroReference;
 using Microsoft.EntityFrameworkCore;
+using IndexAttribute = Microsoft.EntityFrameworkCore.IndexAttribute;
 
 namespace INSS.ODS.Bankruptcy.API.Common.Models
 {
